@@ -39,11 +39,11 @@ then you can generate pdoc files
 
 And open pdoc/index.html to check it. Pretty easy.
 
-To avoid conflicts with current doc, do not includ pdoc comment in current JS file. Edit documentation.pdoc in each component directory (add any new .pdoc file, they will be used in rake pdoc).
+To avoid conflicts with current doc, do not include pdoc comment in current JS file. Edit documentation.pdoc in each component directory (add any new .pdoc file, they will be used in rake pdoc).
 When you're done, pull request :).
 
 Thanks in advance for your help.
 
 ## Bugs Report
 
-We are also moving to [lighthouseapp.com](http://lighthouseapp.com/), right now you can fill tockets on our [Trac](http://dev.prototype-ui.com/)
+We are also moving to [lighthouseapp.com](http://lighthouseapp.com/), right now you can fill tickets on our [Trac](http://dev.prototype-ui.com/)
