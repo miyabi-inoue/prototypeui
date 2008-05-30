@@ -67,7 +67,11 @@ UI.AutoComplete = Class.create(UI.Options, {
     
     // Close button   
     var close = new Element('a', {'href': '#', 'class': 'closebutton'});
-    li.insert(new Element("span").update(text).insert(close));
+    li.insert(new Element("span").update(text).insert(close)).insert(new Element('input', {
+      type: 'hidden',
+      name: this.element.name,
+      value: value
+    }));
     if (value)
       li.writeAttribute("pui-autocomplete:value", value);
       
@@ -83,7 +87,9 @@ UI.AutoComplete = Class.create(UI.Options, {
     else
       this.hideAutocomplete().fire("input:empty");
     
-    return this.fire("element:added", {element: li, text: text, value: value});
+    this.fire("element:added", {element: li, text: text, value: value});
+    
+    return this;
   },
  
   remove: function(element) { 
@@ -95,7 +101,9 @@ UI.AutoComplete = Class.create(UI.Options, {
     
     this.updateInputSize();
     this.input.focus();
-    return this.fire("element:removed", {element: element});
+    this.fire("element:removed", {element: element});
+    
+    return this;
   }, 
   
   removeLast: function() {
