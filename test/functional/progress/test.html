@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" debug="false">
+<head>
+	<title>Test PWC</title>
+  <script src="../../../lib/prototype.js" type="text/javascript"></script>
+  <script src="../../../lib/effects.js" type="text/javascript"></script>  
+  <script src="../../../dist/prototype-ui.js" type="text/javascript"></script>
+   <script src="../../../src/progress/progress.js" type="text/javascript"></script>
+
+  <link href="../../../themes/progress/progress.css" rel="stylesheet" type="text/css">
+  <link href="../../../themes/progress/mac_os_x.css" rel="stylesheet" type="text/css">
+  <link href="../../../themes/progress/mac_os_x_small.css" rel="stylesheet" type="text/css">
+  <link href="../../../themes/progress/vista.css" rel="stylesheet" type="text/css">
+  
+  <style type='text/css'>
+  body {
+    background: #CCC;
+  }  
+  label {
+  	display: block;
+	float:left;
+  	width:100px;
+	padding: 4px 0;
+  }
+  </style>
+  
+</head>
+<body>
+  
+ 
+
+<script type="text/javascript">   
+
+  function runTest() {
+  	
+  	var container = new Element('div');
+	
+	container.insert(new Element('h1').insert('Simple Example'));
+	
+ 	var progress = new UI.Progress(container);
+	
+	
+	var buttons=new Element('p');
+	buttons.insert(new Element('button').insert('0%').observe('click',function(){progress.setValue(0)}));
+	buttons.insert(new Element('button').insert('10%').observe('click',function(){progress.setValue(10)}));
+	buttons.insert(new Element('button').insert('25%').observe('click',function(){progress.setValue(25)}));
+	buttons.insert(new Element('button').insert('50%').observe('click',function(){progress.setValue(50)}));
+	buttons.insert(new Element('button').insert('66.67%').observe('click',function(){progress.setValue(66.67)}));
+	buttons.insert(new Element('button').insert('95%').observe('click',function(){progress.setValue(95)}));
+	buttons.insert(new Element('button').insert('99%').observe('click',function(){progress.setValue(99)}));
+	buttons.insert(new Element('button').insert('100%').observe('click',function(){progress.setValue(100)}));
+	buttons.insert(new Element('button').insert('120%').observe('click',function(){progress.setValue(120)}));
+	buttons.insert(new Element('button').insert('Working').observe('click',function(){progress.setValue(-1)}));
+	container.insert(buttons);
+	
+	
+	container.insert(new Element('h1').insert('Example with Range from 0 to 1 and Mac OS X Theme'));	
+	
+ 	var progress2 = new UI.Progress(container,{width:200,maxValue:1,theme:'mac_os_x'}).setValue(0.33);
+	
+	var buttons=new Element('p');
+	buttons.insert(new Element('button').insert('0%').observe('click',function(){progress2.setValue(0)}));
+	buttons.insert(new Element('button').insert('10%').observe('click',function(){progress2.setValue(0.1)}));
+	buttons.insert(new Element('button').insert('25%').observe('click',function(){progress2.setValue(0.25)}));
+	buttons.insert(new Element('button').insert('50%').observe('click',function(){progress2.setValue(0.5)}));
+	buttons.insert(new Element('button').insert('66.67%').observe('click',function(){progress2.setValue(0.6667)}));
+	buttons.insert(new Element('button').insert('95%').observe('click',function(){progress2.setValue(0.95)}));
+	buttons.insert(new Element('button').insert('99%').observe('click',function(){progress2.setValue(0.99)}));
+	buttons.insert(new Element('button').insert('100%').observe('click',function(){progress2.setValue(1)}));
+	buttons.insert(new Element('button').insert('120%').observe('click',function(){progress2.setValue(1.2)}));	
+	buttons.insert(new Element('button').insert('Working').observe('click',function(){progress2.setValue(-1)}));
+	container.insert(buttons); 	
+	
+	container.insert(new Element('h1').insert('Same as above but smaller Theme'));		
+	
+	var progress2small = new UI.Progress(container,{width:75,maxValue:1,theme:'mac_os_x_small'}).setValue(0.33);
+	
+	var buttons=new Element('p');
+	buttons.insert(new Element('button').insert('0%').observe('click',function(){progress2small.setValue(0)}));
+	buttons.insert(new Element('button').insert('10%').observe('click',function(){progress2small.setValue(0.1)}));
+	buttons.insert(new Element('button').insert('25%').observe('click',function(){progress2small.setValue(0.25)}));
+	buttons.insert(new Element('button').insert('50%').observe('click',function(){progress2small.setValue(0.5)}));
+	buttons.insert(new Element('button').insert('66.67%').observe('click',function(){progress2small.setValue(0.6667)}));
+	buttons.insert(new Element('button').insert('95%').observe('click',function(){progress2small.setValue(0.95)}));
+	buttons.insert(new Element('button').insert('99%').observe('click',function(){progress2small.setValue(0.99)}));
+	buttons.insert(new Element('button').insert('100%').observe('click',function(){progress2small.setValue(1)}));
+	buttons.insert(new Element('button').insert('120%').observe('click',function(){progress2small.setValue(1.2)}));	
+	buttons.insert(new Element('button').insert('Working').observe('click',function(){progress2small.setValue(-1)}));
+	container.insert(buttons);
+
+	container.insert(new Element('h1').insert('Example with Range from 0 to 250, onUpdate Function and Vista Theme'));	
+
+	var label = new Element('span');
+ 	var progress3 = new UI.Progress(container,{width:350,maxValue:250,theme:'vista',onUpdate:function(widget){label.update(widget.value)}}).setValue(123);
+	container.insert(label);
+	
+	var buttons=new Element('p');
+	buttons.insert(new Element('button').insert('0').observe('click',function(){progress3.setValue(0)}));
+	buttons.insert(new Element('button').insert('10').observe('click',function(){progress3.setValue(10)}));
+	buttons.insert(new Element('button').insert('66.67').observe('click',function(){progress3.setValue(66.67)}));
+	buttons.insert(new Element('button').insert('100').observe('click',function(){progress3.setValue(100)}));
+	buttons.insert(new Element('button').insert('120').observe('click',function(){progress3.setValue(120)}));
+	buttons.insert(new Element('button').insert('170').observe('click',function(){progress3.setValue(170)}));
+	buttons.insert(new Element('button').insert('250').observe('click',function(){progress3.setValue(250)}));
+	buttons.insert(new Element('button').insert('Working').observe('click',function(){progress3.setValue(-1)}));
+	container.insert(buttons);
+
+	
+	document.body.insert(container);
+  }                                   
+   
+  document.whenReady(runTest);
+</script>
+
+</body>
+</html>

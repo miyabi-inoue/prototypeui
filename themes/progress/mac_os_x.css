@@ -1,0 +1,14 @@
+.UI-progress.mac_os_x_small  .pane {
+	background: url(mac_os_x_small/pane.gif) top repeat-x;
+	height: 11px;
+	border:none;
+}
+
+.UI-progress.mac_os_x_small .bar {
+	background: url(mac_os_x_small/bar.gif) top repeat-x;
+	height: 11px;
+}
+
+.UI-progress.mac_os_x_small .working {
+	background: url(mac_os_x_small/work.gif) top repeat-x;
+}

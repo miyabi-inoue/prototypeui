@@ -1,0 +1,15 @@
+.UI-progress.vista  .pane {
+	background: url(vista/pane.gif) top repeat-x;
+	height: 12px;
+	font-size:10px;
+	border: 1px solid #b2b2b2;
+}
+
+.UI-progress.vista .bar {
+	background: url(vista/bar.gif) top repeat-x;
+	height: 12px;
+}
+
+.UI-progress.vista .working {
+	background: url(vista/work.gif) top repeat-x;
+}
