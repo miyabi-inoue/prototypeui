@@ -1,0 +1,67 @@
+.shadow_container.pulldown .shadow_center_wrapper {
+  float:left;
+  width:100%;
+}              
+
+.shadow_container.pulldown .shadow_right {
+  float:left;
+	width:30px;
+  margin-left:-30px
+}  
+
+.shadow_container.pulldown .shadow_left {
+  float:left;
+  margin-left:-100%;
+ 	width:30px;
+}
+
+.shadow_container.pulldown .se_shadow {
+  background:url(pulldown/se.png);
+  height:30px;   
+}
+
+.shadow_container.pulldown .s_shadow {
+  background:url(pulldown/s.png);
+  height:30px;
+  margin: 0 30px;
+}
+
+.shadow_container.pulldown .sw_shadow {
+  background:url(pulldown/sw.png);
+  height:30px;
+}
+
+.shadow_container.pulldown .ne_shadow {
+  background:url(pulldown/ne.png);
+  height:30px;
+}
+
+.shadow_container.pulldown .n_shadow {
+  background:url(pulldown/n.png) bottom;
+  height:30px; 
+  margin: 0 30px;
+}
+
+.shadow_container.pulldown .nw_shadow {
+  background:url(pulldown/nw.png);
+  height:30px;
+}
+
+.shadow_container.pulldown .e_shadow {
+  background:url(pulldown/e.png) repeat-y;
+  height:100%;
+}
+
+.shadow_container.pulldown .w_shadow {
+  background:url(pulldown/w.png) repeat-y;
+  height:100%;
+}
+
+.shadow_container.pulldown .c_shadow {     
+  height:100%;               
+  padding:10px;
+}      
+
+.shadow_container.pulldown {
+  font-size: 0px;
+}

@@ -1,0 +1,60 @@
+.UI-widget  {
+	cursor:pointer;
+}
+
+.UI-widget-selection-dropdown ul {
+	padding:0;
+	margin:0 -5px;
+
+   padding: 5px;       
+   height: auto !important; 
+   height: 1%;
+}
+
+.UI-widget-selection-dropdown li {
+  cursor: pointer;
+  overflow: hidden;
+  padding: 0 5px;
+  list-style-type: none;
+  width:auto;
+}
+
+.UI-widget-selection-dropdown li.selected span {
+	
+}
+
+.UI-widget-selection-dropdown li:hover {
+	background: #369;
+	color: #fff;
+	
+}
+
+.UI-widget-color-dropdown label {
+	width:auto;
+	display:inline;
+	float:none;
+}
+
+.UI-widget-ajax-dropdown label {
+	width:100px;
+}
+
+.UI-widget-dropdown .track {
+	position:relative;
+	top:5px;
+	height:5px;
+	font-size:1px;
+	margin-left:3px;
+	margin-right:3px;
+	background-color:#d3d9e2;
+	border: 1px inset #a5a5a5;
+}
+
+.UI-widget-dropdown .slider {
+	position:relative;
+	top: -4px;
+	width:4px;
+	height:8px;
+	background-color:#999;
+	border: 2px outset #999	;
+}

@@ -1,0 +1,67 @@
+.shadow_container.pulldown_vista .shadow_center_wrapper {
+  float:left;
+  width:100%;
+}              
+
+.shadow_container.pulldown_vista .shadow_right {
+  float:left;
+	width:12px;
+  margin-left:-12px
+}  
+
+.shadow_container.pulldown_vista .shadow_left {
+  float:left;
+  margin-left:-100%;
+  width:12px;
+}
+
+.shadow_container.pulldown_vista .se_shadow {
+  background:url(pulldown_vista/se.png);
+  height:6px;   
+}
+
+.shadow_container.pulldown_vista .s_shadow {
+  background:url(pulldown_vista/s.png);
+  height:6px;
+  margin: 0 12px;
+}
+
+.shadow_container.pulldown_vista .sw_shadow {
+  background:url(pulldown_vista/sw.png);
+  height:6px;
+}
+
+.shadow_container.pulldown_vista .ne_shadow {
+  background:url(pulldown_vista/ne.png);
+  height:7px;
+}
+
+.shadow_container.pulldown_vista .n_shadow {
+  background:url(pulldown_vista/n.png) bottom;
+  height:7px; 
+  margin: 0 12px;
+}
+
+.shadow_container.pulldown_vista .nw_shadow {
+  background:url(pulldown_vista/nw.png);
+  height:7px;
+}
+
+.shadow_container.pulldown_vista .e_shadow {
+  background:url(pulldown_vista/e.png) repeat-y;
+  height:100%;
+}
+
+.shadow_container.pulldown_vista .w_shadow {
+  background:url(pulldown_vista/w.png) repeat-y;
+  height:100%;
+}
+
+.shadow_container.pulldown_vista .c_shadow {     
+  height:100%;               
+  padding:6px 7px 0 7px;
+}      
+
+.shadow_container.pulldown_vista {
+  font-size: 0px;
+}

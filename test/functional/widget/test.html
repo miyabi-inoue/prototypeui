@@ -1,0 +1,273 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" debug="false">
+<head>
+	<title>Test PWC</title>
+  <script src="../../../lib/prototype.js" type="text/javascript"></script>
+  <script src="../../../lib/effects.js" type="text/javascript"></script>  
+  <script src="../../../lib/slider.js" type="text/javascript"></script>   
+  <script src="../../../dist/prototype-ui.js" type="text/javascript"></script>
+  <script src="../../../src/widget/widget.js" type="text/javascript"></script>
+  <script src="../../../src/widget/selection.js" type="text/javascript"></script>
+  <script src="../../../src/widget/date.js" type="text/javascript"></script>
+  <script src="../../../src/widget/color.js" type="text/javascript"></script>
+  <script src="../../../src/widget/ajax.js" type="text/javascript"></script>
+
+  <link href="../../../themes/shadow/pulldown.css" rel="stylesheet" type="text/css"/>
+  <link href="../../../themes/shadow/pulldown_vista.css" rel="stylesheet" type="text/css"/>
+  <link href="../../../themes/calendar/calendar.css" rel="stylesheet" type="text/css"/>
+  <link href="../../../themes/calendar/mac_os_x.css" rel="stylesheet" type="text/css"/>
+
+  <link href="../../../themes/widget/widget.css" rel="stylesheet" type="text/css"/>
+  <link href="../../../themes/widget/mac_os_x.css" rel="stylesheet" type="text/css"/>
+  <link href="../../../themes/widget/mini.css" rel="stylesheet" type="text/css"/>
+  
+  <style type='text/css'>
+  body {
+    background: #9cf;
+  }  
+  label {
+  	display: block;
+	float:left;
+  	width:100px;
+	padding: 4px 0;
+	font: 10px sans-serif;
+  }
+  </style>
+  
+</head>
+<body>
+  
+  <form action="#">
+  	<table><tr><td>
+	
+   	<label for="selectinput">Selection</label>
+	<input id="selectinput" name="selection" value="D"/>
+	<br style="clear:both;"/>
+  	<label for="selectselect">Selection from Select</label>
+	<select id="selectselect" name="selection2">
+		<option value="1">A is a test option</option>
+		<option value="2" selected="selected">B is another test option</option>
+		<option>C is a further test option</option>
+	</select>	
+	<br style="clear:both;"/>
+ 	
+	
+  	<label for="dateinput">Date</label>
+	<input id="dateinput" name="date" value="03/08/2006"/>
+	<br style="clear:both;"/>
+  	<label for="germandateinput">German Date</label>
+	<input id="germandateinput" name="germandate" value="03.06.2006"/>
+	<br style="clear:both;"/>
+  	<label for="hiddendateinput">Date /w hidden</label>
+	<input id="hiddendateinput" name="hiddendate" value="06/03/2006"/>
+	<br style="clear:both;"/>
+	
+
+	<label for="colorinput">Color</label>
+  	<input id="colorinput" name="color" value="#6699cc"/>
+	<br style="clear:both;"/>
+	<label for="colorinput_def">Color with Unset allowed</label>
+  	<input id="colorinput_def" name="color_def" value="#ffcc00"/>
+	<br style="clear:both;"/>
+	<label for="hiddencolorinput">Color /w hidden</label>
+  	<input id="hiddencolorinput" name="hiddencolor" value="#6699cc"/>
+	<br style="clear:both;"/>
+
+	<label for="ajaxinput">Ajax Pulldown</label>
+  	<input id="ajaxinput" name="ajax" value=""/>
+	<br style="clear:both;"/>
+	<label for="hiddenajaxinput">Ajax Pulldown /w hidden</label>
+  	<input id="hiddenajaxinput" name="hiddenajax" value=""/>
+	<br style="clear:both;"/>
+
+	</td><td>
+		
+   	<label for="selectinput_mac">Selection</label>
+	<input id="selectinput_mac" name="selection_mac" value="D"/>
+	<br style="clear:both;"/>
+  	<label for="selectselect_mac">Selection from Select</label>
+	<select id="selectselect_mac" name="selection2_mac">
+		<option value="1">A is a test option</option>
+		<option value="2" selected="selected">B is another test option</option>
+		<option>C is a further test option</option>
+	</select>	
+	<br style="clear:both;"/>
+ 	
+	
+  	<label for="dateinput_mac">Date</label>
+	<input id="dateinput_mac" name="date_mac" value="03/08/2006"/>
+	<br style="clear:both;"/>
+  	<label for="germandateinput_mac">German Date</label>
+	<input id="germandateinput_mac" name="germandate_mac" value="03.06.2006"/>
+	<br style="clear:both;"/>
+  	<label for="hiddendateinput_mac">Date /w hidden</label>
+	<input id="hiddendateinput_mac" name="hiddendate_mac" value="06/03/2006"/>
+	<br style="clear:both;"/>
+	
+
+	<label for="colorinput_mac">Color</label>
+  	<input id="colorinput_mac" name="color_mac" value="#6699cc"/>
+	<br style="clear:both;"/>
+	<label for="colorinput_def_mac">Color with Unset allowed</label>
+  	<input id="colorinput_def_mac" name="color_def_mac" value="#ffcc00"/>
+	<br style="clear:both;"/>
+	<label for="hiddencolorinput_mac">Color /w hidden</label>
+  	<input id="hiddencolorinput_mac" name="hiddencolor_mac" value="#6699cc"/>
+	<br style="clear:both;"/>
+
+	<label for="ajaxinput_mac">Ajax Pulldown</label>
+  	<input id="ajaxinput_mac" name="ajax_mac" value=""/>
+	<br style="clear:both;"/>
+	<label for="hiddenajaxinput_mac">Ajax Pulldown /w hidden</label>
+  	<input id="hiddenajaxinput_mac" name="hiddenajax_mac" value=""/>
+	<br style="clear:both;"/>
+		
+	</td><td>
+		
+   	<label for="selectinput_mini">Selection</label>
+	<input id="selectinput_mini" name="selection_mini" value="D"/>
+	<br style="clear:both;"/>
+  	<label for="selectselect_mini">Selection from Select</label>
+	<select id="selectselect_mini" name="selection2_mini">
+		<option value="1">A is a test option</option>
+		<option value="2" selected="selected">B is another test option</option>
+		<option>C is a further test option</option>
+	</select>	
+	<br style="clear:both;"/>
+ 	
+	
+  	<label for="dateinput_mini">Date</label>
+	<input id="dateinput_mini" name="date_mini" value="03/08/2006"/>
+	<br style="clear:both;"/>
+  	<label for="germandateinput_mini">German Date</label>
+	<input id="germandateinput_mini" name="germandate_mini" value="03.06.2006"/>
+	<br style="clear:both;"/>
+  	<label for="hiddendateinput_mini">Date /w hidden</label>
+	<input id="hiddendateinput_mini" name="hiddendate_mini" value="06/03/2006"/>
+	<br style="clear:both;"/>
+	
+
+	<label for="colorinput_mini">Color</label>
+  	<input id="colorinput_mini" name="color_mini" value="#6699cc"/>
+	<br style="clear:both;"/>
+	<label for="colorinput_def_mini">Color with Unset allowed</label>
+  	<input id="colorinput_def_mini" name="color_def_mini" value="#ffcc00"/>
+	<br style="clear:both;"/>
+	<label for="hiddencolorinput_mini">Color /w hidden</label>
+  	<input id="hiddencolorinput_mini" name="hiddencolor_mini" value="#6699cc"/>
+	<br style="clear:both;"/>
+
+	<label for="ajaxinput_mini">Ajax Pulldown</label>
+  	<input id="ajaxinput_mini" name="ajax_mini" value=""/>
+	<br style="clear:both;"/>
+	<label for="hiddenajaxinput_mini">Ajax Pulldown /w hidden</label>
+  	<input id="hiddenajaxinput_mini" name="hiddenajax_mini" value=""/>
+	<br style="clear:both;"/>
+		
+	</td></tr></table>
+	
+	<button>Submit</button>
+  </form>
+
+<script type="text/javascript">   
+UI.Calendar.Options = {
+	MONTHS_SHORT: $w('Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec'),
+	MONTHS: $w('January February March April May June July August September October November December'),
+	WEEKDAYS_1CHAR: $w('S M T W T F S'),
+	WEEKDAYS_SHORT: $w('Su Mo Tu We Th Fr Sa'),
+	WEEKDAYS_MEDIUM: $w('Sun Mon Tue Wed Thu Fri Sat'),
+	WEEKDAYS: $w('Sunday Monday Tuesday Wednesday Thursday Friday Saturday'),
+	
+	FORMAT_DATE: '%m/%d/%Y',
+	FORMAT_TIME: '%H:%M:%S',
+	FORMAT_DATETIME: '%x %X',
+	
+	LABEL_MONTH: "Month",
+	LABEL_YEAR: "Year"
+};
+
+
+  function build(postfix)
+  {
+  	 	new UI.Widget.Selection('selectinput'+postfix,{
+		options: [
+			{title:'A', value:1, className:'first'},
+			{title:'B', value:2, className:'second'},
+			{title:'C', value:3},
+			{title:'D'}
+		]
+			
+	});
+	new UI.Widget.Selection('selectselect'+postfix,{
+	}); 	
+	
+	new UI.Widget.Date('dateinput'+postfix,{
+	});
+	new UI.Widget.Date('germandateinput'+postfix,{
+		format:'%d.%m.%Y'
+	});
+	new UI.Widget.Date('hiddendateinput'+postfix,{
+	    hideInput: true,
+        placeDropdown: 'over'
+	});
+	
+	new UI.Widget.Color('colorinput'+postfix, {
+		allowUnset: false
+	});
+	new UI.Widget.Color('colorinput_def'+postfix, {
+		defaultColorText:'DefaultColor',
+		allowUnset: true
+	});	
+	new UI.Widget.Color('hiddencolorinput'+postfix, {
+		allowUnset: false,
+	    hideInput: true,
+        placeDropdown: 'below'
+	});
+	
+	new UI.Widget.Ajax('ajaxinput'+postfix, {
+		src:'ajax.html'
+	});	
+	new UI.Widget.Ajax('hiddenajaxinput'+postfix, {
+		src:'ajax.html',
+	    hideInput: true
+	});	
+  }
+
+
+  function runTest() {
+  	
+  var strHref = window.location.href;
+  if ( strHref.indexOf("?") > -1 ){
+    var strQueryString = strHref.substr(strHref.indexOf("?")+1);
+    var aQueryString = strQueryString.replace('#','').split("&");
+	var output = new Element('p',{style: 'border:1px solid #333;background:#ccc;'});
+	
+    for ( var iParam = 0; iParam < aQueryString.length; iParam++ ){
+      	output.insert(unescape(aQueryString[iParam])).insert(new Element('br'));
+    }
+	document.body.insert(output);
+  }
+  
+  	UI.Widget.options.shadow='pulldown_vista';
+  
+  	build('');
+  
+    UI.Widget.options.theme='mac_os_x';
+	UI.Widget.options.shadow='pulldown';
+  	
+	build('_mac');
+	
+    UI.Widget.options.theme='mini';
+	UI.Widget.options.shadow='pulldown_vista';
+  	
+	build('_mini');
+	
+	
+  }                                   
+   
+  document.whenReady(runTest);
+</script>
+
+</body>
+</html>

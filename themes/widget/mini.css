@@ -1,0 +1,100 @@
+.mini.UI-widget  {
+	border: none;
+	background: transparent;
+	padding: 0;
+	line-height: 100%;
+	font-family: sans-serif;
+	font-size: 10px;
+}
+
+.mini.UI-widget .UI-widget-e{
+	background: transparent url(mini/control.gif) center right no-repeat;
+	padding-left:10px;
+}
+
+.mini.UI-widget .UI-widget-c {
+}
+
+.mini.UI-widget input {
+	line-height: 10px;
+	height:12px;
+	font: 10px sans-serif;
+	border: 1px solid #333;
+	padding: 1px 3px;
+}
+
+
+.mini.UI-widget-dropdown {
+	font-family: sans-serif;
+	font-size: 10px;
+    background: #fff;
+	padding:2px;	
+	border:none;
+}
+
+.mini.UI-widget-date input {
+	width:8em;
+}
+
+.mini.UI-widget .UI-widget-color-preview {
+	position:relative;
+	border: 1px solid #333;
+	padding: 0 4px;
+	top: -1px;
+	margin-left: 2px;
+	font-size:6px;
+}
+
+* html .UI-widget .UI-widget-color-preview {
+	padding:4px;
+}
+
+.mini.UI-widget-color .UI-widget-e {
+	background: transparent;
+}
+
+.mini.UI-widget-color {
+	padding-right:0;
+}
+
+.mini.UI-widget-color input {
+	width:7em;
+}
+
+.mini.UI-widget-color-dropdown input {
+	width:12px;
+}
+
+.mini.UI-widget-selection-dropdown ul {
+	margin: 0 -2px;
+}
+
+.mini.UI-widget-selection-dropdown li span {
+	padding-left:8px;
+}
+
+.mini.UI-widget-selection-dropdown li.selected span {
+	background: transparent url(mini/selected.gif) center left no-repeat;
+}
+
+.mini.UI-widget-selection-dropdown li.selected:hover span {
+	background: transparent url(mini/selected_hover.gif) center left no-repeat;
+}
+
+
+.mini.UI-widget-selection-dropdown li {
+  line-height: 12px;
+}
+
+.mini.UI-widget-dropdown .UI-widget-color-view {
+	position: absolute;
+	right: 4px;
+	top:7px;
+	width: 43px;
+	height: 43px;
+	border: 1px solid #333;
+}
+ 
+.mini.UI-widget-dropdown .track {
+	margin-right:55px;
+}
