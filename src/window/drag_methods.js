@@ -3,13 +3,13 @@ UI.Window.addMethods({
     this.initBounds = this.getBounds();
     this.activate();
 
-    if (this.options.wired) {
+    if (this.options.wired  && !this.saveElement) {
       this.createWiredElement();
       this.wiredElement.style.cssText = this.element.style.cssText;
-      this.element.hide();
       this.saveElement = this.element;
       this.windowManager.container.appendChild(this.wiredElement);
       this.element = this.wiredElement;
+	  this.element.show();
     }
     
     handle.hasClassName('resize_handle') ? this.startResize(handle) : this.startMove();
@@ -19,10 +19,13 @@ UI.Window.addMethods({
     this.element.hasClassName('resized') ? this.endResize() : this.endMove();
     
     if (this.options.wired) {
-      this.saveElement.style.cssText = this.wiredElement.style.cssText;
-      this.wiredElement.remove();
       this.element = this.saveElement;
-      this.saveElement = false;
+	  this.saveElement = false;
+	  this.setBounds(Object.extend({
+	  	width: parseInt(this.wiredElement.style.width),
+		height: parseInt(this.wiredElement.style.height),
+	  }, this.wiredElement.positionedOffset()));
+      this.wiredElement.remove();
     }
   },
   
