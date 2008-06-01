@@ -70,7 +70,7 @@ UI.Window.addMethods({
 
   setPositionWithShadow: function(top, left) {  
     this.setPositionWithoutShadow(top, left);
-    if (this.shadow  && !this.saveElement) {
+    if (this.shadow) {
       var pos = this.getPosition();
       this.shadow.setPosition(pos.top, pos.left);  
     }
@@ -83,7 +83,7 @@ UI.Window.addMethods({
 
   setSizeWithShadow: function(width, height, innerSize) {
     this.setSizeWithoutShadow(width, height, innerSize);
-    if (this.shadow  && !this.saveElement) { 
+    if (this.shadow) { 
       var size = this.getSize();
       this.shadow.setSize(size.width, size.height);
     }
