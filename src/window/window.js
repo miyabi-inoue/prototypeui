@@ -402,7 +402,7 @@ UI.Window = Class.create(UI.Options, {
     // Hide the overlay that catch events
     this.overlay.hide();
     // Add focused class name
-    this.element.addClassName(this.options.theme + '_focused');
+    this.element.addClassName(this.getTheme() + '_focused');
     
     this.focused = true;
     this.fire('focused');
