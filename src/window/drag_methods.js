@@ -25,6 +25,7 @@ UI.Window.addMethods({
 	  	  width: parseInt(this.wiredElement.style.width),
 	      height: parseInt(this.wiredElement.style.height),
 	    }, this.wiredElement.positionedOffset()));
+      this.wiredElement.remove();
     }
   },
   
