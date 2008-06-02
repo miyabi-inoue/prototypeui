@@ -733,8 +733,9 @@ UI.Window = Class.create(UI.Options, {
     this.options.width  = size.outerWidth;
     this.options.height = size.outerHeight;
 
-    elementStyle.width = size.outerWidth + "px", elementStyle.height = size.outerHeight + "px";    
-    contentStyle.width = size.innerWidth + "px", contentStyle.height = size.innerHeight + "px";
+    elementStyle.width = size.outerWidth + "px", elementStyle.height = size.outerHeight + "px";
+	  if (!this.saveElement)    
+	    contentStyle.width = size.innerWidth + "px", contentStyle.height = size.innerHeight + "px";
     this.overlay.style.height = size.innerHeight + "px";
     
     this.fire('size:changed');
