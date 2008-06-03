@@ -23,7 +23,7 @@ UI.Window.addMethods({
       this.saveElement = false;
 	    this.setBounds(Object.extend({
 	  	  width: parseInt(this.wiredElement.style.width),
-	      height: parseInt(this.wiredElement.style.height),
+	      height: parseInt(this.wiredElement.style.height)
 	    }, this.wiredElement.positionedOffset()));
       this.wiredElement.remove();
     }
