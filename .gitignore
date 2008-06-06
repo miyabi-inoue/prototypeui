@@ -1,3 +1,5 @@
+.settings/*
+.project
 dist/*
 doc/config/Data
 doc/files/**/*
