@@ -16,48 +16,48 @@
 }
 
 .shadow_container.ice .se_shadow {
-  background:url(ice/shadow/se.png);
+  background:url(ice/se.png);
   height:20px;   
 }
 
 .shadow_container.ice .s_shadow {
-  background:url(ice/shadow/s.png);
+  background:url(ice/s.png);
   height:20px;
   margin: 0 20px;
 }
 
 .shadow_container.ice .sw_shadow {
-  background:url(ice/shadow/sw.png);
+  background:url(ice/sw.png);
   height:20px;
 }
 
 .shadow_container.ice .ne_shadow {
-  background:url(ice/shadow/ne.png);
+  background:url(ice/ne.png);
   height:20px;
 }
 
 .shadow_container.ice .n_shadow {
-  background:url(ice/shadow/n.png);
+  background:url(ice/n.png);
   height:20px; 
   margin: 0 20px;
 }
 
 .shadow_container.ice .nw_shadow {
-  background:url(ice/shadow/nw.png);
+  background:url(ice/nw.png);
   height:20px;
 }
 
 .shadow_container.ice .e_shadow {
-  background:url(ice/shadow/e.png) repeat-y;
+  background:url(ice/e.png) repeat-y;
 }
 
 .shadow_container.ice .w_shadow {
-  background:url(ice/shadow/w.png) repeat-y;
+  background:url(ice/w.png) repeat-y;
 }
 
 .shadow_container.ice .c_shadow {
   /* Padding is used to set shift values for unfocused window */
-  padding:30px;
+  padding:50px;
   /* Maring is used to set shift values for focused window */
   margin:17px 12px 12px 12px;
 }                   

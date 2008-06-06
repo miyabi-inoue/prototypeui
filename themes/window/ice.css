@@ -1,151 +1,156 @@
 .ui-window.ice .nw
 {
-	background:transparent url(ice/window/blur/nw.png) no-repeat;
-	height:36px;
+  background:transparent url(ice/blur/nw.png) no-repeat;
+  height:36px;
 }
 .ui-window.ice_focused .nw
 {
-	background:transparent url(ice/window/focus/nw.png) no-repeat;
+  background:transparent url(ice/focus/nw.png) no-repeat;
 }
 
 .ui-window.ice .ne
 {
-	background:transparent url(ice/window/blur/ne.png) no-repeat right;
-	height:36px;
+  background:transparent url(ice/blur/ne.png) no-repeat right;
+  height:36px;
 }
 .ui-window.ice_focused .ne
 {
-	background:transparent url(ice/window/focus/ne.png) no-repeat right;
+  background:transparent url(ice/focus/ne.png) no-repeat right;
 }
 
 .ui-window.ice .n
 {
-	font-size:1.2em;
-	font-weight: bolder;
-	padding-top:7px;
-	height:36px;
-	background:transparent url(ice/window/blur/n.png) repeat-x scroll 0 0px;
-	margin: 0px 21px;
+  font-size: 14px;
+  line-height: 30px;
+  font-family: Helvetica, Verdana;
+  font-weight: bold;
+  color:#d8d8d8;
+  height:36px;
+  background:transparent url(ice/blur/n.png) repeat-x scroll 0 0px;
+  margin: 0px 21px;
 }
 .ui-window.ice_focused .n
 {
-	background:transparent url(ice/window/focus/n.png) repeat-x scroll 0 0px;
+  color:black;
+  background:transparent url(ice/focus/n.png) repeat-x scroll 0 0px;
 }
 
 .ui-window.ice .sw
 {
-	background:transparent url(ice/window/blur/sw.png) no-repeat;
-	height:24px;
+  background:transparent url(ice/blur/sw.png) no-repeat;
+  height:24px;
 }
 .ui-window.ice_focused .sw
 {
-	background:transparent url(ice/window/focus/sw.png) no-repeat;
+  background:transparent url(ice/focus/sw.png) no-repeat;
 }
 
 .ui-window.ice .se
 {
-	height:24px;
-	background:transparent url(ice/window/blur/se.png) no-repeat right;
+  height:24px;
+  background:transparent url(ice/blur/se.png) no-repeat right;
 }
 .ui-window.ice_focused .se
 {
-	background:transparent url(ice/window/focus/se.png) no-repeat right;
+  background:transparent url(ice/focus/se.png) no-repeat right;
 }
 
 .ui-window.resizable.ice .se
 {
-	background:transparent url(ice/window/blur/se_resizeable.png) no-repeat right;
+  background:transparent url(ice/blur/se_resizeable.png) no-repeat right;
 }
 .ui-window.resizable.ice_focused .se
 {
-	background:transparent url(ice/window/focus/se_resizeable.png) no-repeat right;
+  background:transparent url(ice/focus/se_resizeable.png) no-repeat right;
 }
 
 .ui-window.ice .s
 {
-	background:transparent url(ice/window/blur/s.png) repeat-x scroll 0 0px;
-	height:24px;
-	margin: 0px 21px;
+  background:transparent url(ice/blur/s.png) repeat-x scroll 0 0px;
+  height:24px;
+  margin: 0px 21px;
 }
 .ui-window.ice_focused .s
 {
-	background:transparent url(ice/window/focus/s.png) repeat-x scroll 0 0px;
+  background:transparent url(ice/focus/s.png) repeat-x scroll 0 0px;
 }
 
 .ui-window.ice .w
 {
-	background:transparent url(ice/window/blur/w.png) repeat-y left;
+  background:transparent url(ice/blur/w.png) repeat-y left;
 }
 .ui-window.ice_focused .w
 {
-	background:transparent url(ice/window/focus/w.png) repeat-y left;
+  background:transparent url(ice/focus/w.png) repeat-y left;
 }
 
 .ui-window.ice .e
 {
-	background:transparent url(ice/window/blur/e.png) repeat-y right;
+  background:transparent url(ice/blur/e.png) repeat-y right;
 }
 .ui-window.ice_focused .e
 {
-	background:transparent url(ice/window/focus/e.png) repeat-y right;
+  background:transparent url(ice/focus/e.png) repeat-y right;
 }
 
 .ui-window.ice .content
 {
-	background:white;
-	margin:0px 21px;
+  background:white;
+  margin:0px 21px;
+  font-size:12px;
+  font-family: Verdana;
 }
 
 .ui-window.ice .buttons
 {
-	position: absolute;
-  	top:13px;
-  	right:25px;
-	filter:alpha(opacity=60);
-	-moz-opacity: 0.6;
-	opacity: 0.6;
+  position: absolute;
+    top:13px;
+    right:25px;
+  filter:alpha(opacity=60);
+  -moz-opacity: 0.6;
+  opacity: 0.6;
 }
 
 .ui-window.ice .buttons:hover
 {
-	filter:alpha(opacity=100);
-	-moz-opacity: 1;
-	opacity: 1;
+  filter:alpha(opacity=100);
+  -moz-opacity: 1;
+  opacity: 1;
 }
 
 .ui-window.ice .buttons a
 {
-	display:block;
-	width:17px;
-	height: 17px;
-	float:left;
-	margin-left:2px;
+  display:block;
+  width:17px;
+  height: 17px;
+  float:left;
+  margin-left:2px;
 }
 
 .ui-window.ice .buttons a:hover
 {
-	height: 19px;
+  height: 19px;
 }
 
 .ui-window.ice .buttons a.minimize
 {
-	background:transparent url(ice/window/minimize.png) no-repeat;
+  background:transparent url(ice/minimize.png) no-repeat;
 }
 
 .ui-window.ice .buttons a.minimize.disabled
 {
-	filter:alpha(opacity=60);
-	-moz-opacity: 0.6;
-	opacity: 0.6;
-	cursor: default !important;
+  filter:alpha(opacity=60);
+  -moz-opacity: 0.6;
+  opacity: 0.6;
+  cursor: default !important;
 }
 
 .ui-window.ice .buttons a.close
 {
-	background:transparent url(ice/window/close.png) no-repeat;
+  background:transparent url(ice/close.png) no-repeat;
 }
 
 .ui-window.ice .buttons a.maximize
 {
-	background:transparent url(ice/window/maximize.png) no-repeat;
+  background:transparent url(ice/maximize.png) no-repeat;
 }
