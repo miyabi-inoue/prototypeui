@@ -4,5 +4,3 @@
   top: expression( ignoreMe2 = document.documentElement.scrollTop  + 'px' );     
 	filter:alpha(opacity=80);
 }
-
-bla
