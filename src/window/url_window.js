@@ -13,21 +13,21 @@ UI.URLWindow = Class.create(UI.Window, {
   },
   
   destroy: function($super){
-    this.iframe.src = null;
+    this.contentframe.src = null;
     $super();
   },
   
   getUrl: function() {
-    return this.iframe.src;
+    return this.contentframe.src;
   },
   
   setUrl: function(url, options) {
-    this.iframe.src = url;
+    this.contentframe.src = url;
     return this;
   },
   
   createIFrame: function($super) {
-    this.iframe = new Element('iframe', {
+    this.contentframe = new Element('iframe', {
       style: this.style,
       frameborder: 0,
       src: this.options.url,
@@ -35,7 +35,7 @@ UI.URLWindow = Class.create(UI.Window, {
       id:  this.element.id + "_frame" 
     });
     
-    this.content.insert(this.iframe);
+    this.content.insert(this.contentframe);
   }
 });
 
