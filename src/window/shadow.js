@@ -74,6 +74,10 @@ UI.Window.addMethods({
       var pos = this.getPosition();
       this.shadow.setPosition(pos.top, pos.left);  
     }
+    if (this.iframe) {
+      var pos = this.getPosition();
+      this.iframe.setPosition(pos.top, pos.left);  
+    }
     return this;
   },
 
@@ -83,6 +87,10 @@ UI.Window.addMethods({
       var size = this.getSize();
       this.shadow.setSize(size.width, size.height);
     }
+    if (this.iframe) {
+      var size = this.getSize();
+      this.iframe.setSize(size.width, size.height);  
+    }
     return this;
   },
 
@@ -90,5 +98,8 @@ UI.Window.addMethods({
     this.setBoundsWithoutShadow(bounds, innerSize);  
     if (this.shadow)
       this.shadow.setBounds(this.getBounds());
+    if (this.iframe)
+      this.iframe.setBounds(this.getBounds());
+    return this;
   }
 });
