@@ -1,5 +1,6 @@
 .settings/*
 .project
+*~
 dist/*
 doc/config/Data
 doc/files/**/*
@@ -7,4 +8,4 @@ doc/*
 doc/javascript/*
 doc/styles/*
 pdoc/*
-*~
+Thumbs.db
