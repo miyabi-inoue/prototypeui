@@ -34,7 +34,7 @@
 var loremIpsum = "<p style='margin:10px'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>";
 
   function runTest() {
-    var width = 200, height = 300, spacing = 20;
+    var width = 200, height = 300, vspacing = 50, hspacing = 20;
       CSS.preloadImages();
 
     UI.Window.setOptions({
@@ -50,7 +50,8 @@ var loremIpsum = "<p style='margin:10px'>Lorem ipsum dolor sit amet, consectetur
       var options = {
         theme: theme,      
         shadowTheme: theme == "vista" ? "drop_shadow" : (theme == "ice" ? "ice" : "mac_shadow"),
-        left: spacing + (width + spacing) * index
+		top: vspacing + (height + vspacing) * Math.floor(index / 4),
+        left: hspacing + (width + hspacing) * (index % 4)
       };
       
       if (theme == "black_hud")
