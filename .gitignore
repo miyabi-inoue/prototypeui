@@ -5,3 +5,7 @@ doc/*
 doc/javascript/*
 doc/styles/*
 pdoc/*
+Thumbs.db
+.settings/*
+.project
+.tmp_*~
