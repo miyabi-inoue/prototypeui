@@ -1,0 +1,67 @@
+.shadow_container.ice .shadow_center_wrapper {
+  float:left;
+  width:100%;
+}              
+
+.shadow_container.ice .shadow_right {
+  float:left;
+  width:20px;
+  margin-left:-20px
+}  
+
+.shadow_container.ice .shadow_left {
+  float:left;
+  margin-left:-100%;
+  width:20px;
+}
+
+.shadow_container.ice .se_shadow {
+  background:url(ice/se.png);
+  height:20px;   
+}
+
+.shadow_container.ice .s_shadow {
+  background:url(ice/s.png);
+  height:20px;
+  margin: 0 20px;
+}
+
+.shadow_container.ice .sw_shadow {
+  background:url(ice/sw.png);
+  height:20px;
+}
+
+.shadow_container.ice .ne_shadow {
+  background:url(ice/ne.png);
+  height:20px;
+}
+
+.shadow_container.ice .n_shadow {
+  background:url(ice/n.png);
+  height:20px; 
+  margin: 0 20px;
+}
+
+.shadow_container.ice .nw_shadow {
+  background:url(ice/nw.png);
+  height:20px;
+}
+
+.shadow_container.ice .e_shadow {
+  background:url(ice/e.png) repeat-y;
+}
+
+.shadow_container.ice .w_shadow {
+  background:url(ice/w.png) repeat-y;
+}
+
+.shadow_container.ice .c_shadow {
+  /* Padding is used to set shift values for unfocused window */
+  padding: 22px 17px 18px 17px;
+  /* Maring is used to set shift values for focused window */
+  margin:17px 12px 12px 12px;
+}                   
+
+.shadow_container.ice {
+  font-size: 2px;
+}

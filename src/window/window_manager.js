@@ -226,7 +226,7 @@ UI.WindowManager = Class.create(UI.Options, {
   removeOverflow: function() {
     var container = this.container;
     // Remove overflow, save overflow and scrolloffset values to restore them when restore window    
-    container.savedOverflow = container.style.overflow || "auto";      
+    container.savedOverflow = container.getStyle('overflow') || "auto";      
     container.savedOffset = this.viewport.getScrollOffset(); 
     container.style.overflow = "hidden"; 
 

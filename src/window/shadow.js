@@ -54,7 +54,7 @@ UI.Window.addMethods({
   addElementsWithShadow: function() {
     this.addElementsWithoutShadow();
     if (this.shadow) {
-      this.shadow.setBounds(this.options).render();
+      this.shadow.setBounds(this.options).render().hide();
     }
   },  
 
@@ -70,7 +70,7 @@ UI.Window.addMethods({
 
   setPositionWithShadow: function(top, left) {  
     this.setPositionWithoutShadow(top, left);
-    if (this.shadow) {
+    if (this.shadow && !this.saveElement) {
       var pos = this.getPosition();
       this.shadow.setPosition(pos.top, pos.left);  
     }
@@ -83,7 +83,7 @@ UI.Window.addMethods({
 
   setSizeWithShadow: function(width, height, innerSize) {
     this.setSizeWithoutShadow(width, height, innerSize);
-    if (this.shadow) { 
+    if (this.shadow && !this.saveElement) { 
       var size = this.getSize();
       this.shadow.setSize(size.width, size.height);
     }
@@ -100,5 +100,6 @@ UI.Window.addMethods({
       this.shadow.setBounds(this.getBounds());
     if (this.iframe)
       this.iframe.setBounds(this.getBounds());
+    return this;
   }
 });

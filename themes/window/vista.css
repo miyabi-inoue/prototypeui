@@ -117,7 +117,7 @@
 }
 
 .vista .buttons a.minimize {
-	background:transparent url(vista/buttons.gif) no-repeat 0 -85px;
+	background:transparent url(vista/buttons.gif) no-repeat 1px -85px;
 	display:block;
 	height:17px;
 	float:left;

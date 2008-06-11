@@ -29,7 +29,7 @@
       windows.push(window.show());
     });
     var elapsed = new Date() - time;
-    console.log(elapsed);  
+    typeof(window.console) != 'undefined' ? console.log(elapsed) : alert(elapsed);  
   }  
   document.whenReady(runTest);
   

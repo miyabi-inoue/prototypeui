@@ -39,6 +39,11 @@ UI.Window.addMethods({
     
     if (this.options.activeOnClick) 
       this.content.insert({ before: this.overlay });
+      
+    if (this.options.maximize)
+      this.header.observe('dblclick', (function(){
+        !this.maximized ? this.maximize() : this.restore()
+      }).bind(this));
   },
   
   createWiredElement: function() {

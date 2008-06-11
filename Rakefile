@@ -7,7 +7,7 @@ PUI_VERSION = 'trunk'
 
 PUI_DEPENDENCIES = {  
   :core          => nil,
-  :window        => [ :"util/iframe_shim.js", :"util/drag.js", :shadow ],
+  :window        => [ :"util/iframe_shim.js", :shadow ],
   :carousel      => nil, 
   :dock          => nil, 
   :shadow        => :util,

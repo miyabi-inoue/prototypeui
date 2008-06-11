@@ -17,10 +17,12 @@
   <link href="../../../themes/window/leopard.css" rel="stylesheet" type="text/css">
   <link href="../../../themes/window/vista.css" rel="stylesheet" type="text/css">
   <link href="../../../themes/window/lighting.css" rel="stylesheet" type="text/css">
-  <link href="../../../themes/window/black_hud.css" rel="stylesheet" type="text/css">  
+  <link href="../../../themes/window/black_hud.css" rel="stylesheet" type="text/css">
+  <link href="../../../themes/window/ice.css" rel="stylesheet" type="text/css">   
 
   <link href="../../../themes/shadow/mac_shadow.css" rel="stylesheet" type="text/css"> 
-  <link href="../../../themes/shadow/drop_shadow.css" rel="stylesheet" type="text/css"> 
+  <link href="../../../themes/shadow/drop_shadow.css" rel="stylesheet" type="text/css">
+  <link href="../../../themes/shadow/ice.css" rel="stylesheet" type="text/css">  
   <style type='text/css'>
   body { 
     background: url('../../assets/body_bg.png') repeat; 
@@ -47,7 +49,7 @@ var loremIpsum = "<p style='margin:10px'>Lorem ipsum dolor sit amet, consectetur
     function openWindow(theme, index) {
       var options = {
         theme: theme,      
-        shadowTheme: theme == "vista" ? "drop_shadow" : "mac_shadow",
+        shadowTheme: theme == "vista" ? "drop_shadow" : (theme == "ice" ? "ice" : "mac_shadow"),
         left: spacing + (width + spacing) * index
       };
       
@@ -59,7 +61,7 @@ var loremIpsum = "<p style='margin:10px'>Lorem ipsum dolor sit amet, consectetur
       if (options.shadow)
         w.setFooter("Shadow Theme: " + w.getShadowTheme());
     }
-    $w("alphacube mac_os_x bluelighting leopard vista black_hud").each(openWindow);
+    $w("alphacube mac_os_x bluelighting leopard vista black_hud ice").each(openWindow);
     
   }
   
