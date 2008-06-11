@@ -69,10 +69,14 @@
   background:transparent url(ice/blur/s.png) repeat-x scroll 0 0px;
   height:24px;
   margin: 0px 21px;
+  font-size: 10px;
+  line-height: 31px;
+  color: #d8d8d8;
 }
 .ui-window.ice_focused .s
 {
   background:transparent url(ice/focus/s.png) repeat-x scroll 0 0px;
+  color:black;
 }
 
 .ui-window.ice .w

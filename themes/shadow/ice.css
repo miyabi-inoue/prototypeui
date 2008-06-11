@@ -57,7 +57,7 @@
 
 .shadow_container.ice .c_shadow {
   /* Padding is used to set shift values for unfocused window */
-  padding:50px;
+  padding: 22px 17px 18px 17px;
   /* Maring is used to set shift values for focused window */
   margin:17px 12px 12px 12px;
 }                   

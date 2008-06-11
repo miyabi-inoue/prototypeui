@@ -49,7 +49,7 @@ var loremIpsum = "<p style='margin:10px'>Lorem ipsum dolor sit amet, consectetur
     function openWindow(theme, index) {
       var options = {
         theme: theme,      
-        shadowTheme: theme == "vista" ? "drop_shadow" : "ice" ? "ice" : "mac_shadow",
+        shadowTheme: theme == "vista" ? "drop_shadow" : (theme == "ice" ? "ice" : "mac_shadow"),
         left: spacing + (width + spacing) * index
       };
       
