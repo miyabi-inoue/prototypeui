@@ -54,7 +54,7 @@ UI.Window.addMethods({
   addElementsWithShadow: function() {
     this.addElementsWithoutShadow();
     if (this.shadow) {
-      this.shadow.setBounds(this.options).render().hide();
+      this.shadow.setBounds(this.options).render();
     }
   },  
 
