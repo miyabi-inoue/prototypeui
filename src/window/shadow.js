@@ -54,7 +54,7 @@ UI.Window.addMethods({
   addElementsWithShadow: function() {
     this.addElementsWithoutShadow();
     if (this.shadow) {
-      this.shadow.setBounds(this.options).render().hide();
+      this.shadow.setBounds(this.options).render();
     }
   },  
 
@@ -63,6 +63,8 @@ UI.Window.addMethods({
       if (this.shadow)
         this.shadow.setZIndex(zIndex - 1);
       this.setZIndexWithoutShadow(zIndex);  
+      if (this.iframe)
+        this.iframe.positionUnder(this.element);
       this.zIndex = zIndex;
     }
     return this;
