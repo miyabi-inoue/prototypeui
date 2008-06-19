@@ -7,7 +7,7 @@
 
 Object.extend(Event, {
   KEY_SPACE: 32,
-  KEY_COMA:  188
+  KEY_COMMA:  188
 });
 
 UI.AutoComplete = Class.create(UI.Options, {
@@ -21,7 +21,7 @@ UI.AutoComplete = Class.create(UI.Options, {
     delay: 0.2,                            // Delay before running ajax request
     shadow: false,                         // Shadow theme name (false = no shadow)
     highlight: false,                      // Highlight search string in list
-    tokens: false,                         // Tokens used to automatically adds a new entry (ex tokens:[',', ' '] for coma and spaces)
+    tokens: false,                         // Tokens used to automatically adds a new entry (ex tokens:[',', ' '] for comma and spaces)
     unique: true                           // Do not display in suggestion a selected value
   }, 
   

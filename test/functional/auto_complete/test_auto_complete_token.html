@@ -32,7 +32,7 @@
     <script  type="text/javascript">
       document.whenReady(function() {
         ac = new UI.AutoComplete('pui-demo', { shadow:             "auto_complete",
-                                               tokens:             Event.KEY_COMA,
+                                               tokens:             Event.KEY_COMMA,
                                                max:                {selection: 10, selected:5} 
                                                }).init();
         ac.observe('input:empty',           function(event) {event.memo.autocomplete.showMessage("Enter tags separated by coma")})
