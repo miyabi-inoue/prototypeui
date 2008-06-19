@@ -155,13 +155,16 @@ UI.WindowManager = Class.create(UI.Options, {
       }
     }
     this.modalOverlay.setStyle({ zIndex: win.zIndex - 1 });
+    if (this.iframe) this.iframe.element.setStyle({ zIndex: win.zIndex - 1 });
     this.modalSessions++;
   },
 
   endModalSession: function(win) {
     this.modalSessions--;
     if (this.modalSessions) {
-      this.modalOverlay.setStyle({ zIndex: this.stack.getPreviousWindow(win).zIndex - 1 });
+      var zIndex = this.stack.getPreviousWindow(win).zIndex - 1;
+      this.modalOverlay.setStyle({ zIndex: zIndex });
+      if (this.iframe) this.iframe.element.setStyle({ zIndex: zIndex });
     } else {
       this.resetOverflow();
       this.options.hideOverlay(this.modalOverlay, { from: this.modalOverlay.opacity, to: 0 });
@@ -273,7 +276,7 @@ UI.WindowManager = Class.create(UI.Options, {
   createOverlays: function() {
     this.modalOverlay = new Element("div", { style: this.overlayStyle });
     this.dragOverlay  = new Element("div", { style: this.overlayStyle+"height: 100%" });
-    this.iframe       = Prototype.Browser.IE ? new UI.IframeShim() : null;
+    this.iframe       = Prototype.Browser.IE ? new UI.IframeShim({parent:this.viewport != document.viewport ? this.container : null}).hide() : null;
   },
   
   focus: function(win) {

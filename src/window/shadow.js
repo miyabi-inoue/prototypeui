@@ -63,6 +63,8 @@ UI.Window.addMethods({
       if (this.shadow)
         this.shadow.setZIndex(zIndex - 1);
       this.setZIndexWithoutShadow(zIndex);  
+      if (this.iframe)
+        this.iframe.positionUnder(this.element);
       this.zIndex = zIndex;
     }
     return this;
