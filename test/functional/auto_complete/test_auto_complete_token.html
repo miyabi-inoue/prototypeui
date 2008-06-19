@@ -35,7 +35,7 @@
                                                tokens:             Event.KEY_COMMA,
                                                max:                {selection: 10, selected:5} 
                                                }).init();
-        ac.observe('input:empty',           function(event) {event.memo.autocomplete.showMessage("Enter tags separated by coma")})
+        ac.observe('input:empty',           function(event) {event.memo.autocomplete.showMessage("Enter tags separated by comma")})
           .observe('selection:max_reached', function(event) {event.memo.autocomplete.showMessage("5 tags maximum")})
           .observe('selection:empty',       function(event) {event.memo.autocomplete.showMessage("Nothing match")})
         
