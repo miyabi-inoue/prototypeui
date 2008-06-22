@@ -5,6 +5,10 @@
   - InteRiders: Prototype version  <http://interiders.com/>
 */
 
+Object.extend(Event, {
+  KEY_SPACE: 32,
+  KEY_COMMA:  188
+});
 
 UI.AutoComplete = Class.create(UI.Options, {
   // Group: Options
@@ -17,15 +21,14 @@ UI.AutoComplete = Class.create(UI.Options, {
     delay: 0.2,                            // Delay before running ajax request
     shadow: false,                         // Shadow theme name (false = no shadow)
     highlight: false,                      // Highlight search string in list
-    tokens: false,                         // Tokens used to automatically adds a new entry (ex tokens:[',', ' '] for coma and spaces)
+    tokens: false,                         // Tokens used to automatically adds a new entry (ex tokens:[',', ' '] for comma and spaces)
     unique: true                           // Do not display in suggestion a selected value
   }, 
   
   initialize: function(element, options) {   
     this.setOptions(options);
-    if(typeof(this.options.tokens) == 'string') 
-      this.options.tokens = new Array(this.options.tokens);
-    
+    if(typeof(this.options.tokens) == 'number') 
+      this.options.tokens = $A([this.options.tokens]);
     this.element = $(element);
 
     this.render();  
@@ -333,7 +336,7 @@ UI.AutoComplete = Class.create(UI.Options, {
     // Check tokens
     if (this.options.tokens){
       var tokenFound = this.options.tokens.find(function(token){
-        return String.fromCharCode(event.charCode ? event.charCode : event.keyCode) == token ;
+        return event.keyCode == token;
       });
       if (tokenFound) {
         var value = this.input.value.strip();
