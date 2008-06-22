@@ -17,11 +17,15 @@ UI.AutoComplete = Class.create(UI.Options, {
     max: {selection: 10, selected:false},  // Max values fort autocomplete, 
                                            // selection : max item in pulldown menu
                                            // selected  : max selected items (false = no limit)
+    separator: ',',                        // separator character for hidden input
     url: false,                            // Url for ajax completion
     delay: 0.2,                            // Delay before running ajax request
     shadow: false,                         // Shadow theme name (false = no shadow)
     highlight: false,                      // Highlight search string in list
     tokens: false,                         // Tokens used to automatically adds a new entry (ex tokens:[',', ' '] for comma and spaces)
+    returnType: 'text',                    // Return following type in input:
+                                           // 'text'  : return text of selected items
+                                           // 'value' : return value of selected items - not possible if token is active
     unique: true                           // Do not display in suggestion a selected value
   }, 
   
@@ -70,11 +74,14 @@ UI.AutoComplete = Class.create(UI.Options, {
     
     // Close button   
     var close = new Element('a', {'href': '#', 'class': 'closebutton'});
-    li.insert(new Element("span").update(text).insert(close)).insert(new Element('input', {
+    li.insert(new Element("span").update(text).insert(close));
+    /*
+    .insert(new Element('input', {
       type: 'hidden',
       name: this.element.name,
       value: value
     }));
+    */
     if (value)
       li.writeAttribute("pui-autocomplete:value", value);
       
@@ -523,20 +530,26 @@ UI.AutoComplete = Class.create(UI.Options, {
   updateSelectedText: function() {
     var selected = this.container.select("li." + this.getClassName("box"));
     var content = selected.collect(function(element) {return element.down("span").firstChild.textContent});
-    var separator = this.options.tokens ? this.options.tokens.first() : " ";
+    var separator = this.options.separator ? this.options.separator : " ";
     this.selectedText = content.empty() ? false : content.join(separator); 
-    
+ 
     return this;
   },
   
   updateHiddenField: function() {
-    var separator = this.options.tokens ? this.options.tokens.first() : " ";
-    this.hidden.value = this.selectedText ? $A([this.selectedText, this.input.value]).join(separator) : this.input.value;
+    var separator = this.options.separator ? this.options.separator : " ";
+    
+    if (this.options.returnType == 'value' && this.options.tokens == false) {
+      content=this.selectedValues();
+      this.hidden.value = content.empty() ? false : values=content.join(separator)
+    }
+    else 
+      this.hidden.value = this.selectedText ? $A([this.selectedText, this.input.value]).join(separator) : this.input.value;
   },
   
   selectedValues: function() {
     var selected = this.container.select("li." + this.getClassName("box"));
-    return  selected.collect(function(element) {return element.readAttribute("pui-autocomplete:value")});
+    return selected.collect(function(element) {return element.readAttribute("pui-autocomplete:value")});
   }
 });
 

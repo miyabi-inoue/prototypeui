@@ -26,9 +26,11 @@
         <input type="text" value="" id="pui-demo" name="taglist" />
       </div>                         
       <p>             
-        <input type=submit onclick="console.log($('test-form').serialize());return false;" value="Submit"/>      
+        <input type=submit onclick="$('console').insert(new Element('div').insert('Submitted: '+decodeURIComponent($('test-form').serialize())));return false;" value="Submit"/>      
       </p> 
-    </form>         
+    </form>  
+    <div id="console">
+    </div>         
     <script  type="text/javascript">
       document.whenReady(function() {
         ac = new UI.AutoComplete('pui-demo', { shadow:             "auto_complete",

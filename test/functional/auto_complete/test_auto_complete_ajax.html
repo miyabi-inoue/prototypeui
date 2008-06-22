@@ -22,9 +22,9 @@
     <p>Ajax requests are simulated by stubbing Ajax.Request#onComplete and may not work on some browser (like IE)<br/>
     One second delay is set to simulate also internet traffic</p>
     <p>Type "e" for example to see autocompletion.</p>
-    <form action="test_submit" method="get" accept-charset="utf-8">
+    <form action="test_submit" method="get" accept-charset="utf-8" id="test-form">
       <div id="input-text">
-        <input type="text" value="" id="pui-demo" />
+        <input type="text" value="" id="pui-demo" name="taglist" />
       </div>
 	  <p>
         <select>
@@ -33,15 +33,19 @@
           <option>option 3</option>
         </select> 
 	  </p>
-	  <p><button onclick="return false;">Submit</button></p>     
+    <p>             
+      <input type=submit onclick="$('console').insert(new Element('div').insert('Submitted: '+decodeURIComponent($('test-form').serialize())));return false;" value="Submit"/>      
+    </p> 
     </form>
-   
+    <div id="console">
+    </div>         
     <script  type="text/javascript">
     
     // Simulate AJAX response from server. It filters response values with input search string and handles unique options
     Ajax.Request.prototype.originalInitialize = Ajax.Request.prototype.initialize;
     Ajax.Request.prototype.initialize = function(url, options) {
       var unique = ac.options.unique;
+      
       
       options.onComplete = options.onComplete.wrap(function(proceed, request, json) {
         var list = request.responseText.evalJSON();
@@ -52,6 +56,7 @@
         request.responseText = list.toJSON()
         proceed.curry(request, json).delay(1);
       }.bind(this));
+      
       this.search = options.parameters.search;
       this.selected = options.parameters.selected;
       this.originalInitialize(url, options);
