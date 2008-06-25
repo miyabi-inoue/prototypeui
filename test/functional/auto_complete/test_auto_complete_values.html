@@ -39,7 +39,7 @@
         </select> 
       </p>
       <p>             
-      <input type=submit onclick="$('console').insert(new Element('div').insert('Submitted: '+decodeURIComponent($('test-form').serialize())));return false;" value="Submit"/>      
+        <input type=submit onclick="$('console').insert(new Element('div').insert('Submitted: '+$H($('test-form').serialize(true)).toJSON()));return false;" value="Submit"/>      
       </p> 
     </form>   
     <div id="console">
