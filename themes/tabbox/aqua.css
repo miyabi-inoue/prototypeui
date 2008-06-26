@@ -1,0 +1,45 @@
+.aqua div.tabbox_body {
+  margin: 0px;
+  border: 1px solid #999;
+}
+
+.aqua div.tabbox_head {
+  height: 18px;
+  margin: 0px;
+  padding: 3px 3px 0px 3px;
+  border: none;
+}
+
+.aqua .tabbox_head span span {
+  display: block;
+  float: left;
+  height: 18px;
+  margin: 0px;
+  background: url(aqua/default.gif) repeat-x;
+  line-height: 18px;
+  font-size: 12px;
+}
+
+.aqua .tabbox_head span span.tab_w {
+  display: inline-block;
+  width: 6px;
+  background: url(aqua/default_w.gif);
+}
+
+.aqua .tabbox_head span span.tab_e {
+  display: inline-block;
+  width: 6px;
+  background: url(aqua/default_e.gif);
+}
+
+.aqua .tabbox_head span.selected span {
+  background: url(aqua/default_selected.gif) repeat-x;
+}
+
+.aqua .tabbox_head span.selected span.tab_w {
+  background: url(aqua/default_selected_w.gif) repeat-x;
+}
+
+.aqua .tabbox_head span.selected span.tab_e {
+  background: url(aqua/default_selected_e.gif) repeat-x;
+}
