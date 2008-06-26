@@ -31,30 +31,7 @@ UI.Tabbox = Class.create(UI.Options, {
     this.head=new Element('div',{className:'tabbox_head'});
     
     tabs.each(function(tab) {
-      
-      head=new Element('span').insert(new Element('span',{className:'tab_w'})).insert(new Element('span',{className:'tab_c'}).insert(tab.lable)).insert(new Element('span',{className:'tab_e'}));
-      head.writeAttribute('pui-tabbox:name',tab.name)
-      head.observe('click',function(e){
-        this.select(tab.name);
-      }.bind(this).bind(tab));
-      tab.head=head;
-      this.head.insert(head);
-      
-      if(tab.element)
-        tab.element=$(tab.element);
-      else {
-        tab.element=new Element('div').hide();
-        this.element.insert({
-          bottom: tab.element
-        });
-        if(tab.content) {
-          tab.element.insert(tab.content);
-        }
-      }
-      tab.element.addClassName('tabbox_body');
-      tab.element.writeAttribute('pui-tabbox:object',this);
-          
-      this.tabs.set(tab.name,tab);
+      this.add(tab);
     }.bind(this));
     
     this.element.insert({
@@ -126,8 +103,45 @@ UI.Tabbox = Class.create(UI.Options, {
 
   // Group: Actions
 
-  select: function(tab) {
-    if (this.selectedTab && this.selectedTab.name == tab) {
+  add: function(tab) {
+      // make sure tab name is unique
+      while(this.tabs.get(tab.name))
+      {
+        tab.name=tab.name+'_';
+      }
+    
+      head=new Element('span').insert(new Element('span',{className:'tab_w'})).insert(new Element('span',{className:'tab_c'}).insert(tab.lable)).insert(new Element('span',{className:'tab_e'}));
+      head.writeAttribute('pui-tabbox:name',tab.name)
+      head.observe('click',function(e){
+        this.select(tab.name);
+      }.bind(this).bind(tab));
+      tab.head=head;
+      if(tab.after) {
+        this.tabs.get(tab.after).head.insert({after:head});
+      } else {
+        this.head.insert(head);
+      }
+      
+      
+      if(tab.element)
+        tab.element=$(tab.element);
+      else {
+        tab.element=new Element('div').hide();
+        this.element.insert({
+          bottom: tab.element
+        });
+        if(tab.content) {
+          tab.element.insert(tab.content);
+        }
+      }
+      tab.element.addClassName('tabbox_body');
+      tab.element.writeAttribute('pui-tabbox:object',this);
+          
+      this.tabs.set(tab.name,tab);    
+  },
+
+  select: function(tabName) {
+    if (this.selectedTab && this.selectedTab.name == tabName) {
       return this;
     }
     
@@ -136,11 +150,11 @@ UI.Tabbox = Class.create(UI.Options, {
       this.selectedTab.element.hide();
     }
     
-    this.selectedTab=this.tabs.get(tab);
+    this.selectedTab=this.tabs.get(tabName);
     
     if(this.selectedTab.ajaxContent)
     {
-      tab=this.tabs.get(tab);
+      tab=this.tabs.get(tabName);
       options={onComplete:function(){
         this.fire('selected', {
           tab: tab
@@ -152,7 +166,7 @@ UI.Tabbox = Class.create(UI.Options, {
       new Ajax.Updater(this.selectedTab.element, this.selectedTab.ajaxContent, options);
     } else {
       this.fire('selected', {
-        tab: tab
+        tab: tabName
       });
     }
     
