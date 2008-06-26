@@ -14,7 +14,9 @@ PUI_DEPENDENCIES = {
   :util          => nil,
   :context_menu  => [ :shadow, :"util/iframe_shim.js"],
   :auto_complete => [ :shadow, :"util/iframe_shim.js"],
-  :calendar      => :"util/date.js"
+  :calendar      => :"util/date.js",
+  :table         => nil,
+  :tabbox        => nil
 }
 
 PUI_COMPONENTS = PUI_DEPENDENCIES.keys
