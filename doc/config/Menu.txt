@@ -49,6 +49,7 @@ Group: Utilities  {
       File: Date  (util/date.js)
       File: Drag  (util/drag.js)
       File: pull_down.js  (util/pull_down.js)
+      File: scroller.js  (util/scroller.js)
       File: UI.IframeShim  (util/iframe_shim.js)
       File: UI.Logger  (util/logger.js)
       }  # Group: Util
