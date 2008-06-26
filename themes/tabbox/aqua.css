@@ -1,7 +1,4 @@
-.aqua div.tabbox_body {
-  margin: 0px;
-  border: 1px solid #999;
-}
+
 
 .aqua div.tabbox_head {
   height: 18px;
@@ -42,4 +39,9 @@
 
 .aqua .tabbox_head span.selected span.tab_e {
   background: url(aqua/default_selected_e.gif) repeat-x;
+}
+
+.aqua div.tabbox_body {
+  margin: 0px;
+  border: 1px solid #999;
 }
