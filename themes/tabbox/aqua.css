@@ -1,8 +1,14 @@
 .aqua div.tabbox_head {
   height: 18px;
   margin: 0px;
-  padding: 3px 3px 0px 3px;
+  padding:0;
   border: none;
+}
+
+.aqua .tabbox_head span {
+  display: block;
+  float: left;
+  text-align:justify;
 }
 
 .aqua .tabbox_head span span {
@@ -16,13 +22,15 @@
 }
 
 .aqua .tabbox_head span span.tab_w {
-  display: inline-block;
+  float: left;
+  display: block;
   width: 6px;
   background: url(aqua/default_w.gif);
 }
 
 .aqua .tabbox_head span span.tab_e {
-  display: inline-block;
+  float: left;
+  display: block;
   width: 6px;
   background: url(aqua/default_e.gif);
 }
@@ -42,4 +50,5 @@
 .aqua div.tabbox_body {
   margin: 0px;
   border: 1px solid #999;
+  clear:left;
 }
