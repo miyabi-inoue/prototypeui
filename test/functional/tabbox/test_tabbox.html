@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	  <title>Prototype UI : functional test : Tabbox</title>
+    
+    <script src="../../../lib/prototype.js" type="text/javascript"></script>
+    <script src="../../../lib/effects.js" type="text/javascript"></script>
+    <script src="../../../dist/util.js" type="text/javascript"></script>
+    <script src="../../../src/tabbox/tabbox.js" type="text/javascript"></script>
+    <link href="../../../themes/tabbox/aqua.css" rel="stylesheet" type="text/css" />
+    <link href="../../../themes/tabbox/mac_os_x.css" rel="stylesheet" type="text/css" />
+  </head>
+  
+  <body id="test">    
+    <h1>Prototype UI tabbox Demo</h1>
+
+    <div style="position:relative;width:400px;height:400px;border:1px solid black;float:left;">
+      <div id="tabbox">
+        <div id="tab1">
+          <p>Tab 1</p>
+        </div>
+        <div id="tab2">
+          <p>Tab 2</p>
+        </div>
+      </div>
+    </div>
+    
+    <div style="position:relative;width:400px;float:left;margin-left:20px;">
+      <div id="tabbox-aqua">
+        <div id="tab1-aqua">
+          <p>Tab 1</p>
+        </div>
+      </div>
+    </div>
+    
+    
+    <p style="clear:left;"></p>
+    <div id="console">
+    </div>         
+    <script  type="text/javascript">
+      
+      function runTest() {
+        t = new UI.Tabbox('tabbox',[{
+          name:'tab1',
+          lable:'Tab 1',
+          element:'tab1'
+        },{
+          name:'tab2',
+          lable:'Tab 2',
+          element:'tab2'
+        },{
+          name:'ajaxTab',
+          lable:'Ajax',
+          ajaxContent:'../../fixtures/ajax_content.html'
+        },{
+          name:'staticAjaxTab',
+          lable:'Ajax (only load once)',
+          ajaxContent:'../../fixtures/ajax_content2.html',
+          ajaxLoadOnce: true
+        },{
+          name:'tab3',
+          lable:'Content by parameter',
+          content:'Testcontent'
+        }],{theme:'mac_os_x'}).select('tab1');  
+        
+        t.observe('selected',function(selected){$('console').insert(new Element('div').insert('Selected '+this.selectedTab.name+' on first Tabbox'))});
+        
+        ta = new UI.Tabbox('tabbox-aqua',[{
+          name:'tab1',
+          lable:'Tab 1',
+          element:'tab1-aqua'
+        },{
+          name:'ajaxTab',
+          lable:'Ajax',
+          ajaxContent:'../../fixtures/ajax_content.html'
+        },{
+          name:'tab3',
+          lable:'Content by parameter',
+          content:'Testcontent'
+        }],{theme:'aqua'}).select('tab1');  
+        
+        ta.observe('selected',function(selected){$('console').insert(new Element('div').insert('Selected '+this.selectedTab.name+' on second Tabbox'))});
+      }  
+      document.whenReady(runTest);
+    </script>
+  </body>  
+</html>

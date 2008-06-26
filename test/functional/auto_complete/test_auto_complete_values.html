@@ -18,7 +18,7 @@
   </head>
   
   <body id="test">    
-    <h1>Prototype UI autocomplete Demo</h1>      
+    <h1>Prototype UI autocomplete Demo - return Values</h1>      
     <p>Type "e" for example to see autocompletion.<br/></p>
     <form action="test_submit" method="get" accept-charset="utf-8" id="test-form">
       <div id="input-text">
@@ -46,7 +46,7 @@
     </div>      
     <script  type="text/javascript">
     document.whenReady(function() {
-      ac = new UI.AutoComplete('pui-demo', { shadow: "auto_complete" });
+      ac = new UI.AutoComplete('pui-demo', { shadow: "auto_complete", returnType:'value'});
       ac.observe('input:empty',     function(event) {event.memo.autocomplete.showMessage("Type a user name")})
         .observe('selection:empty', function(event) {event.memo.autocomplete.showMessage("Nothing found")});
 

@@ -1,0 +1,84 @@
+.mac_os_x div.tabbox_head {
+  border-right:1px solid #a5a5a5;
+  background: #D3D9E2;
+  overflow: auto;
+  position: absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  margin:0;
+  padding:0;
+  width:160px;
+  height:auto;
+}
+
+.null_focused .tabdialog .tabs_head {
+  background: #e8e8e8;
+}
+
+.mac_os_x .tabbox_head span {
+  display: block;
+  float:none;
+  background: #D3D9E2;
+  text-align: left;
+  padding: 0 5px;
+  margin: 0;
+  height:auto;
+}
+
+.mac_os_x .tabbox_head span.separator {
+  font-size: 1px;
+  height:1px;
+  line-height:1px;
+  padding: 0;
+  border-bottom:1px solid #a5a5a5;
+}
+
+.mac_os_x .tabbox_head span span {
+  display: inline;
+  padding: 0;
+  background-image: none;
+  font-family: "Lucida Grande", Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  line-height:22px;
+  height:auto;
+  float:none;
+}
+
+.mac_os_x .tabbox_head img {
+  position: relative;
+  margin-right: 5px;
+  top: 3px;
+}
+
+.mac_os_x .tabbox_head span.selected {
+  background: url(mac_os_x/selectedline.png) top repeat-x  #7285ac;
+  color: #fff;
+}
+
+.null_focused .mac_os_x .tabbox_head span.selected {
+  background: url(mac_os_x/selectedline_inactive.png) top repeat-x  #8c8c8c;
+}
+
+.mac_os_x .tabbox_head span.selected span {
+  background:none;
+}
+
+.mac_os_x .tabbox_head span span.tab_w,
+.mac_os_x .tabbox_head span span.tab_e,
+.mac_os_x .tabbox_head span.selected span.tab_w,
+.mac_os_x .tabbox_head span.selected span.tab_e {
+  display:none;
+}
+
+.mac_os_x div.tabbox_body {
+  border:none;
+  overflow: auto;
+  position: absolute;
+  left:161px;
+  top:0;
+  bottom:0;
+  right:0;
+  padding: 0 5px;
+  text-align: left;
+}

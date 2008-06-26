@@ -27,9 +27,9 @@
         
     <h1>Prototype UI autocomplete Demo</h1>      
     Type "e" for example to see autocompletion.<br/><br/>
-    <form action="test_submit" method="get" accept-charset="utf-8">
+    <form action="test_submit" method="get" accept-charset="utf-8" id="test-form">
       <div id="input-text">
-        <input type="text" value="" id="pui-demo" />
+        <input type="text" value="" id="pui-demo" name="taglist" />
       </div>                           
       <p>Add Select box for testing iFrameShim on IE</p>
 	  <p>
@@ -45,11 +45,12 @@
       	<option>option 3</option>
       </select>   
 	  </p> 
+    <p>             
+      <input type=submit onclick="$('console').insert(new Element('div').insert('Submitted: '+$H($('test-form').serialize(true)).toJSON()));return false;" value="Submit"/>      
+    </p>     
     </form>         
-    <br/><br/>
-
-
-    <button onclick="tlist2.update(); alert($F('facebook-demo'));return false;">Submit</button>       
+    <div id="console">
+    </div>         
     </div>
     <script  type="text/javascript">
     document.whenReady(function() {
