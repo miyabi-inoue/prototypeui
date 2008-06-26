@@ -13,6 +13,7 @@
     <link href="../../../themes/tabbox/mac_os_x.css" rel="stylesheet" type="text/css" />
     <style lang="text/css">
       .link {color:#00f;text-decoration:underline;}
+      .faillink {color:#f00;text-decoration:line-through;}
     </style>
   </head>
   
@@ -30,6 +31,9 @@
           </p>
           <p class="link" onclick="t.add({name:'new',lable:'Added after Tab 1',content:'<p>New content</p><p>'+(new Date())+'</p>',after:'tab1'});">
             Add new Tab after Tab1
+          </p>     
+          <p class="faillink" onclick="t.add({name:'new',lable:'Added wrong after',content:'<p>New content</p><p>'+(new Date())+'</p>',after:'tabthatdoesnotexist1'});">
+            Add new Tab after Tab that does not exists
           </p>     
         </div>
         <div id="tab2">

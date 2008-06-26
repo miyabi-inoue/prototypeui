@@ -116,7 +116,7 @@ UI.Tabbox = Class.create(UI.Options, {
         this.select(tab.name);
       }.bind(this).bind(tab));
       tab.head=head;
-      if(tab.after) {
+      if(tab.after && this.tabs.get(tab.after)) {
         this.tabs.get(tab.after).head.insert({after:head});
       } else {
         this.head.insert(head);
