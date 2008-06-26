@@ -80,4 +80,5 @@ UI.Table = Class.create(UI.Options, {
 
   // Group: Actions
   
+  terminate_for_ie: true
 });
