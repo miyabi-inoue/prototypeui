@@ -161,37 +161,5 @@ UI.Tabbox = Class.create(UI.Options, {
       
     
     return this;
-  },
-
-  change: function(tab) {
-    tab_div=this.name+'_tab_'+tab;
-    head_div=this.name+'_head_'+tab;
-    
-    if(this.options.ajaxTabs && this.options.ajaxTabs[tab]) {
-      target=$(this.name+'_tab_'+tab);
-      if(target.firstChild)
-        target=$(target.firstChild);
-        
-      ajaxtab=this.options.ajaxTabs[tab];
-      this.options.ajaxTabs[tab]=false;
-        
-      ajaxtab.options.onSuccess=this.change(tab);
-        
-      new Ajax.Updater(target, ajaxtab.url, ajaxtab.options);
-      
-      return false;
-    }
-        
-    if(this.openTab!=tab) {
-      $(this.name+'_head_'+this.openTab).removeClassName("selected");
-        $(head_div).addClassName("selected");
-    
-      new Effect.Fade(this.name+'_tab_'+this.openTab, { duration: 0.15, afterFinish: function(){new Effect.Appear(tab_div, { duration: 0.15, afterFinish: function(){} });} });
-      this.openTab=tab;
-    }
-    
-    this.fire('',{tab:tab});
-
-    return this;
   }
 });
