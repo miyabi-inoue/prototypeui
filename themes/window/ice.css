@@ -1,3 +1,16 @@
+.ice_wired
+{
+	position: absolute;
+	-moz-border-radius: 12px;
+	-webkit-border-radius: 12px;
+	-khtml-border-radius: 12px;
+	background: white;
+	border: 1px solid #d8d8d8;
+	filter:alpha(opacity=60);
+	-moz-opacity: 0.6;
+	opacity: 0.6;
+}
+
 .ui-window.ice .nw
 {
   background:transparent url(ice/blur/nw.png) no-repeat;
