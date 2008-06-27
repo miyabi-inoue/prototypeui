@@ -2,7 +2,8 @@ UI.Scroller = Class.create(UI.Options, {
   // Group: Options
   options: {
     first: 0,
-    perPage: 3
+    perPage: 3,
+    loadFunction: false
   },
  
   // Group: Contructor
@@ -24,7 +25,8 @@ UI.Scroller = Class.create(UI.Options, {
     this.setOptions(options);
 
     this.element = $(element);  
-    this.element.update(new Element('div'));
+    if(!this.element.down())
+      this.element.update(new Element('div'));
     
     this.url     = url;
     
@@ -35,7 +37,7 @@ UI.Scroller = Class.create(UI.Options, {
     this.load();
     
     
-    $('scroller').observe('scroll',function(e){
+    $(this.element).observe('scroll',function(e){
       this.load();     
     }.bind(this),false);      
       
@@ -110,18 +112,31 @@ UI.Scroller = Class.create(UI.Options, {
    
     if(scrollBottom<500 && this.loaded>=this.first)
     {
-      new Ajax.Updater($(this.element).down(), this.url, {
-        parameters:{
-          first:this.first,
-          perpage:this.perPage
-        }, 
-        onSuccess: 
-          function(){
+      parameters=this.options.parameters || {};
+      parameters.first=this.first;
+      parameters.perpage=this.perPage
+      
+      if(this.options.loadFunction) {
+        new Ajax.Request(this.url, {
+          parameters:parameters, 
+          onSuccess : function(transport){
             this.loaded+=this.perPage;
+            this.options.loadFunction(transport);
             this.load();
             this.fire('loaded');
-          }.bind(this),
-        insertion: Insertion.Bottom});
+          }.bind(this)
+        });
+      } else {
+        new Ajax.Updater($(this.element).down(), this.url, {
+          parameters:parameters, 
+          onSuccess: 
+            function(){
+              this.loaded+=this.perPage;
+              this.load();
+              this.fire('loaded');
+            }.bind(this),
+          insertion: Insertion.Bottom});
+      }
 
       this.first+=this.perPage;
     }

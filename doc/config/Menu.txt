@@ -75,7 +75,6 @@ File: ContextMenu  (context_menu/context_menu.js)
 File: Dock  (dock/dock.js)
 File: Shadow  (shadow/shadow.js)
 File: tabbox/tabbox.js  (tabbox/tabbox.js)
-File: table/table.js  (table/table.js)
 
 Group: Index  {
 

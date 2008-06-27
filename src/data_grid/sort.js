@@ -96,13 +96,13 @@ UI.DataGrid.sortMethod = {
 	
 	time: function(a, b)
 	{
-                var mtch = a[0].match(UI.DataGrid.sortReg.time);
+    var mtch = a[0].match(UI.DataGrid.sortReg.time);
 		var t1 = mtch.join('');
 		var mtch = b[0].match(UI.DataGrid.sortReg.time);
 		var t2 = mtch.join('');
 		if (t1==t2) return 0;
-                if (t1<t2) return -1;
-                return 1;
+    if (t1<t2) return -1;
+    return 1;
 	},
 	
 	datetime: function(a, b)
