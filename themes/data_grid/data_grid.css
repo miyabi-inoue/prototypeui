@@ -1,0 +1,116 @@
+.ui-datagrid
+{
+	position:relative;
+	overflow: hidden !important;
+}
+
+.ui-datagrid table
+{
+	border-collapse:collapse;
+}
+
+.ui-datagrid .viewport
+{
+	position:relative;
+	overflow:hidden;
+}
+.ui-datagrid .head
+{
+	width: 100%;
+	position:relative;
+	overflow:hidden;
+}
+
+.ui-datagrid .body
+{
+	width: 100%;
+	overflow: auto;
+}
+
+.ui-datagrid .body table
+{
+	width:99.9%;
+}
+
+/*ie6 fix*/
+* html .ui-datagrid .body table {width:97%;}
+/*ie7 fix*/
+*:first-child+html .ui-datagrid .body table {width:97%;}
+
+.ui-datagrid .resizer
+{
+	width:3px;
+	background:#ccc;
+}
+
+.ui-datagrid .resizer.enabled
+{
+	cursor:col-resize;
+}
+
+.ui-datagrid .hiddenrow
+{
+	display:none;
+}
+
+.ui-datagrid .header, .ui-datagrid .entry
+{
+	white-space:nowrap;
+	overflow:hidden;
+}
+
+.ui-datagrid .resize_display
+{
+	position:absolute;
+	display:none;
+	width:5px;
+	top:0px;
+	background-color:black;
+	z-index:2;
+	cursor:col-resize;
+}
+
+.ui-datagrid .resize_hover
+{
+	position:absolute;
+	display:none;
+	top:0px;
+	background-color: #eee;
+}
+
+.ui-datagrid .sortdesc, .ui-datagrid .sortasc
+{
+	vertical-align:middle;
+	display:-moz-inline-box;
+	display:inline-block;
+}
+
+.ui-datagrid .move_clone
+{
+	position:absolute;
+	top: 0px;
+	z-index:5;
+}
+
+.ui-datagrid .move_preview
+{
+	position:absolute;
+	width:4px;
+	height:20px;
+	background: black;
+	z-index:6;
+	top:0px;
+	display:none;
+}
+
+.ui-datagrid .overlay
+{
+	position:absolute;
+	z-index:1;
+	background:white;
+	left:0px;
+	right:0px;
+	bottom:-2px;
+	top:0px;
+	display:none;
+}

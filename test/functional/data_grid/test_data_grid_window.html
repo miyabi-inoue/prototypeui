@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title>Test DataGrid</title>
+  <script src="../../../lib/prototype.js" type="text/javascript"></script>
+  <script src="../../../lib/effects.js" type="text/javascript"></script>
+  <script src="../../../dist/prototype-ui.js" type="text/javascript"></script>      
+  <script src="../../assets/runner.js" type="text/javascript"></script>
+  
+  <link href="../../../themes/data_grid/data_grid.css" rel="stylesheet" type="text/css" />
+  <link href="../../../themes/data_grid/ice.css" rel="stylesheet" type="text/css" />
+  
+  <link href="../../../themes/window/window.css" rel="stylesheet" type="text/css" />
+  <link href="../../../themes/window/ice.css" rel="stylesheet" type="text/css" />
+
+  <link href="../../../themes/shadow/ice.css" rel="stylesheet" type="text/css" />
+    
+  <style type='text/css'>
+   
+  *
+  {
+    padding: 0px;
+    margin: 0px;
+  } 
+    
+  body { 
+    background: url('../../assets/body_bg.png') repeat; 
+  }           
+  
+  div#container
+  {
+    position:absolute;
+  }
+  
+  </style>
+  
+  <script type="text/javascript">
+
+  function runTest()
+  {
+				
+				var columns = [
+        {
+					header:'#',
+					key:'id',
+					width: 30,
+					sort:'numeric'
+				},
+				{
+					header:'First Name',
+					key:'firstname',
+					width: 100	
+				},
+				{
+					header:'Last Name',
+					key:'lastname',
+					width: 100
+				}
+			];
+				w = new UI.DataGrid(columns, {theme:'ice', heigth:217, rowsEvents:['mousedown']});
+				new Ajax.Request('../../fixtures/data_grid.json', {
+					onSuccess : function(event)
+					{
+            $A(event.responseText.evalJSON()).each(w.addRow.bind(w));
+            b.setContent(w);
+            b.show();
+            b.adapt();
+					}
+				});
+				
+				b = new UI.Window({shadow:true, height:220, wired:true, theme:'ice', shadowTheme:'ice'}).center().setHeader('Go Germany!');
+				b.observe('size:changed', function(){w.setHeight(b.getSize(true).height)});
+  }
+  
+  document.whenReady(runTest);
+  
+  function log(text)
+  {
+    $('logger').appendText(text + '\n').scrollTop = 9999;
+  }
+  
+  function change_visibility()
+  {
+    w.getColumn($F('hide_show'))[$F('visible') ? 'show' : 'hide']();
+  }
+  
+  function adjust()
+  {
+    $('visible').checked = w.getColumn($F('hide_show')).getVisible();
+  }
+  
+</script>
+</head>
+<body class="noscroll">   
+</body>
+</html>
