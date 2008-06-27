@@ -104,13 +104,27 @@ UI.Scroller = Class.create(UI.Options, {
 
   // Group: Actions
 
+  _loaded: function(transport) {
+    this.loaded+=this.perPage;
+    var paneHeight=$(this.element).down().getHeight();
+    if(paneHeight == this.paneHeight) {
+      this.loaded=true;
+    }
+    this.paneHeight=paneHeight;
+    if(this.options.loadFunction) {
+      this.options.loadFunction(transport);
+    }
+    this.load();
+    this.fire('loaded');    
+  },
+
   load: function() {
     var paneHeight=$(this.element).down().getHeight();
     var boxHeight=$(this.element).getHeight();
     var scrollTop=$(this.element).scrollTop;
     var scrollBottom=paneHeight-boxHeight-scrollTop;
-   
-    if(scrollBottom<500 && this.loaded>=this.first)
+
+    if(scrollBottom<500 && this.loaded==this.first)
     {
       parameters=this.options.parameters || {};
       parameters.first=this.first;
@@ -119,22 +133,12 @@ UI.Scroller = Class.create(UI.Options, {
       if(this.options.loadFunction) {
         new Ajax.Request(this.url, {
           parameters:parameters, 
-          onSuccess : function(transport){
-            this.loaded+=this.perPage;
-            this.options.loadFunction(transport);
-            this.load();
-            this.fire('loaded');
-          }.bind(this)
+          onSuccess : this._loaded.bind(this)
         });
       } else {
         new Ajax.Updater($(this.element).down(), this.url, {
           parameters:parameters, 
-          onSuccess: 
-            function(){
-              this.loaded+=this.perPage;
-              this.load();
-              this.fire('loaded');
-            }.bind(this),
+          onSuccess : this._loaded.bind(this),
           insertion: Insertion.Bottom});
       }
 
