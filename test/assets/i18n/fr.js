@@ -7,5 +7,5 @@ UI.Calendar.Options = {
 	WEEKDAYS: $w('Dimanche Lundi Mardi Mercredi Jeudi Vendredi Samedi'),
 	
 	LABEL_MONTH: "Mois",
-	LABEL_YEAR: "L'année"
+	LABEL_YEAR: "Année"
 };
