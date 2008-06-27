@@ -2,7 +2,7 @@ UI.AjaxDataGrid = Class.create(UI.DataGrid, {
   ajax_options: {
     url: '',
     first: 0,
-    perPage: -1,
+    perPage: -1
   },
   
   initialize: function($super, columns, ajax_options, options) {

@@ -227,7 +227,7 @@ $i=$first;
 	
 while($i<$first+$perpage && isset($items[$i]))
 {
-	echo "{firstname:'".$items[$i]['firstname']."', lastname:'".$items[$i]['lastname']."', id:".$items[$i]['id']."},\n";
+	echo "{firstname:'".$items[$i]['firstname']."', lastname:'".$items[$i]['lastname']."', id:".$items[$i]['id']."}".(($i+1)<$first+$perpage?',':'')."\n";
 	$i++;
 }
 

@@ -29,6 +29,7 @@ UI.Scroller = Class.create(UI.Options, {
       this.element.update(new Element('div'));
     
     this.url     = url;
+    this.active  = true;
     
     this.first=this.options.first;
     this.perPage=this.options.perPage;
@@ -49,6 +50,7 @@ UI.Scroller = Class.create(UI.Options, {
       Destructor, cleans up DOM and memory
   */
   destroy: function($super) {
+    this.active=false;
     this.fire('destroyed');
   },
   
@@ -105,12 +107,17 @@ UI.Scroller = Class.create(UI.Options, {
   // Group: Actions
 
   _loaded: function(transport) {
+    if (!(this.loaded+this.perPage == this.first && this.active)) {
+      return false;
+    }  
     this.loaded+=this.perPage;
+    
     var paneHeight=$(this.element).down().getHeight();
     if(paneHeight == this.paneHeight) {
       this.loaded=true;
     }
     this.paneHeight=paneHeight;
+    
     if(this.options.loadFunction) {
       this.options.loadFunction(transport);
     }
@@ -124,10 +131,11 @@ UI.Scroller = Class.create(UI.Options, {
     var scrollTop=$(this.element).scrollTop;
     var scrollBottom=paneHeight-boxHeight-scrollTop;
 
-    if(scrollBottom<500 && this.loaded==this.first)
+    if(scrollBottom<500 && this.loaded==this.first && this.active)
     {
       parameters=this.options.parameters || {};
       parameters.first=this.first;
+      this.first+=this.perPage;
       parameters.perpage=this.perPage
       
       if(this.options.loadFunction) {
@@ -138,11 +146,10 @@ UI.Scroller = Class.create(UI.Options, {
       } else {
         new Ajax.Updater($(this.element).down(), this.url, {
           parameters:parameters, 
-          onSuccess : this._loaded.bind(this),
-          insertion: Insertion.Bottom});
+          onSuccess: this._loaded.bind(this),
+          insertion : Insertion.Bottom});
       }
 
-      this.first+=this.perPage;
     }
   }
 });

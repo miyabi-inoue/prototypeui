@@ -32,38 +32,52 @@
   }
   
   </style>
-  
+</head>
+<body class="noscroll">
+  <div id="container">   
+  </div>
+  <form action="#">
+    <div>
+      <label for="hide_show">Show Row :</label>
+      <select onchange="adjust()" id="hide_show">
+      </select>
+      <input onchange="change_visibility()" type="checkbox" id="visible" />
+    </div>
+    <div>
+      <textarea style="width:100%;" id="logger"></textarea>  
+    </div>
+  </form> 
   <script type="text/javascript">
 
   function runTest()
   {
        var columns = [
         {
-					header:'#',
-					key:'id',
-					width: 30,
-					sort:'numeric'
-				},
-				{
-					header:'First Name',
-					key:'firstname',
-					width: 100	
-				},
-				{
-					header:'Last Name',
-					key:'lastname',
-					width: 100
-				}
-			];
-	    w = new UI.DataGrid(columns, {theme:'ice', heigth:300, rowsEvents:['click', 'dblclick'], });
+          header:'#',
+          key:'id',
+          width: 30,
+          sort:'numeric'
+        },
+        {
+          header:'First Name',
+          key:'firstname',
+          width: 100  
+        },
+        {
+          header:'Last Name',
+          key:'lastname',
+          width: 100
+        }
+      ];
+      w = new UI.DataGrid(columns, {theme:'ice', heigth:300, rowsEvents:['click', 'dblclick']});
       $('container').insert(w);
       
       new Ajax.Request('../../fixtures/data_grid.json', {
-					onSuccess : function(event)
-					{
+          onSuccess : function(event)
+          {
             $A(event.responseText.evalJSON()).each(w.addRow.bind(w));
-					}
-			});
+          }
+      });
       
       $A(w.columns).each(function(column){
         $('hide_show').insert(new Element('option', {
@@ -104,18 +118,6 @@
     $('visible').checked = w.getColumn($F('hide_show')).getVisible();
   }
   
-</script>
-</head>
-<body class="noscroll">
-   <div id="container">
-     
-   </div>
-   <div>
-     <label for="hide_show">Show Row :</label>
-     <select onchange="adjust()" id="hide_show">
-     </select>
-     <input onchange="change_visibility()" type="checkbox" id="visible" />
-   </div>
-   <textarea style="width:100%;" id="logger"></textarea>    
+</script>  
 </body>
 </html>
