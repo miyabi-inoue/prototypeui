@@ -3,6 +3,7 @@ UI.Scroller = Class.create(UI.Options, {
   options: {
     first: 0,
     perPage: 3,
+    preloadOffset: 500,
     loadFunction: false
   },
  
@@ -36,7 +37,6 @@ UI.Scroller = Class.create(UI.Options, {
     this.loaded=0; 
          
     this.load();
-    
     
     $(this.element).observe('scroll',function(e){
       this.load();     
@@ -131,7 +131,7 @@ UI.Scroller = Class.create(UI.Options, {
     var scrollTop=$(this.element).scrollTop;
     var scrollBottom=paneHeight-boxHeight-scrollTop;
 
-    if(scrollBottom<500 && this.loaded==this.first && this.active)
+    if(scrollBottom<this.options.preloadOffset && this.loaded==this.first && this.active)
     {
       parameters=this.options.parameters || {};
       parameters.first=this.first;
