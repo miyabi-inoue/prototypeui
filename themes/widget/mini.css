@@ -1,4 +1,4 @@
-.mini.UI-widget  {
+.mini_ui_widget  {
 	border: none;
 	background: transparent;
 	padding: 0;
@@ -7,15 +7,15 @@
 	font-size: 10px;
 }
 
-.mini.UI-widget .UI-widget-e{
-	background: transparent url(mini/control.gif) center right no-repeat;
-	padding-left:10px;
+.mini_ui_widget .ui_widget-e{
+	background: transparent url(mini/control.gif) center no-repeat;
+  padding:5px;
 }
 
-.mini.UI-widget .UI-widget-c {
+.mini_ui_widget .ui_widget-c {
 }
 
-.mini.UI-widget input {
+.mini_ui_widget input {
 	line-height: 10px;
 	height:12px;
 	font: 10px sans-serif;
@@ -24,7 +24,7 @@
 }
 
 
-.mini.UI-widget-dropdown {
+.mini_ui_pulldown {
 	font-family: sans-serif;
 	font-size: 10px;
     background: #fff;
@@ -32,11 +32,11 @@
 	border:none;
 }
 
-.mini.UI-widget-date input {
+.mini_ui_widget-date input {
 	width:8em;
 }
 
-.mini.UI-widget .UI-widget-color-preview {
+.mini_ui_widget .ui_widget-color-preview {
 	position:relative;
 	border: 1px solid #333;
 	padding: 0 4px;
@@ -45,48 +45,57 @@
 	font-size:6px;
 }
 
-* html .UI-widget .UI-widget-color-preview {
+* html .ui_widget .ui_widget-color-preview {
 	padding:4px;
 }
 
-.mini.UI-widget-color .UI-widget-e {
+.mini_ui_widget-color .ui_widget-e {
 	background: transparent;
 }
 
-.mini.UI-widget-color {
+.mini_ui_widget-color {
 	padding-right:0;
 }
 
-.mini.UI-widget-color input {
+.mini_ui_widget-color input {
 	width:7em;
 }
 
-.mini.UI-widget-color-dropdown input {
+.mini_ui_pulldown input.checkbox {
 	width:12px;
 }
 
-.mini.UI-widget-selection-dropdown ul {
-	margin: 0 -2px;
+.mini_ui_pulldown ul {
+	margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.mini.UI-widget-selection-dropdown li span {
-	padding-left:8px;
+.mini_ui_pulldown li span {
+  margin-left:3px;
+	padding-left:6px;
+  padding-right:3px;
 }
 
-.mini.UI-widget-selection-dropdown li.selected span {
+.mini_ui_pulldown li:hover {
+  background: #1a43f3;
+  color:#fff;
+}
+
+.mini_ui_pulldown li.selected span {
 	background: transparent url(mini/selected.gif) center left no-repeat;
 }
 
-.mini.UI-widget-selection-dropdown li.selected:hover span {
-	background: transparent url(mini/selected_hover.gif) center left no-repeat;
+.mini_ui_pulldown li.selected:hover span {
+	background: #1a43f3 url(mini/selected_hover.gif) center left no-repeat;
 }
 
 
-.mini.UI-widget-selection-dropdown li {
+.mini_ui_pulldown li {
   line-height: 12px;
 }
 
-.mini.UI-widget-dropdown .UI-widget-color-view {
+.mini_ui_pulldown .ui_widget-color-view {
 	position: absolute;
 	right: 4px;
 	top:7px;
@@ -95,6 +104,6 @@
 	border: 1px solid #333;
 }
  
-.mini.UI-widget-dropdown .track {
+.mini_ui_pulldown .track {
 	margin-right:55px;
 }

@@ -1,6 +1,6 @@
 UI.Widget.Color = Class.create(UI.Widget.Generic, {
   color_options: {
-    className: 'UI-widget-color',
+    className: 'ui_color_widget',
     trackWidth: 170,
     mode: 'rgb',
     value: 'dec',
@@ -45,7 +45,7 @@ UI.Widget.Color = Class.create(UI.Widget.Generic, {
     trackBlue.colorWidget = this;
     
     this.color = new Element('div', {
-      className: 'UI-widget-color-view'
+      className: 'ui_widget-color-view'
     });
     
     this.pulldown.insert(this.color).insert(trackRed).insert(sliderRed).insert(trackGreen).insert(sliderGreen).insert(trackBlue).insert(sliderBlue);
@@ -54,6 +54,7 @@ UI.Widget.Color = Class.create(UI.Widget.Generic, {
       unsetter_string = new Element('label').insert(this.options.defaultColorText);
       this.unsetter = new Element('input', {
         type: 'checkbox',
+        className: 'checkbox',
         checked: (this.input.value == '')
       });
       
@@ -96,9 +97,9 @@ UI.Widget.Color = Class.create(UI.Widget.Generic, {
     });
     
     this.preview = new Element('span', {
-      className: 'UI-widget-color-preview'
+      className: 'ui_widget-color-preview'
     });
-    this.container.down('.UI-widget-c').insert({
+    this.container.down('.ui_widget-c').insert({
       after: this.preview.insert('')
     });
     

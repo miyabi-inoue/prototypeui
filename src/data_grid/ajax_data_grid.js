@@ -41,6 +41,7 @@ UI.AjaxDataGrid = Class.create(UI.DataGrid, {
     
     if (this.sortColumn != column)
     {    
+      this.sortColumn.element.removeClassName('active');
       this.sortOrder = 'asc';
       this.sortColumn = column;
     }
@@ -53,6 +54,7 @@ UI.AjaxDataGrid = Class.create(UI.DataGrid, {
     this.load();
     
     this.sortDisplay.className = "sort" + this.sortOrder;
+    column.element.addClassName('active');
     column.element.firstDescendant().insert(this.sortDisplay);
     
     this.fire('sort', {column:this.sortColumn, order:this.sortOrder});

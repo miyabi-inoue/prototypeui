@@ -1,6 +1,6 @@
 UI.Widget.Date = Class.create(UI.Widget.Generic, {
   date_options: {
-    className: 'UI-widget-date',
+    className: 'ui_date_widget',
     format: '%m/%d/%Y',
     startWeekday: 1
   },

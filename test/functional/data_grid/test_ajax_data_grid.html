@@ -9,7 +9,7 @@
   <script src="../../../dist/data_grid.js" type="text/javascript"></script>      
   <script src="../../assets/runner.js" type="text/javascript"></script>
   <link href="../../../themes/data_grid/data_grid.css" rel="stylesheet" type="text/css" />
-  <link href="../../../themes/data_grid/ice.css" rel="stylesheet" type="text/css" />
+  <link href="../../../themes/data_grid/osx.css" rel="stylesheet" type="text/css" />
     
   <style type='text/css'>
    
@@ -55,7 +55,7 @@
 					width: 100
 				}
 			];
-	    w = new UI.AjaxDataGrid(columns, {url:'../../fixtures/data_grid.php', perPage:3}, {theme:'ice', heigth:300, rowsEvents:['click']});
+	    w = new UI.AjaxDataGrid(columns, {url:'../../fixtures/data_grid.php', perPage:3}, {theme:'osx', heigth:300, rowsEvents:['click']});
       $('container').insert(w);
       
       $A(w.columns).each(function(column){

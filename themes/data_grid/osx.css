@@ -1,0 +1,130 @@
+.osx_ui_datagrid 
+{
+  margin:  0px;
+  border:  0px;
+  padding: 0px;
+  font-family: Geneva, Arial, Helvetica, sans-serif;
+}
+
+.osx_ui_datagrid .overlay
+{
+  filter:alpha(opacity=30);
+  opacity: 0.3;
+  -moz-opacity: 0.3;
+}
+
+.osx_ui_datagrid .viewport
+{
+  border:1px solid #ccc;
+  background:white;
+}
+
+.osx_ui_datagrid .resizer
+{
+  width:2px;
+  background:#ddd;
+}
+
+.osx_ui_datagrid .head
+{
+  background:url(osx/bg.png) top repeat-x;
+}
+
+.osx_ui_datagrid .head .active
+{
+  background:url(osx/bg-s.png) top repeat-x;
+}
+
+.osx_ui_datagrid .header
+{
+  position:relative;
+  padding: 1px 2px;
+  cursor:pointer;
+  font-weight:normal;
+  text-align:left;
+  color:#000;
+  font-size:11px;
+}
+
+.osx_ui_datagrid .entry
+{
+  font-size:11px;
+  padding: 1px 3px 1px 2px;
+  color: #000;
+  text-align:left;
+  cursor:pointer;
+  border-right: 1px solid #d8d8d8;
+}
+
+.osx_ui_datagrid .body tr {
+  border-bottom: 1px solid #d8d8d8;
+}
+
+.osx_ui_datagrid .body tr:nth-child(odd)
+{
+  background: #fff;
+  border: none;
+}
+
+.osx_ui_datagrid .body tr:nth-child(even)
+{
+  background: #edf3fe;
+  border: none;
+}
+
+* html .osx_ui_datagrid .body tr {
+  border-bottom: 1px solid #d8d8d8;
+}
+
+.osx_ui_datagrid .body td:last-child .entry
+{
+  border-right:none;
+}
+
+.osx_ui_datagrid .resize_display
+{
+  width:1px;
+  background-color:#d8d8d8;
+}
+
+.osx_ui_datagrid .resize_hover
+{
+  filter:alpha(opacity=50);
+  opacity: 0.5;
+  -moz-opacity: 0.5;
+  background-color:#73bbd4;
+}
+
+.osx_ui_datagrid .sortasc,
+.osx_ui_datagrid .sortdesc {
+  position:absolute;
+  display:block;
+  top:0;
+  right:0;
+  width:11px;
+  height:17px;
+}
+.osx_ui_datagrid .sortdesc
+{
+  background:transparent url(osx/desc-s.png) no-repeat top right;
+}
+
+.osx_ui_datagrid .sortasc
+{
+  background:transparent url(osx/asc-s.png) no-repeat top right;
+}
+
+.osx_ui_datagrid .move_clone
+{
+  
+  background:url(osx/bg-s.png) top;
+  color:#000;
+  top:12px;
+}
+
+.osx_ui_datagrid .move_preview
+{
+  background:transparent url(osx/between.png) center no-repeat;
+  width: 20px;
+  margin-top:-2px;
+}

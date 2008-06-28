@@ -23,16 +23,18 @@ UI.Widget.Generic = Class.create(UI.Options, {
     this.input = $(input);
     
     this.output = new Element('span', {
-      className: 'UI-widget-c'
+      className: 'ui_widget-c'
     });
     
     this.container = new Element('span', {
-      className: 'UI-widget ' + this.options.className + ' ' + this.options.theme
+      className: 'ui_widget ' + (this.options.theme?' ' + this.options.theme+'_ui_widget':'')
     }).insert(new Element('span', {
-      className: 'UI-widget-w'
+      className: this.options.className 
+    }).insert(new Element('span', {
+      className: 'ui_widget-w'
     })).insert(this.output).insert(new Element('span', {
-      className: 'UI-widget-e'
-    }));
+      className: 'ui_widget-e'
+    })));
     
     this.container.onclick = this.show.bindAsEventListener(this);
     this.input.insert({
@@ -40,7 +42,7 @@ UI.Widget.Generic = Class.create(UI.Options, {
     });
     
     this.pulldown = new UI.PullDown(this.container, {
-      className: this.options.theme + ' ' + this.options.className,
+      className: (this.options.theme?'' + this.options.theme+'_ui_pulldown ':'') + this.options.className,
       shadow: this.options.shadow,
       position: this.options.placeDropdown,
       cloneWidth: false
@@ -49,7 +51,7 @@ UI.Widget.Generic = Class.create(UI.Options, {
     this.build();
     
     if (this.options.hideInput) {
-      this.container.addClassName('UI-widget-hidden-input');
+      this.container.down().addClassName('hidden-input');
       
       this.anchor = this.control;
       

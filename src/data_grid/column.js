@@ -181,7 +181,7 @@ UI.DataGridColumn = Class.create(UI.Options, {
 			display:'block',
 			height:height,
 			left:this.element.positionedOffset().left + 'px',
-			width: this.element.getWidth() + 'px'
+			width:this.element.getWidth() + 'px'
 		});
 		
 		document.body.style.cursor = 'col-resize';
@@ -235,10 +235,11 @@ UI.DataGridColumn = Class.create(UI.Options, {
 		}
 		
 		this.moveClone.setStyle({
+      position:'absolute',
 			display: 'block',
 			left:this.element.positionedOffset().left + 'px',
-			width: this.getWidth() + 'px',
-			top: this.element.getHeight() + 'px'
+			width:this.getWidth() + 'px',
+			top:this.element.getHeight() + 'px'
 		}).update(this.header.innerHTML);
 		
 		this.dataGrid.overlay(true);

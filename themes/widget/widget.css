@@ -1,8 +1,8 @@
-.UI-widget  {
+.ui_widget  {
 	cursor:pointer;
 }
 
-.UI-widget-selection-dropdown ul {
+.ui_pulldown ul {
 	padding:0;
 	margin:0 -5px;
 
@@ -11,7 +11,7 @@
    height: 1%;
 }
 
-.UI-widget-selection-dropdown li {
+.ui_pulldown li {
   cursor: pointer;
   overflow: hidden;
   padding: 0 5px;
@@ -19,27 +19,27 @@
   width:auto;
 }
 
-.UI-widget-selection-dropdown li.selected span {
+.ui_pulldown li.selected span {
 	
 }
 
-.UI-widget-selection-dropdown li:hover {
+.ui_pulldown li:hover {
 	background: #369;
 	color: #fff;
 	
 }
 
-.UI-widget-color-dropdown label {
+.ui_pulldown label {
 	width:auto;
 	display:inline;
 	float:none;
 }
 
-.UI-widget-ajax-dropdown label {
+.ui_pulldown label {
 	width:100px;
 }
 
-.UI-widget-dropdown .track {
+.ui_pulldown .track {
 	position:relative;
 	top:5px;
 	height:5px;
@@ -50,7 +50,7 @@
 	border: 1px inset #a5a5a5;
 }
 
-.UI-widget-dropdown .slider {
+.ui_pulldown .slider {
 	position:relative;
 	top: -4px;
 	width:4px;

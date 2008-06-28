@@ -16,7 +16,7 @@ UI.DataGrid = Class.create(UI.Options, {
 		this.rows = [];
 		this.create();
 		$A(columns).each(this.addColumn.bind(this));
-                this.optionsGetter('height', 'theme');
+    this.optionsGetter('height', 'theme');
 	},
 	
 	addColumn: function(options)
@@ -53,11 +53,20 @@ UI.DataGrid = Class.create(UI.Options, {
     this.columns.each(row.displayColumn.bind(row));
     return this;
 	},
-	
+  
+  expandThemeToClassName: function(theme) {
+    return (theme?theme+'_ui_datagrid':'');
+  },
+  
 	setTheme: function(theme) {
-	    this.element.removeClassName(this.getTheme()).addClassName(theme);
-	    return this;
-  	},
+    var old=this.getTheme();
+    this.options.theme = theme;
+    if(old)
+      this.element.removeClassName(this.expandThemeToClassName(old));
+    if(this.options.theme && this.element)
+      this.element.addClassName(this.expandThemeToClassName(this.options.theme));
+    return this;
+	},
         
 	setHeight: function(height)
 	{
@@ -78,6 +87,8 @@ UI.DataGrid = Class.create(UI.Options, {
 		if (this.sortColumn != column)
 		{
 			var sortMethod = UI.DataGrid.sortMethod[column.getSort()], flaggedRows = [], cellIndex = column.getIndex();
+      if(this.sortColumn)
+        this.sortColumn.element.removeClassName('active');
 
 			$A(tbody.rows).each(function(row){
 				flaggedRows.push([UI.DataGrid.getSortText(row.cells[cellIndex]), row]);
@@ -106,6 +117,7 @@ UI.DataGrid = Class.create(UI.Options, {
 		}
 		
 		this.sortDisplay.className = "sort" + order;
+    column.element.addClassName('active');
 		column.element.firstDescendant().insert(this.sortDisplay);
 		
 		this.fire('sort', {column:column, order:order});
@@ -133,7 +145,7 @@ UI.DataGrid = Class.create(UI.Options, {
 	create: function()
 	{
 		// Main Div
-		this.element = new Element('div', {className: 'ui-datagrid ' + this.getTheme()});
+		this.element = new Element('div', {className: 'ui-datagrid ' + this.expandThemeToClassName(this.getTheme())});
 		
 		// Container
 		this.viewport = new Element('div', {className: 'viewport'})

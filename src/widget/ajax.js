@@ -1,6 +1,6 @@
 UI.Widget.Ajax = Class.create(UI.Widget.Generic, {
   color_options: {
-    className: 'UI-widget-ajax',
+    className: 'ui_ajax_widget',
     src: false,
     onComplete: false
   },

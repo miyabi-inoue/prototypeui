@@ -15,6 +15,7 @@ PUI_DEPENDENCIES = {
   :context_menu  => [ :shadow, :"util/iframe_shim.js"],
   :auto_complete => [ :shadow, :"util/iframe_shim.js"],
   :calendar      => :"util/date.js",
+  :widget        => [ :shadow, :"util/iframe_shim.js"],
   :tabbox        => nil,
   :data_grid     => :util
 }

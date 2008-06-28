@@ -16,7 +16,7 @@ UI.PullDown = Class.create(UI.Options, {
 		this.container = $(container);
         
     this.element = new Element('div', {
-      className: 'UI-widget-dropdown ' + this.options.className,
+      className: 'ui_pulldown ' + this.options.className,
       style: 'z-index:999999;position:absolute;'
     }).hide();
         

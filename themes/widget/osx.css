@@ -1,0 +1,170 @@
+.osx_ui_widget {
+	display: block;
+	float:left;
+	position:relative;
+}
+
+.osx_ui_widget .hidden-input .ui_widget-w {
+	display: block;
+	float:left;
+	background: url(osx/w.png) top left no-repeat;
+	padding: 1px 0;
+	width:8px;
+	height: 21px;
+	margin: 0;
+	border: none;
+}
+
+.osx_ui_widget .ui_widget-e {
+	display: block;
+	float:left;
+	background: url(osx/e.png) top right no-repeat;
+	padding: 1px 0;
+	height: 21px;
+	width: 17px;
+	margin:0;
+}
+
+.osx_ui_widget .ui_widget-c {
+	font: 13px "Lucida Grande", arial, sans-serif;
+	position:relative;
+	display: block;
+	float:left;
+	background: url(osx/c.png) top left repeat-x;
+	margin: 0;
+	padding: 3px 0;
+	height: 17px;
+}
+
+* html .osx_ui_widget .ui_widget-c {
+  height: 16px;  
+}
+
+.osx_ui_widget .hidden-input .ui_widget-c {
+	padding-right:8px;
+}
+
+.osx_ui_widget input {
+	float:left;
+	line-height: 13px;
+	height: 17px;
+	margin: 0;
+	padding: 1px 3px;
+	border: 1px solid #7e7e7e;
+	font: 13px "Lucida Grande", arial, sans-serif;
+}
+
+.osx_ui_widget .ui_widget-output {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	font: 13px "Lucida Grande", arial, sans-serif;
+	line-height: 13px;
+	top: 4px;
+}
+
+.osx_ui_widget input.transparent {
+	line-height: 13px;
+	height: 15px;
+	border: none;
+	font: 13px "Lucida Grande", arial, sans-serif;
+	background: transparent;
+}
+
+.osx_ui_pulldown {
+	border: none;
+	padding:0;
+	background: #fff;
+	font: 13px "Lucida Grande", arial, sans-serif;
+}
+
+.osx_ui_widget .ui_date_widget input {
+	width:8em;
+}
+
+.osx_ui_widget .ui_selection_widget .ui_widget-e {
+	background: transparent url(osx/selection-e.png) top right no-repeat;
+	width:21px;
+}
+
+.osx_ui_widget .ui_color_widget input {
+	width:7em;
+}
+
+.osx_ui_pulldown input.checkbox {
+	width:12px;
+}
+
+.osx_ui_widget .ui_widget-color-preview {
+	display: block;
+	float:left;
+	padding: 0;
+	width: 20px;
+	height: 21px;
+	background: url(osx/color-c.png) top right no-repeat;
+}
+
+* html .osx_ui_widget .ui_widget-color-preview {
+  width:14px;
+  line-height:1px;
+}
+
+.osx_ui_pulldown ul {
+  padding:0;
+  margin:0;
+  list-style: none;
+}
+
+
+.osx_ui_pulldown li {
+	line-height: 18px;
+}
+
+.osx_ui_pulldown li span {
+	padding-left: 20px;
+  padding-right:10px;
+}
+
+.osx_ui_pulldown li.selected span {
+	background: transparent url(osx/selected.png) center left no-repeat;
+}
+
+.osx_ui_pulldown li.selected:hover span {
+	background: transparent url(osx/selected_hover.png) center left no-repeat;
+}
+
+.osx_ui_pulldown li:hover {
+	background: url(osx/selected_bg.png) #1a43f3 top repeat-x;
+	color: #fff;
+}
+
+
+.osx_ui_pulldown .ui_color_pulldown {
+	padding: 0;	
+}
+
+.osx_ui_pulldown .ui_widget-color-view {
+	position: absolute;
+	right:4px;
+	top:10px;
+	width: 57px;
+	height: 57px;
+	border: 1px inset #999;
+}
+
+.osx_ui_pulldown .track {
+	position: relative;
+	top:10px;
+	margin: 0 5px;
+	margin-right:70px;
+	padding: 0 6px;
+}
+
+.osx_ui_pulldown .slider {
+	top: -3px;
+	margin-left: 2px;
+	width: 19px;
+	height: 19px;
+	background: transparent url(osx/slider.png) center no-repeat;
+	border: none;
+}

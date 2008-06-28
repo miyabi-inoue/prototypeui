@@ -1,6 +1,6 @@
 UI.Widget.Selection = Class.create(UI.Widget.Generic, {
   select_options: {
-    className: 'UI-widget-selection',
+    className: 'ui_selection_widget',
     hideInput: true,
     placeDropdown: 'over',
     options: []
