@@ -1,7 +1,7 @@
 UI.Tabbox = Class.create(UI.Options, {
   // Group: Options
   options: {
-
+    theme: ''
   },
  
   // Group: Contructor
@@ -26,7 +26,7 @@ UI.Tabbox = Class.create(UI.Options, {
     this.tabs                  = new Hash;
 
     this.element.childElements().invoke('hide');
-    this.element.addClassName(this.options.theme);
+    this.element.addClassName('ui_tabbox'+(this.options.theme?' '+this.options.theme+'_ui_tabbox':''));
     
     this.head=new Element('div',{className:'tabbox_head'});
     

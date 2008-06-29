@@ -1,4 +1,4 @@
-.mac_os_x div.tabbox_head {
+.osx_ui_tabbox div.tabbox_head {
   border-right:1px solid #a5a5a5;
   background: #D3D9E2;
   overflow: auto;
@@ -16,7 +16,7 @@
   background: #e8e8e8;
 }
 
-.mac_os_x .tabbox_head span {
+.osx_ui_tabbox .tabbox_head span {
   display: block;
   float:none;
   background: #D3D9E2;
@@ -26,7 +26,7 @@
   height:auto;
 }
 
-.mac_os_x .tabbox_head span.separator {
+.osx_ui_tabbox .tabbox_head span.separator {
   font-size: 1px;
   height:1px;
   line-height:1px;
@@ -34,7 +34,7 @@
   border-bottom:1px solid #a5a5a5;
 }
 
-.mac_os_x .tabbox_head span span {
+.osx_ui_tabbox .tabbox_head span span {
   display: inline;
   padding: 0;
   background-image: none;
@@ -45,33 +45,33 @@
   float:none;
 }
 
-.mac_os_x .tabbox_head img {
+.osx_ui_tabbox .tabbox_head img {
   position: relative;
   margin-right: 5px;
   top: 3px;
 }
 
-.mac_os_x .tabbox_head span.selected {
-  background: url(mac_os_x/selectedline.png) top repeat-x  #7285ac;
+.osx_ui_tabbox .tabbox_head span.selected {
+  background: url(osx/selectedline.png) top repeat-x  #7285ac;
   color: #fff;
 }
 
-.null_focused .mac_os_x .tabbox_head span.selected {
-  background: url(mac_os_x/selectedline_inactive.png) top repeat-x  #8c8c8c;
+.null_focused .osx_ui_tabbox .tabbox_head span.selected {
+  background: url(osx/selectedline_inactive.png) top repeat-x  #8c8c8c;
 }
 
-.mac_os_x .tabbox_head span.selected span {
+.osx_ui_tabbox .tabbox_head span.selected span {
   background:none;
 }
 
-.mac_os_x .tabbox_head span span.tab_w,
-.mac_os_x .tabbox_head span span.tab_e,
-.mac_os_x .tabbox_head span.selected span.tab_w,
-.mac_os_x .tabbox_head span.selected span.tab_e {
+.osx_ui_tabbox .tabbox_head span span.tab_w,
+.osx_ui_tabbox .tabbox_head span span.tab_e,
+.osx_ui_tabbox .tabbox_head span.selected span.tab_w,
+.osx_ui_tabbox .tabbox_head span.selected span.tab_e {
   display:none;
 }
 
-.mac_os_x div.tabbox_body {
+.osx_ui_tabbox div.tabbox_body {
   border:none;
   overflow: auto;
   position: absolute;

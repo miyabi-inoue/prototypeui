@@ -10,7 +10,7 @@
     <script src="../../../dist/util.js" type="text/javascript"></script>
     <script src="../../../src/tabbox/tabbox.js" type="text/javascript"></script>
     <link href="../../../themes/tabbox/aqua.css" rel="stylesheet" type="text/css" />
-    <link href="../../../themes/tabbox/mac_os_x.css" rel="stylesheet" type="text/css" />
+    <link href="../../../themes/tabbox/osx.css" rel="stylesheet" type="text/css" />
   </head>
   
   <body id="test">    
@@ -62,7 +62,7 @@
           name:'tab3',
           lable:'Content by parameter',
           content:'Testcontent'
-        }],{theme:'mac_os_x'}).select('tab1');  
+        }],{theme:'osx'}).select('tab1');  
         
         t.observe('selected',function(selected){$('console').insert(new Element('div').insert('Selected '+this.selectedTab.name+' on inner Tabbox'))});
         

@@ -11,7 +11,7 @@
     <link href="../../../themes/window/window.css" rel="stylesheet" type="text/css" />
     <link href="../../../themes/window/leopard.css" rel="stylesheet" type="text/css" />
     <link href="../../../themes/shadow/mac_shadow.css" rel="stylesheet" type="text/css" />
-    <link href="../../../themes/tabbox/mac_os_x.css" rel="stylesheet" type="text/css" />
+    <link href="../../../themes/tabbox/osx.css" rel="stylesheet" type="text/css" />
     <style>
       .ui-dialog-buttons {
         border-top:1px solid #A5A5A5;
@@ -70,7 +70,7 @@
           name:'tab3',
           lable:'Content by parameter',
           content:'Testcontent'
-        }],{theme:'mac_os_x'}).select('tab1');  
+        }],{theme:'osx'}).select('tab1');  
         
         t.observe('selected',function(selected){$('console').insert(new Element('div').insert('Selected '+this.selectedTab.name+' on first Tabbox'))});
         
