@@ -141,8 +141,6 @@
         if($$('li.active').length)
           $$('li.active')[0].removeClassName('active');
         Event.element(e).up('li').addClassName('active');
-
-        $('.active').style.border='10px solid red';
       }
       
       $$('li').each(function(element){element.observe('click',toggle)});
