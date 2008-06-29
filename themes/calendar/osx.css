@@ -1,6 +1,7 @@
-.osx_ui_calendar .ui_calendar_container {
+.osx_ui_calendar {
   padding: 5px;
   font-size:10px;
+  font-family: "Lucida Grande","Bitstream Vera Sans","Verdana",sans-serif;
 }
 .osx_ui_calendar table {
   border-collapse: collapse;
@@ -9,6 +10,7 @@
 .osx_ui_calendar th { 
   vertical-align: middle; 
   width: 1.8em;
+  font-size:10px;
 }
 .osx_ui_calendar th .prev, 
 .osx_ui_calendar th .next {
@@ -41,6 +43,7 @@
 .osx_ui_calendar td {
   background: #ffffff url(osx/day-sprite.png) repeat-x -32px 0px;
   text-align: center;
+  font-size:10px;
   height: 16px;
   line-height: 16px;
 }

@@ -1,5 +1,6 @@
-.ical_ui_calendar .ui_calendar_container {
+.ical_ui_calendar {
   background: transparent url(ical/container-background.png) top left repeat-x;
+  font-family: "Lucida Grande","Bitstream Vera Sans","Verdana",sans-serif;
 }
 .ical_ui_calendar table {
   border-collapse: collapse;
@@ -17,15 +18,24 @@
   height: 36px;
   background: transparent url(ical/thead-background.png) top left repeat-x;
 }
-.ical_ui_calendar td, .ical_ui_calendar td a {
-  font-size: 9pt;
+.ical_ui_calendar th, .ical_ui_calendar td, .ical_ui_calendar td a {
+  font-size: 12px;
   font-weight: bold;
   text-align: center;
   color: #333333;
+  text-shadow: 1px 1px 1px #fff;
 }
 .ical_ui_calendar td a {
   display: block;
   text-decoration:none;
+  text-shadow: 1px 1px 1px #fff;
+}
+.ical_ui_calendar th.dayname {
+  font-size: 9px;
+  color: #2b4c75;
+  text-shadow: 1px 1px 1px #fff;
+  line-height: 14px;
+  background: transparent url(ical/thead-background.png) 0px -15px repeat-x ;
 }
 .ical_ui_calendar td.selected { 
   background: #0072e2 url(ical/selected-cell.png) top left repeat-x;
@@ -49,9 +59,10 @@
 .ical_ui_calendar th .prev, 
 .ical_ui_calendar th .next {
   cursor: pointer;
-  top: 0pt;
+  top: 5px;
   bottom: 0pt;
   width: 13px;
+  height:13px;
   display: block;
   position: absolute;
 } 
@@ -66,5 +77,9 @@
   background: transparent url(ical/buttons-sprite.png) no-repeat -26px 0px;
 }
 .ical_ui_calendar .header a {
-  color: #3c3c3c;
+  color: #2b4c75;
+  text-shadow: 1px 1px 1px #fff;
+}
+.ical_ui_calendar .header {
+  height: 15px;
 }
