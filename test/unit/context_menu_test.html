@@ -11,7 +11,7 @@
   <script src="../lib/event_simulate_mouse.js" type="text/javascript"></script>
   <script src="../../dist/prototype-ui.js" type="text/javascript"></script>
   <link href="../../themes/context_menu/context_menu.css" rel="stylesheet" type="text/css" />
-  <link href="../../themes/context_menu/mac_os_x.css" rel="stylesheet" type="text/css" />
+  <link href="../../themes/context_menu/osx.css" rel="stylesheet" type="text/css" />
   <link href="../../themes/context_menu/desktop.css" rel="stylesheet" type="text/css" />
   <link href="../../themes/shadow/mac_shadow.css" rel="stylesheet" type="text/css" />
 
@@ -79,17 +79,17 @@
       
       var myMenu = new UI.ContextMenu({
         selector: '#contextArea',
-        className: 'menu desktop',
+        theme: 'desktop',
         menuItems: myMenuItems
       })
       
       var myMacMenu = new UI.ContextMenu({
         selector: '#contextAreaMacOsX',
-        className: 'menu mac_os_x',
+        theme: 'osx',
         menuItems: myMenuItems
       })
       
-      var menuElement = $$('div.menu')[0],
+      var menuElement = $$('div.ui_menu')[0],
           iframeElement = $$('iframe')[0],
           shadowElement = $$('.shadow_container')[0],
           POINTER_X = 50,
@@ -137,13 +137,14 @@
         }},
         
         testContainerClassName: function(){ with(this) {
-          assert(menuElement.hasClassName('desktop'));
-          assert(menuElement.hasClassName('menu'));
+          assert(menuElement.hasClassName('desktop_ui_menu'));
+          assert(menuElement.hasClassName('ui_menu'));
         }},
         
         testContainerMarkup: function(){ with(this) {
-          assertEqual(4, menuElement.select('li a').length);
-          assertEqual(1, menuElement.select('li span').length);
+          //4 active + 1 inactive + 2 submenu = 7 items
+          assertEqual(7, menuElement.select('li a').length);
+          assertEqual(1, menuElement.select('li a.disabled').length);
         }},
         
         testFirstItem: function(){ with(this) {
@@ -165,7 +166,7 @@
         }},
         
         testSeparator: function(){ with(this) {
-          var separator = menuElement.select('li')[2].down();
+          var separator = menuElement.select('li')[2];
           
           assertEqual('', separator.innerHTML);
           assertNull(separator.readAttribute('href'));
@@ -224,8 +225,8 @@
             pointerX: 150,
             pointerY: 150
           });
-          assertVisible($$('.menu.mac_os_x')[0]);
-          assertNotVisible($$('.menu.desktop')[0]);
+          assertVisible($$('.osx_ui_menu')[0]);
+          assertNotVisible($$('.desktop_ui_menu')[0]);
         }}
       })
     }

@@ -1,0 +1,182 @@
+.osx .nw {
+	background:transparent url(osx/top_unactive.gif) no-repeat scroll 0px 0px;
+	height:22px;
+	padding-left:10px;
+}      
+
+.osx_focused .nw {
+	background:transparent url(osx/top.gif) no-repeat scroll 0px 0px !important;
+}       
+
+.osx .ne {
+	background:transparent url(osx/top_unactive.gif) no-repeat scroll right -44px;
+	height:22px;
+	padding-right:10px;
+}
+
+.osx_focused .ne {
+	background:transparent url(osx/top.gif) no-repeat scroll right -44px !important;
+}
+
+.osx .n {
+	background:transparent url(osx/top_unactive.gif) repeat-x scroll right -22px;
+	color:#17385B;
+	font:normal 14px/26px Arial, sans-serif;
+	height:22px;
+	margin:0;
+	padding:0;
+	text-align:center;
+	overflow: hidden;
+	padding-left:60px;
+	line-height: 20px; 
+	color: #000;
+}
+
+.osx_focused .n {
+	background:transparent url(osx/top.gif) repeat-x scroll right -22px !important;
+}
+
+.osx .content {
+	background:#FFF;
+	color:#000;
+	font:normal 12px/1em Verdana, Arial, sans-serif;
+	overflow:auto;
+}
+
+.osx .w {
+	border-left:1px solid #DDD;
+	border-right:1px solid #DDD;
+}
+
+.osx .e {
+	border-left:1px solid #EEE;
+	border-right:1px solid #EEE;
+}
+
+.osx .sw {
+	background:transparent url(osx/bottom_unactive.gif) no-repeat scroll 0 0px;
+	font-size:2px;
+	height:22px;
+	padding-left:25px;
+}
+
+.osx_focused .sw {
+	background:transparent url(osx/bottom.gif) no-repeat scroll 0 0px !important;
+}
+
+.osx .se {
+	background:transparent url(osx/bottom_unactive.gif) no-repeat scroll right -44px;
+	font-size:2px;
+	height:22px;
+	padding-right:25px;
+}
+
+.osx_focused .se {
+	background:transparent url(osx/bottom.gif) no-repeat scroll right -44px !important;
+}
+
+.osx .se_resize_handle {
+	background:transparent url(osx/bottom_unactive.gif) no-repeat scroll right -66px;
+	font-size:2px;
+	height:22px;
+	padding-right:25px;
+}
+      
+.osx_focused .se_resize_handle {
+	background:transparent url(osx/bottom.gif) no-repeat scroll right -66px !important;
+}
+
+.osx .s {
+	background:transparent url(osx/bottom_unactive.gif) repeat-x scroll 0 -22px;
+	font-size:12px;
+	line-height: 22px;
+	height:22px;
+	overflow:hidden;
+} 
+
+.osx .se_sizer { 
+  width:22px;
+  height:22px;
+}          
+
+.osx_focused .s {
+	background:transparent url(osx/bottom.gif) repeat-x scroll 0 -22px !important;
+}
+
+.osx .buttons {
+  position: absolute;
+  top:1px;
+  left:7px;
+  height: 20px;   
+}
+
+.osx .buttons a.close {
+  float:left;
+	background:transparent url(osx/button_unactive.gif) no-repeat 0 0;
+	height:15px;
+	width:14px;
+	margin: 2px 7px 0 0px;  
+	padding-top:0px; /* padding-top = buttons order, it will be reset to 0, do not use padding, use margin*/ 
+	overflow:hidden;
+}
+  
+.osx_focused .buttons a.close {
+	background:transparent url(osx/buttons.gif) no-repeat 0 0 !important;    
+}
+
+.osx .buttons.over a.close {
+	background:transparent url(osx/buttons_over.gif) no-repeat 0 0px !important; 
+}
+
+.osx .buttons a.maximize {
+  float:left;
+	background:transparent url(osx/button_unactive.gif) no-repeat 0 0;
+	height:15px;
+	width:14px;
+	margin: 2px 7px 0 0;
+	padding-top:2px; /* padding-top = buttons order, it will be reset to 0, do not use padding, use margin*/ 
+	overflow:hidden;
+}
+  
+.osx_focused .buttons a.maximize {
+	background:transparent url(osx/buttons.gif) no-repeat 0 -30px !important;
+}
+
+.osx .buttons.over a.maximize {
+	background:transparent url(osx/buttons_over.gif) no-repeat 0 -30px !important;  
+}
+
+.osx .buttons a.minimize {
+  float:left;
+	background:transparent url(osx/button_unactive.gif) no-repeat 0 0;
+	height:15px;
+	width:14px;
+	margin: 2px 7px 0 0;
+	padding-top:1px; /* padding-top = buttons order, it will be reset to 0, do not use padding, use margin*/ 
+	overflow:hidden;
+}  
+
+.osx_focused .buttons a.minimize {
+	background:transparent url(osx/buttons.gif) no-repeat 0 -15px !important;
+}
+
+.osx .buttons.over a.minimize {
+	background:transparent url(osx/buttons_over.gif) no-repeat 0 -15px !important;
+}
+
+.osx .buttons a.minimize.disabled, .osx .buttons.over a.minimize_disabled  {
+	background:transparent url(osx/button_unactive.gif) no-repeat 0 0  !important; 
+}
+
+.osx_overlay {
+	position:absolute;
+	top:0;            
+	left:0;
+	width:100%;
+	background-color:#DDD;
+	filter:alpha(opacity=60);
+	opacity: 0.6;
+	-moz-opacity: 0.6;
+}
+
+

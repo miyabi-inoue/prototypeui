@@ -11,27 +11,27 @@
 	opacity: 0.6;
 }
 
-.ui-window.ice .nw
+.ice .nw
 {
   background:transparent url(ice/blur/nw.png) no-repeat;
   height:36px;
 }
-.ui-window.ice_focused .nw
+.ice_focused .nw
 {
   background:transparent url(ice/focus/nw.png) no-repeat;
 }
 
-.ui-window.ice .ne
+.ice .ne
 {
   background:transparent url(ice/blur/ne.png) no-repeat right;
   height:36px;
 }
-.ui-window.ice_focused .ne
+.ice_focused .ne
 {
   background:transparent url(ice/focus/ne.png) no-repeat right;
 }
 
-.ui-window.ice .n
+.ice .n
 {
   font-size: 14px;
   line-height: 30px;
@@ -42,42 +42,42 @@
   background:transparent url(ice/blur/n.png) repeat-x scroll 0 0px;
   margin: 0px 21px;
 }
-.ui-window.ice_focused .n
+.ice_focused .n
 {
   color:black;
   background:transparent url(ice/focus/n.png) repeat-x scroll 0 0px;
 }
 
-.ui-window.ice .sw
+.ice .sw
 {
   background:transparent url(ice/blur/sw.png) no-repeat;
   height:24px;
 }
-.ui-window.ice_focused .sw
+.ice_focused .sw
 {
   background:transparent url(ice/focus/sw.png) no-repeat;
 }
 
-.ui-window.ice .se
+.ice .se
 {
   height:24px;
   background:transparent url(ice/blur/se.png) no-repeat right;
 }
-.ui-window.ice_focused .se
+.ice_focused .se
 {
   background:transparent url(ice/focus/se.png) no-repeat right;
 }
 
-.ui-window.resizable.ice .se
+.ice .se_resize_handle
 {
   background:transparent url(ice/blur/se_resizeable.png) no-repeat right;
 }
-.ui-window.resizable.ice_focused .se
+.ice_focused .se_resize_handle
 {
   background:transparent url(ice/focus/se_resizeable.png) no-repeat right;
 }
 
-.ui-window.ice .s
+.ice .s
 {
   background:transparent url(ice/blur/s.png) repeat-x scroll 0 0px;
   height:24px;
@@ -86,31 +86,31 @@
   line-height: 31px;
   color: #d8d8d8;
 }
-.ui-window.ice_focused .s
+.ice_focused .s
 {
   background:transparent url(ice/focus/s.png) repeat-x scroll 0 0px;
   color:black;
 }
 
-.ui-window.ice .w
+.ice .w
 {
   background:transparent url(ice/blur/w.png) repeat-y left;
 }
-.ui-window.ice_focused .w
+.ice_focused .w
 {
   background:transparent url(ice/focus/w.png) repeat-y left;
 }
 
-.ui-window.ice .e
+.ice .e
 {
   background:transparent url(ice/blur/e.png) repeat-y right;
 }
-.ui-window.ice_focused .e
+.ice_focused .e
 {
   background:transparent url(ice/focus/e.png) repeat-y right;
 }
 
-.ui-window.ice .content
+.ice .content
 {
   background:white;
   margin:0px 21px;
@@ -118,7 +118,7 @@
   font-family: Verdana;
 }
 
-.ui-window.ice .buttons
+.ice .buttons
 {
   position: absolute;
     top:13px;
@@ -128,14 +128,14 @@
   opacity: 0.6;
 }
 
-.ui-window.ice .buttons:hover
+.ice .buttons:hover
 {
   filter:alpha(opacity=100);
   -moz-opacity: 1;
   opacity: 1;
 }
 
-.ui-window.ice .buttons a
+.ice .buttons a
 {
   display:block;
   width:17px;
@@ -144,17 +144,17 @@
   margin-left:2px;
 }
 
-.ui-window.ice .buttons a:hover
+.ice .buttons a:hover
 {
   height: 19px;
 }
 
-.ui-window.ice .buttons a.minimize
+.ice .buttons a.minimize
 {
   background:transparent url(ice/minimize.png) no-repeat;
 }
 
-.ui-window.ice .buttons a.minimize.disabled
+.ice .buttons a.minimize.disabled
 {
   filter:alpha(opacity=60);
   -moz-opacity: 0.6;
@@ -162,12 +162,12 @@
   cursor: default !important;
 }
 
-.ui-window.ice .buttons a.close
+.ice .buttons a.close
 {
   background:transparent url(ice/close.png) no-repeat;
 }
 
-.ui-window.ice .buttons a.maximize
+.ice .buttons a.maximize
 {
   background:transparent url(ice/maximize.png) no-repeat;
 }

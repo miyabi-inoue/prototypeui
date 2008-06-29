@@ -8,7 +8,7 @@ var TestHelper = {
                'window/window_manager ' +    
                'shadow/shadow ' +
                'dock/dock ' + '../test/assets/runner'),
-  cssFiles: $w("windows/window windows/alphacube windows/mac_os_x windows/leopard windows/lighting windows/vista shadows/mac_shadow shadows/drop_shadow"),
+  cssFiles: $w("windows/window windows/alphacube windows/osx windows/aqua windows/lighting windows/vista shadows/mac_shadow shadows/drop_shadow"),
   
   requireJS: function(libraryName) {
     // inserting via DOM fails in Safari 2.0, so brute force approach
