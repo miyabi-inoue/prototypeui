@@ -13,8 +13,8 @@
   <link href="../../../themes/context_menu/firefox.css" rel="stylesheet" type="text/css" />
   <link href="../../../themes/context_menu/google.css" rel="stylesheet" type="text/css" />
   <link href="../../../themes/context_menu/desktop.css" rel="stylesheet" type="text/css" />
-  <link href="../../../themes/context_menu/mac_os_x.css" rel="stylesheet" type="text/css" />
-  <link href="../../../themes/context_menu/leopard.css" rel="stylesheet" type="text/css" />
+  <link href="../../../themes/context_menu/aqua.css" rel="stylesheet" type="text/css" />
+  <link href="../../../themes/context_menu/osx.css" rel="stylesheet" type="text/css" />
   
   <link href="../../../themes/shadow/leopard.css" rel="stylesheet" type="text/css" /> 
   <link href="../../../themes/shadow/mac_shadow.css" rel="stylesheet" type="text/css" />
@@ -107,13 +107,13 @@
       
       new UI.ContextMenu({
         selector: '#contextArea',
-        className: 'menu desktop',
+        theme: 'desktop',
         menuItems: myMenuItems
       });
       
       new UI.ContextMenu({
         selector: '#contextAreaMacOsX',
-        className: 'menu mac_os_x',
+        theme: 'aqua',
         menuItems: myMenuItems
       });
     }  

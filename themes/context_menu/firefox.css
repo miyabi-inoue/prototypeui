@@ -1,33 +1,33 @@
 /* FIREFOX STYLES */
 
-.menu.firefox {
+.firefox_ui_menu {
 	width: 12em;
 	background: #F4F5EB;
 } 
-.menu.firefox ul {
+.firefox_ui_menu ul {
 	border-top: 1px solid #ddd;
 	border-left: 1px solid #ddd;
 	border-right: 1px solid #666;
 	border-bottom: 1px solid #666;
 	padding: 2px 0;
 }
-.menu.firefox a {
+.firefox_ui_menu a {
 	color: #555;
 	padding: 4px 15px;
 	margin: 0 2px;
 }
-.menu.firefox a:hover {
+.firefox_ui_menu a:hover {
 	background: #006;
 	color: #fff;
 }
-.menu.firefox a.disabled {
+.firefox_ui_menu a.disabled {
 	color: #bbb;
 }
-.menu.firefox a.disabled:hover {
+.firefox_ui_menu a.disabled:hover {
 	background: #F4F5EB;
 	color: #bbb;
 }
-.menu.firefox .separator {
+.firefox_ui_menu .separator {
 	border-bottom: 1px solid #fff;
 	background: #999;
 	margin: 2px 4px;

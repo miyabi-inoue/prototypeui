@@ -1,13 +1,13 @@
 /* MAC OS X STYLES */
 
-.menu.leopard {
+.osx_ui_menu {
 	width: 12em; 
 	background:#FFF;
 }
-.menu.leopard ul {
+.osx_ui_menu ul {
 	padding: 2px 0;
 }                 
-.menu.leopard a {
+.osx_ui_menu a {
 	color: #333;
 	padding: 0px 15px;
 	margin: 0 0px;
@@ -16,18 +16,18 @@
 	height:22px;
 	line-height:22px;
 }
-.menu.leopard a:hover {
-	background: url(leopard/selected_bg.png);
+.osx_ui_menu a:hover {
+	background: url(osx/selected_bg.png);
 	color: #fff;
 }
-.menu.leopard a.disabled {
+.osx_ui_menu a.disabled {
 	color: #bbb;
 }
-.menu.leopard a.disabled:hover {
+.osx_ui_menu a.disabled:hover {
 	background: #FFF;
 	color: #bbb;
 }
-.menu.leopard .separator {
+.osx_ui_menu .separator {
 	background: #e2e4e3;
 	height: 1px;
 	margin: 2px;

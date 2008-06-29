@@ -1,32 +1,32 @@
 /* GOOGLE STYLES */
 
-.menu.google {
+.google_ui_menu {
 	width: 10.5em;
 	background: #fff;
 }
-.menu.google ul {
+.google_ui_menu ul {
 	border-top: 1px solid #ccc;
 	border-left: 1px solid #ccc;
 	border-bottom: 1px solid #676767;
 	border-right: 1px solid #676767;
 }
-.menu.google a {
+.google_ui_menu a {
 	color: #00c;
 	text-decoration: none;
 	padding: 2px 5px;
 	cursor: pointer;
 	font-size: 12px;
 }
-.menu.google a:hover {
+.google_ui_menu a:hover {
 	background: #D3E3FE;
 }
-.menu.google a.disabled {
+.google_ui_menu a.disabled {
 	color: #bbb;
 }
-.menu.google a.disabled:hover {
+.google_ui_menu a.disabled:hover {
 	background: #fff;
 	color: #bbb;
 }
-.menu.google .separator {
+.google_ui_menu .separator {
 	background: #ccc;
 }

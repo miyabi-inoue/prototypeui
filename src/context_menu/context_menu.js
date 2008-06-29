@@ -39,9 +39,9 @@
 UI.ContextMenu = Class.create(UI.Options, {
   // Group: Options
   options: {
-    // Property: className
-    //   class to be applied to menu element, default is 'ui-context_menu'
-    className: 'ui-context_menu',
+    // Property: theme
+    //   theme to be applied to menu element, default is none
+    theme: '',
     
     // Property: beforeShow
     //   beforeShow: function to be called before menu element is shown,
@@ -115,7 +115,7 @@ UI.ContextMenu = Class.create(UI.Options, {
   
   create: function() {
     this.element = new Element('div', {
-      className: this.options.className,
+      className: 'ui_menu'+(this.options.theme?' '+this.options.theme+'_ui_menu':''),
       style: 'display: none'
     });
     this.element.insert(this.createList(this.options.menuItems));
