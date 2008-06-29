@@ -9,8 +9,8 @@
    <script src="../../../src/progress/progress.js" type="text/javascript"></script>
 
   <link href="../../../themes/progress/progress.css" rel="stylesheet" type="text/css">
-  <link href="../../../themes/progress/mac_os_x.css" rel="stylesheet" type="text/css">
-  <link href="../../../themes/progress/mac_os_x_small.css" rel="stylesheet" type="text/css">
+  <link href="../../../themes/progress/osx.css" rel="stylesheet" type="text/css">
+  <link href="../../../themes/progress/osx_mini.css" rel="stylesheet" type="text/css">
   <link href="../../../themes/progress/vista.css" rel="stylesheet" type="text/css">
   
   <style type='text/css'>
@@ -57,7 +57,7 @@
 	
 	container.insert(new Element('h1').insert('Example with Range from 0 to 1 and Mac OS X Theme'));	
 	
- 	var progress2 = new UI.Progress(container,{width:200,maxValue:1,theme:'mac_os_x'}).setValue(0.33);
+ 	var progress2 = new UI.Progress(container,{width:200,maxValue:1,theme:'osx'}).setValue(0.33);
 	
 	var buttons=new Element('p');
 	buttons.insert(new Element('button').insert('0%').observe('click',function(){progress2.setValue(0)}));
@@ -74,7 +74,7 @@
 	
 	container.insert(new Element('h1').insert('Same as above but smaller Theme'));		
 	
-	var progress2small = new UI.Progress(container,{width:75,maxValue:1,theme:'mac_os_x_small'}).setValue(0.33);
+	var progress2small = new UI.Progress(container,{width:75,maxValue:1,theme:'osx_mini'}).setValue(0.33);
 	
 	var buttons=new Element('p');
 	buttons.insert(new Element('button').insert('0%').observe('click',function(){progress2small.setValue(0)}));

@@ -1,0 +1,14 @@
+.osx_ui_progress  .pane {
+	background: url(osx/pane.gif) top repeat-x;
+	height: 17px;
+	border:none;
+}
+
+.osx_ui_progress .bar {
+	background: url(osx/bar.gif) top repeat-x;
+	height: 17px;
+}
+
+.osx_ui_progress .working {
+	background: url(osx/work.gif) top repeat-x;
+}

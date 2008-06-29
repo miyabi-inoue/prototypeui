@@ -1,7 +1,7 @@
 UI.Progress = Class.create(UI.Options, {
   options: {
     width: 400,
-    theme: 'progress',
+    theme: '',
     maxValue: 100,
     onUpdate: false
   },
@@ -18,7 +18,7 @@ UI.Progress = Class.create(UI.Options, {
     });
     this.pane.insert(this.bar);
     this.element.insert(new Element('div', {
-      className: 'UI-progress ' + this.options.theme
+      className: 'ui_progress ' + (this.options.theme?' '+this.options.theme+'_ui_progress':'')
     }).insert(this.pane));
     this.value = '';
   },

@@ -1,15 +1,15 @@
-.UI-progress .pane {
+.ui_progress .pane {
 	background: url(progress/pane.gif) top repeat-x;
 	border:1px inset #999;
 	height: 15px;
 	margin-top:5px;
 }
 
-.UI-progress .bar {
+.ui_progress .bar {
 	background: url(progress/bar.gif) top repeat-x;
 	height: 15px;
 }
 
-.UI-progress .working {
+.ui_progress .working {
 	background: url(progress/work.gif) top repeat-x;
 }
