@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
   <head>
     <title>Prototype UI : Functional test : Menu</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="Content-Style-Type" content="text/css" />
     <meta http-equiv="Content-Language" content="en" />
     <meta name="language" content="en" />
@@ -24,6 +24,7 @@
       h2 { 
         margin: 14px 10px 4px 10px; 
         font-size: 13px;
+        color:#666;
       }
       ul {
         margin: 0;
@@ -40,13 +41,13 @@
         color: #000;
         text-decoration: none;
       }
-      li:hover,
-      li a:hover {
+      li.active,
+      li.active a {
         background: #7285AC;
         color: #fff;
       }
-      
     </style>
+    <script src="../../lib/prototype.js" type="text/javascript"></script>
   </head>
   <body>
   	<h1>Prototype UI : Functional tests</h1>
@@ -133,5 +134,18 @@
       <li><a href="window/test_window_manager.html" target="test">Window Manager test</a></li>
       <li><a href="window/test_input.html" target="test">Input Focus Test</a></li>
     </ul> 
+    
+    
+    <script language="JavaScript" type="text/javascript">
+      function toggle(e) {
+        if($$('li.active').length)
+          $$('li.active')[0].removeClassName('active');
+        Event.element(e).up('li').addClassName('active');
+
+        $('.active').style.border='10px solid red';
+      }
+      
+      $$('li').each(function(element){element.observe('click',toggle)});
+    </script>
   </body>
 </html>
