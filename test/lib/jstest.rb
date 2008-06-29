@@ -39,7 +39,8 @@ class FirefoxBrowser < Browser
   end
 
   def visit(url)
-    system("open -a Firefox '#{url}'") if macos?
+    #system("open -a /Applications/Web/Firefox.app '#{url}'") if macos?
+    applescript('tell application "Firefox" to OpenURL "' + url + '"')
     system("#{@path} #{url}") if windows? 
     system("firefox #{url}") if linux?
   end
@@ -68,6 +69,28 @@ class SafariBrowser < Browser
 
   def to_s
     "Safari"
+  end
+end
+
+class CaminoBrowser < Browser
+  def supported?
+    macos?
+  end
+  
+  def setup
+    applescript('tell application "Camino" to make new document')
+  end
+  
+  def visit(url)
+    applescript('tell application "Camino" to open location "' + url + '"') if macos?
+  end
+
+  def teardown
+    #applescript('tell application "Camino" to close front document')
+  end
+
+  def to_s
+    "Camino"
   end
 end
 
@@ -367,6 +390,8 @@ class JavaScriptTestTask < ::Rake::TaskLib
           FirefoxBrowser.new
         when :safari
           SafariBrowser.new
+        when :camino
+          CaminoBrowser.new
         when :ie
           IEBrowser.new
         when :konqueror

@@ -143,7 +143,7 @@
           Event.simulateKeyboard(autoComplete.input, {text: "en"});
           autoComplete.focus();
           Event.simulateKey(autoComplete.input, 'keypress',{keyCode:Event.KEY_DOWN});
-          assertEqual("Sébasti<em>en</em>", $$("ul.pui-autocomplete-results li")[0].innerHTML);
+          assertEqual("Sébastien", $$("ul.pui-autocomplete-results li")[0].innerHTML);
         }}
         
       })

@@ -44,7 +44,7 @@
         // Check default values (and attAccessor)
         assertEqual(1, win.getGridX());
         assertEqual(1, win.getGridY());
-        assertEqual(100, win.getMinWidth());
+        assertEqual(200, win.getMinWidth());
         assertEqual(null, win.getMaxWidth());
         assertEqual(100, win.getMinHeight());
         assertEqual(null, win.getMaxHeight());
@@ -106,13 +106,23 @@
       win2.destroy();
     }},  
   
+    testMinSizeOnCreate: function() { with(this) {
+      var win = new UI.Window({top: 122, left: 15, width: 145, height: 50}); 
+      win.show();  
+      wait(200, function() { 
+        assertEqual(200, win.getSize().width);     
+        assertEqual(100, win.getSize().height);     
+        win.destroy();
+      })
+    }},
+    
     testShouldSnapToGrid: function() { with(this) {
-      var win = new UI.Window({gridX: 10, gridY: 50, top: 122, left: 15, width: 145, height: 320}); 
+      var win = new UI.Window({gridX: 10, gridY: 50, top: 122, left: 15, width: 245, height: 320}); 
       win.show();  
       wait(200, function() {
         assertEqual(100, win.getPosition().top);     
         assertEqual(10, win.getPosition().left); 
-        assertEqual(140, win.getSize().width);     
+        assertEqual(240, win.getSize().width);     
         assertEqual(300, win.getSize().height);     
         win.destroy();
       })
