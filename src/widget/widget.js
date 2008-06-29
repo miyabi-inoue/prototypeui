@@ -42,7 +42,7 @@ UI.Widget.Generic = Class.create(UI.Options, {
     });
     
     this.pulldown = new UI.PullDown(this.container, {
-      className: (this.options.theme?'' + this.options.theme+'_ui_pulldown ':'') + this.options.className,
+      className: (this.options.theme?this.options.theme+'_ui_pulldown ':'') + this.options.className,
       shadow: this.options.shadow,
       position: this.options.placeDropdown,
       cloneWidth: false
@@ -94,8 +94,8 @@ UI.Widget.Generic = Class.create(UI.Options, {
   update: function(value, options){
     options = Object.extend({
       pullup: true
-    }, options ||
-    {});
+    }, options || {});
+    
     this.input.value = value;
     if (this.options.hideInput) 
       this.output.update(this.input.value || this.options.emptyText);

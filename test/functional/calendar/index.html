@@ -10,7 +10,7 @@
   <script src="../../../dist/calendar.js" type="text/javascript"></script>
 
   <link href="../../../themes/calendar/calendar.css" rel="stylesheet" type="text/css" />
-  <link href="../../../themes/calendar/mac_os_x.css" rel="stylesheet" type="text/css" />
+  <link href="../../../themes/calendar/osx.css" rel="stylesheet" type="text/css" />
   <link href="../../../themes/calendar/ical.css" rel="stylesheet" type="text/css" />
 
   <style type="text/css" media="screen">
@@ -60,7 +60,8 @@
     document.observe('dom:loaded', function(e){
       this.calendar1 = new UI.Calendar('calendar', {
         startWeekday: 1,
-        format: '%B %d, %Y'
+        format: '%B %d, %Y',
+        theme: 'osx'
       });
       
       this.calendar1.observe('click', function(e) {     

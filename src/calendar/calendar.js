@@ -31,7 +31,7 @@ Element.addMethods({
 */
 UI.Calendar = Class.create(UI.Options, {
   options: {
-    theme: 'mac_os_x',
+    theme: '',
     format: '%m/%d/%Y',
     startWeekday: 0,
     startDate: new Date()
@@ -43,9 +43,9 @@ UI.Calendar = Class.create(UI.Options, {
     this.element = $(element); 
     this.element.identify();
     
-    this.container = new Element('div').addClassName('ui_calendar_container');
+    this.container = new Element('div');
     this.container.setStyle({ position: 'relative' });
-    this.element.addClassName(this.options.theme).insert({ top: this.container });
+    this.element.addClassName('ui_calendar'+(this.options.theme?' '+this.options.theme+'_ui_calendar':'')).insert({ top: this.container });
                   
     this.initDate(this.options.startDate);
     this.buildTable();
@@ -228,7 +228,7 @@ UI.Calendar = Class.create(UI.Options, {
   },
 
   buildTable: function() {
-    this.table = new Element('table').addClassName('ui_calendar');
+    this.table = new Element('table');
     this.table.setStyle({ position: 'relative' });
     
     this.buildHeader(this.date);

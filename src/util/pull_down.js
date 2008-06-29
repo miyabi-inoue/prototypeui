@@ -121,7 +121,7 @@ UI.PullDown = Class.create(UI.Options, {
   },
     
   outsideClick: function(event) {
-    if (event.findElement('.UI-widget-dropdown'))
+    if (event.findElement('.ui_pulldown'))
 			return;
     this.hide();
   },

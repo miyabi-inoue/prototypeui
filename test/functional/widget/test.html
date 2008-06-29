@@ -11,7 +11,8 @@
   <link href="../../../themes/shadow/pulldown.css" rel="stylesheet" type="text/css"/>
   <link href="../../../themes/shadow/pulldown_vista.css" rel="stylesheet" type="text/css"/>
   <link href="../../../themes/calendar/calendar.css" rel="stylesheet" type="text/css"/>
-  <link href="../../../themes/calendar/mac_os_x.css" rel="stylesheet" type="text/css"/>
+  <link href="../../../themes/calendar/osx.css" rel="stylesheet" type="text/css"/>
+  <link href="../../../themes/calendar/ical.css" rel="stylesheet" type="text/css"/>
 
   <link href="../../../themes/widget/widget.css" rel="stylesheet" type="text/css"/>
   <link href="../../../themes/widget/osx.css" rel="stylesheet" type="text/css"/>
@@ -162,7 +163,8 @@ UI.Calendar.Options = {
 	});
 	new UI.Widget.Date('hiddendateinput'+postfix,{
 	    hideInput: true,
-        placeDropdown: 'over'
+      placeDropdown: 'over',
+      calendarTheme: 'ical'
 	});
 	
 	new UI.Widget.Color('colorinput'+postfix, {
@@ -175,7 +177,7 @@ UI.Calendar.Options = {
 	new UI.Widget.Color('hiddencolorinput'+postfix, {
 		allowUnset: false,
 	    hideInput: true,
-        placeDropdown: 'below'
+      placeDropdown: 'below'
 	});
 	
 	new UI.Widget.Ajax('ajaxinput'+postfix, {
