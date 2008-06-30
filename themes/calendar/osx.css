@@ -1,19 +1,19 @@
-.osx_ui_calendar {
+.ui-calendar__osx {
   padding: 5px;
   font-size:10px;
   font-family: "Lucida Grande","Bitstream Vera Sans","Verdana",sans-serif;
 }
-.osx_ui_calendar table {
+.ui-calendar__osx table {
   border-collapse: collapse;
   border-spacing: 0pt;
 }
-.osx_ui_calendar th { 
+.ui-calendar__osx th { 
   vertical-align: middle; 
   width: 1.8em;
   font-size:10px;
 }
-.osx_ui_calendar th .prev, 
-.osx_ui_calendar th .next {
+.ui-calendar__osx th .ui-calendar_prev, 
+.ui-calendar__osx th .ui-calendar_next {
   cursor: pointer;
   top: 0pt;
   bottom: 0pt;
@@ -21,17 +21,17 @@
   display: block;
   position: absolute;
 } 
-.osx_ui_calendar th .prev { 
+.ui-calendar__osx th .ui-calendar_prev { 
   left: 0px;
   margin-left: 0.4em;
   background: transparent url(osx/buttons-sprite.png) no-repeat 0px 0px;
 }
-.osx_ui_calendar th .next {
+.ui-calendar__osx th .ui-calendar_next {
   right: 0px;
   margin-right: 0.4em;
   background: transparent url(osx/buttons-sprite.png) no-repeat -26px 0px;
 }
-.osx_ui_calendar th .header {
+.ui-calendar__osx th .ui-calendar_header {
   font-weight: bold;
   text-align: center;
   position: relative;
@@ -40,41 +40,41 @@
   vertical-align: top;
   margin-bottom: 5px;
 }
-.osx_ui_calendar td {
+.ui-calendar__osx td {
   background: #ffffff url(osx/day-sprite.png) repeat-x -32px 0px;
   text-align: center;
   font-size:10px;
   height: 16px;
   line-height: 16px;
 }
-.osx_ui_calendar td a {
+.ui-calendar__osx td a {
   color: #000000;
   display: block;
   text-decoration: none;
 }
-.osx_ui_calendar td.today {
+.ui-calendar__osx td.ui-calendar_today {
   background: #ffffff url(osx/today-sprite.png) repeat-x -32px 0px; 
 }
-.osx_ui_calendar td.today a { 
+.ui-calendar__osx td.ui-calendar_today a { 
   color: #ffffff; 
 }
-.osx_ui_calendar td.selected { 
+.ui-calendar__osx td.ui-calendar_selected { 
   background: #ffffff url(osx/selectday-sprite.png) repeat-x -32px 0px;
 }
-.osx_ui_calendar td.selected a { 
+.ui-calendar__osx td.ui-calendar_selected a { 
   font-weight: bold; 
   color: #ffffff;
 }
-.osx_ui_calendar td.non_current { 
+.ui-calendar__osx td.ui-calendar_non_current { 
   color: #A6A6A6; 
   cursor: default; 
 }
-.osx_ui_calendar td.first { 
+.ui-calendar__osx td.ui-calendar_first { 
   background-position: 0px -18px;
 }
-.osx_ui_calendar td.last { 
+.ui-calendar__osx td.ui-calendar_last { 
   background-position: top right;
 }
-.osx_ui_calendar td.outside { 
+.ui-calendar__osx td.ui-calendar_outside { 
   color: silver; 
 }

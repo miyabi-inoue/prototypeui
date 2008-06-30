@@ -1,3 +1,4 @@
+//require "date"
 Element.addMethods({
   center: function( container, element ) {
     element = $(element);
@@ -45,7 +46,7 @@ UI.Calendar = Class.create(UI.Options, {
     
     this.container = new Element('div');
     this.container.setStyle({ position: 'relative' });
-    this.element.addClassName('ui_calendar'+(this.options.theme?' '+this.options.theme+'_ui_calendar':'')).insert({ top: this.container });
+    this.element.addClassName('ui-calendar'+(this.options.theme?' ui-calendar__'+this.options.theme:'')).insert({ top: this.container });
                   
     this.initDate(this.options.startDate);
     this.buildTable();
@@ -140,16 +141,16 @@ UI.Calendar = Class.create(UI.Options, {
       monthDate = day.getDate();
       
       if (day.getMonth() != this.date.getMonth()) {
-        classNames.push('non_current');
+        classNames.push('ui-calendar_non_current');
         cell.innerHTML = monthDate;
       } else {
         cell.innerHTML = '<a href="#">' + monthDate + '</a>';
-        if (this.selectedDay && this.selectedDay.equalsDate(day)) classNames.push('selected');
+        if (this.selectedDay && this.selectedDay.equalsDate(day)) classNames.push('ui-calendar_selected');
       }
-      if (today.equalsDate(day)) classNames.push('today');      
-      if (cell.hasClassName('weekend')) classNames.push('weekend');
-      if (cell.hasClassName('first')) classNames.push('first');
-      if (cell.hasClassName('last')) classNames.push('last');
+      if (today.equalsDate(day)) classNames.push('ui-calendar_today');      
+      if (cell.hasClassName('ui-calendar_weekend')) classNames.push('ui-calendar_weekend');
+      if (cell.hasClassName('ui-calendar_first')) classNames.push('ui-calendar_first');
+      if (cell.hasClassName('ui-calendar_last')) classNames.push('ui-calendar_last');
 
       cell.className = classNames.join(' ');
     }
@@ -160,7 +161,7 @@ UI.Calendar = Class.create(UI.Options, {
     this.daysRow.update('');
     $R(0, 6).each(function(n){
       this.daysRow.insert({ 
-        bottom: new Element('th', {'class': 'dayname'}).update(dayNames[n].truncate(2,''))
+        bottom: new Element('th', {'class': 'ui-calendar_dayname'}).update(dayNames[n].truncate(2,''))
       });
     }.bind(this));
   },
@@ -169,16 +170,16 @@ UI.Calendar = Class.create(UI.Options, {
     event.stop();
     var element = event.element();
     if (element.tagName == 'A') element = element.up('td');
-    if (element.hasClassName('non_current')) return;
+    if (element.hasClassName('ui-calendar_non_current')) return;
     var day = element.date;
     this.selectedDay = day;
     
-    $w('selected selected_next selected_prev').each(function(e){ this.table.select('.'+e).invoke('removeClassName', e); }.bind(this));
+    $w('ui-calendar_selected ui-calendar_selected_next ui-calendar_selected_prev').each(function(e){ this.table.select('.'+e).invoke('removeClassName', e); }.bind(this));
     
-    element.addClassName('selected');
+    element.addClassName('ui-calendar_selected');
     var next = element.next(), prev = element.previous();
-    if (next) next.addClassName('selected_next');
-    if (prev) prev.addClassName('selected_prev');
+    if (next) next.addClassName('ui-calendar_selected_next');
+    if (prev) prev.addClassName('ui-calendar_selected_prev');
 
     this.fire('click', { 
       date: day, 
@@ -239,9 +240,9 @@ UI.Calendar = Class.create(UI.Options, {
       var row = new Element('tr');
       week.each(function(day, i){
         var cell = new Element('td');
-        if (i == 0 || i == 6) cell.addClassName('weekend');
-        if (i == 0) cell.addClassName('first');
-        if (i == 6) cell.addClassName('last');
+        if (i == 0 || i == 6) cell.addClassName('ui-calendar_weekend');
+        if (i == 0) cell.addClassName('ui-calendar_first');
+        if (i == 6) cell.addClassName('ui-calendar_last');
         row.insert({ bottom: cell});
       });
       tbody.insert({ bottom: row });
@@ -254,9 +255,9 @@ UI.Calendar = Class.create(UI.Options, {
   },
 
   buildSelector: function() {
-    this.selector = new Element('div').addClassName('selector').hide();
+    this.selector = new Element('div').addClassName('ui-calendar_selector').hide();
     
-    this.mask = new Element('div').hide().addClassName('ui_calendar_mask').setOpacity(0.3);
+    this.mask = new Element('div').hide().addClassName('ui-calendar_mask').setOpacity(0.3);
     
     this.container.insert({ bottom: this.selector })
                   .insert({ bottom: this.mask });
@@ -289,7 +290,7 @@ UI.Calendar = Class.create(UI.Options, {
     this.selector.insert({ bottom: input });
     
     var createButton = function(name, onClick) {
-      return new Element('span').addClassName('ui_calendar_button')
+      return new Element('span').addClassName('ui-calendar_button')
                                 .insert({ top: new Element('button', {type: 'button'}).update(name)
                                                                                       .observe('click', onClick.bind(this)) });
     };
@@ -307,7 +308,7 @@ UI.Calendar = Class.create(UI.Options, {
       bottom: new Element('div', { 
         textAlign: 'center', 
         width: '100%'
-      }).addClassName('ui_calendar_button_div')
+      }).addClassName('ui-calendar_button_div')
         .insert({ bottom: btnCn })
         .insert({ bottom: btnOk })
     });
@@ -334,7 +335,7 @@ UI.Calendar = Class.create(UI.Options, {
     };
 
     $w('prev next').each(function(d){
-      this[d + 'Link'] = new Element('a').addClassName(d);
+      this[d + 'Link'] = new Element('a').addClassName('ui-calendar_' + d);
       initMonthLink(this[d + 'Link'], d, this);
     }.bind(this));
 
@@ -342,14 +343,14 @@ UI.Calendar = Class.create(UI.Options, {
       href: '#'
     }).update(UI.Calendar.Options.MONTHS[date.getMonth()] + ' ' + date.getFullYear()).observe('click', this.onMonthClick.bind(this));
 
-    var headerDiv = new Element('div').addClassName('header')
+    var headerDiv = new Element('div').addClassName('ui-calendar_header')
                                       .insert({ bottom: this.prevLink })
                                       .insert({ bottom: this.headerSpan })
                                       .insert({ bottom: this.nextLink });
       
     this.updateDaysRow();
 
-    header.insert({ bottom: new Element('tr').insert({ top: new Element('th', {colspan: 7}).update(headerDiv).addClassName('monthname') }) })
+    header.insert({ bottom: new Element('tr').insert({ top: new Element('th', {colspan: 7}).update(headerDiv).addClassName('ui-calendar_monthname') }) })
           .insert({ bottom: this.daysRow });
 
     this.table.insert({ top: header });
@@ -368,7 +369,9 @@ UI.Calendar = Class.create(UI.Options, {
   startDay: function(date) {
     var startDate = date.firstOfMonth();
   	startDate.setDate(-(startDate.getDay() % 7));
-  	startDate.setDate(startDate.getDate() + 1 + parseInt(this.options.startWeekday));
+  	startDate.setDate(startDate.getDate() + 1 +  parseInt(this.options.startWeekday));
+    if(startDate.getDate()>1 && startDate.getDate()<6)
+      startDate.setDate(startDate.getDate()-7);
     return startDate;
   },
 

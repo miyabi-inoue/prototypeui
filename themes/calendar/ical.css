@@ -1,12 +1,12 @@
-.ical_ui_calendar {
+.ui-calendar__ical {
   background: transparent url(ical/container-background.png) top left repeat-x;
   font-family: "Lucida Grande","Bitstream Vera Sans","Verdana",sans-serif;
 }
-.ical_ui_calendar table {
+.ui-calendar__ical table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-.ical_ui_calendar td {
+.ui-calendar__ical td {
   border: none;
   height: 25px;
   width: 27px;
@@ -14,50 +14,57 @@
   background: transparent url(ical/cell-background.png) top left no-repeat;
   padding: 0;
 }
-.ical_ui_calendar thead {
+.ui-calendar__ical thead {
   height: 36px;
   background: transparent url(ical/thead-background.png) top left repeat-x;
 }
-.ical_ui_calendar th, .ical_ui_calendar td, .ical_ui_calendar td a {
+.ui-calendar__ical th, .ui-calendar__ical td, .ui-calendar__ical td a {
   font-size: 13px;
   font-weight: bold;
   text-align: center;
   color: #333333;
   text-shadow: 0 1px 1px #fff;
 }
-.ical_ui_calendar td a {
+
+.ui-calendar__ical td a {
   display: block;
   text-decoration:none;
   text-shadow: 0 1px 1px #fff;
   font-weight: bold;
 }
-.ical_ui_calendar th.dayname {
+.ui-calendar__ical th.ui-calendar_dayname {
   font-size: 9px;
   color: #333;
   text-shadow: 1px 1px 1px #fff;
-  line-height: 14px;
+  line-height: 13px;
+  padding:0;
   background: transparent url(ical/thead-background.png) 0 -15px repeat-x ;
 }
-.ical_ui_calendar td.selected { 
+.ui-calendar__ical td.ui-calendar_selected { 
   background: #0072e2 url(ical/selected-cell.png) top left repeat-x;
 }
-.ical_ui_calendar td.selected, .ical_ui_calendar td.selected a, 
-.ical_ui_calendar td.today, .ical_ui_calendar td.today a {
+.ui-calendar__ical td.ui-calendar_selected, .ui-calendar__ical td.ui-calendar_selected a, 
+.ui-calendar__ical td.ui-calendar_today, .ui-calendar__ical td.ui-calendar_today a {
   color: #fff;
   text-shadow: 0 1px 1px #000;
 }
-.ical_ui_calendar td.today {
+.ui-calendar__ical td.ui-calendar_today {
   background: #fff url(ical/today-cell.png) no-repeat top left; 
 }
-.ical_ui_calendar td.non_current { 
+.ui-calendar__ical td.ui-calendar_non_current { 
   background: #fff url(ical/cell-outside.png) no-repeat top left; 
 }
-.ical_ui_calendar td.non_current, .ical_ui_calendar td.non_current a {
+.ui-calendar__ical td.ui-calendar_non_current, .ui-calendar__ical td.ui-calendar_non_current a {
   color: #a4a4a4; 
   text-shadow: 0 1px 1px #fff;
 }
-.ical_ui_calendar th .prev, 
-.ical_ui_calendar th .next {
+
+.ui-calendar__ical .ui-calendar_header a {
+  color: #333;
+  text-shadow: 0 1px 1px #fff;
+}
+.ui-calendar__ical th .ui-calendar_prev, 
+.ui-calendar__ical th .ui-calendar_next {
   cursor: pointer;
   top: 4px;
   bottom: 0;
@@ -66,20 +73,18 @@
   display: block;
   position: absolute;
 } 
-.ical_ui_calendar th .prev { 
+.ui-calendar__ical th .ui-calendar_prev { 
   left: 0;
   margin-left: 0.4em;
   background: transparent url(ical/buttons-sprite.png) no-repeat 0 0;
 }
-.ical_ui_calendar th .next {
+.ui-calendar__ical th .ui-calendar_next {
   right: 0;
   margin-right: 0.4em;
   background: transparent url(ical/buttons-sprite.png) no-repeat -26px 0;
 }
-.ical_ui_calendar .header a {
-  color: #333;
-  text-shadow: 0 1px 1px #fff;
+
+.ui-calendar__ical thead tr,.ui-calendar__ical th {
+  height:15px;
 }
-.ical_ui_calendar .header {
-  height: 15px;
-}
+
