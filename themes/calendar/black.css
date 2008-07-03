@@ -1,0 +1,81 @@
+.ui-calendar__black {
+  font-family: "Lucida Grande","Bitstream Vera Sans","Verdana",sans-serif;
+}
+.ui-calendar__black table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.ui-calendar__black td {
+  border: none;
+  height: 27px;
+  width: 28px;
+  line-height: 27px;
+  background: transparent url(black/bg.png) top left no-repeat;
+  padding: 0;
+}
+.ui-calendar__black thead {
+  height: 36px;
+  background: transparent url(black/thead.png) top left repeat-x;
+}
+.ui-calendar__black th, .ui-calendar__black td, .ui-calendar__black td a {
+  font-size: 11px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 1px 1px #000;
+}
+
+.ui-calendar__black td a {
+  display: block;
+  text-decoration:none;
+  color:#fff;
+  text-shadow: 0 1px 1px #000;
+  font-weight: bold;
+}
+.ui-calendar__black th.ui-calendar_dayname {
+  font-size: 11px;
+  color: #666;
+  text-shadow: 1px 1px 1px #000;
+  line-height: 13px;
+  padding:0;
+  background: transparent url(black/thead.png) 0 -18px repeat-x ;
+}
+.ui-calendar__black td.ui-calendar_selected { 
+  background: #000 url(black/active.png) top left repeat-x;
+}
+.ui-calendar__black td.ui-calendar_today {
+  background: #000 url(black/today.png) no-repeat top left; 
+}
+.ui-calendar__black td.ui-calendar_non_current, .ui-calendar__black td.ui-calendar_non_current a {
+  color: #5d7aa6; 
+}
+
+.ui-calendar__black .ui-calendar_header a {
+  color: #fff;
+  text-shadow: 0 1px 1px #000;
+}
+.ui-calendar__black th .ui-calendar_prev, 
+.ui-calendar__black th .ui-calendar_next {
+  cursor: pointer;
+  top: 4px;
+  bottom: 0;
+  width: 13px;
+  height:13px;
+  display: block;
+  position: absolute;
+} 
+.ui-calendar__black th .ui-calendar_prev { 
+  left: 0;
+  margin-left: 0.4em;
+  background: transparent url(black/buttons-sprite.png) no-repeat 0 0;
+}
+.ui-calendar__black th .ui-calendar_next {
+  right: 0;
+  margin-right: 0.4em;
+  background: transparent url(black/buttons-sprite.png) no-repeat -26px 0;
+}
+
+.ui-calendar__black thead tr,.ui-calendar__black th {
+  height:15px;
+}
+
