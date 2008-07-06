@@ -115,7 +115,7 @@ UI.ContextMenu = Class.create(UI.Options, {
   
   create: function() {
     this.element = new Element('div', {
-      className: 'ui_menu'+(this.options.theme?' '+this.options.theme+'_ui_menu':''),
+      className: 'ui-context_menu' + (this.options.theme ? ' ui-context_menu__' + this.options.theme: ''),
       style: 'display: none'
     });
     this.element.insert(this.createList(this.options.menuItems));

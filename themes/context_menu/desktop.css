@@ -1,34 +1,32 @@
-/* DESKTOP STYLES */
-
-.desktop_ui_menu {
+.ui-context_menu__desktop {
 	width: 14em;
 	background: #f9f8f7;
 }
-.desktop_ui_menu ul{
+.ui-context_menu__desktop ul{
 	border: 1px solid #666;
 	padding: 1px 0;
 }
-.desktop_ui_menu a {
+.ui-context_menu__desktop a {
 	color: #555;
 	padding: 3px 0 3px 25px;
 	margin: 0 1px;
 	border: 1px solid #f9f8f7;
 	cursor: pointer;
 }
-.desktop_ui_menu a.disabled {
+.ui-context_menu__desktop a.disabled {
 	color: #bbb;
 	cursor: default;
 }
-.desktop_ui_menu .separator {
+.ui-context_menu__desktop .separator {
 	border-bottom: 1px solid #fff;
 	background: #999;
 	margin: 2px 4px;
 }
-.desktop_ui_menu a:hover {
+.ui-context_menu__desktop a:hover {
 	background-color: #b6bdd2;
 	border: 1px solid #0a246a;
 }
-.desktop_ui_menu a.disabled:hover {
+.ui-context_menu__desktop a.disabled:hover {
 	background: #f9f8f7;
 	color: #bbb;
 	border: 1px solid #f9f8f7;

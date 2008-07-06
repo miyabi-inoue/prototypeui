@@ -1,32 +1,30 @@
-/* GENERAL STYLES */
-
-.ui_menu {
+.ui-context_menu {
 	position: absolute;
 	top: 0;
 	left: 0;
 	font-family: verdana;
 }
-.ui_menu a {
+.ui-context_menu a {
 	display: block;
 	text-decoration: none;
 	cursor: default;
 	outline: none;
 	font-size: 11px;
 }
-.ui_menu .separator {
+.ui-context_menu .separator {
 	height: 1px;
 	padding: 0;
 	overflow: hidden;
 	display: block;
 }
-.ui_menu ul, .ui_menu li {
+.ui-context_menu ul, .ui-context_menu li {
 	margin: 0;
 	padding: 0;
 	list-style: none;
 }
-.ui_menu .submenu {
+.ui-context_menu .submenu {
   position: relative;
 }
-.ui_menu .submenu .ui_menu {
+.ui_menu-context .submenu .ui-context_menu {
   position: absolute;
 }
