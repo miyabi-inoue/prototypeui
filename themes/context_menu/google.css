@@ -1,32 +1,30 @@
-/* GOOGLE STYLES */
-
-.google_ui_menu {
+.ui-context_menu__google {
 	width: 10.5em;
 	background: #fff;
 }
-.google_ui_menu ul {
+.ui-context_menu__google ul {
 	border-top: 1px solid #ccc;
 	border-left: 1px solid #ccc;
 	border-bottom: 1px solid #676767;
 	border-right: 1px solid #676767;
 }
-.google_ui_menu a {
+.ui-context_menu__google a {
 	color: #00c;
 	text-decoration: none;
 	padding: 2px 5px;
 	cursor: pointer;
 	font-size: 12px;
 }
-.google_ui_menu a:hover {
+.ui-context_menu__google a:hover {
 	background: #D3E3FE;
 }
-.google_ui_menu a.disabled {
+.ui-context_menu__google a.disabled {
 	color: #bbb;
 }
-.google_ui_menu a.disabled:hover {
+.ui-context_menu__google a.disabled:hover {
 	background: #fff;
 	color: #bbb;
 }
-.google_ui_menu .separator {
+.ui-context_menu__google .separator {
 	background: #ccc;
 }

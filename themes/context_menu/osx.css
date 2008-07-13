@@ -1,15 +1,13 @@
-/* MAC OS X STYLES */
-
-.osx_ui_menu {
+.ui-context_menu__osx {
 	width: 12em; 
 	background:#FFF;
 }
-.osx_ui_menu ul {
+.ui-context_menu__osx ul {
 	padding: 2px 0;
 }                 
-.osx_ui_menu a:link,
-.osx_ui_menu a:visited,
-.osx_ui_menu a {
+.ui-context_menu__osx a:link,
+.ui-context_menu__osx a:visited,
+.ui-context_menu__osx a {
 	color: #333;
 	padding: 0px 15px;
 	margin: 0 0px;
@@ -18,18 +16,18 @@
 	height:22px;
 	line-height:22px;
 }
-.osx_ui_menu a:hover {
+.ui-context_menu__osx a:hover {
 	background: url(osx/selected_bg.png);
 	color: #fff;
 }
-.osx_ui_menu a.disabled {
+.ui-context_menu__osx a.disabled {
 	color: #bbb;
 }
-.osx_ui_menu a.disabled:hover {
+.ui-context_menu__osx a.disabled:hover {
 	background: #FFF;
 	color: #bbb;
 }
-.osx_ui_menu .separator {
+.ui-context_menu__osx .separator {
 	background: #e2e4e3;
 	height: 1px;
 	margin: 2px;

@@ -1,37 +1,25 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-	<title>Test Shadow Class</title>
+  <title>Test Shadow Class</title>
   
   <script src="../../../lib/prototype.js" type="text/javascript"></script>
   <script src="../../../lib/effects.js" type="text/javascript"></script>
   <script src="../../../dist/context_menu.js" type="text/javascript"></script>
   
   <link href="../../../themes/context_menu/context_menu.css" rel="stylesheet" type="text/css" />
+  <link href="../../../themes/context_menu/osx.css" rel="stylesheet" type="text/css" />
   <link href="../../../themes/context_menu/firefox.css" rel="stylesheet" type="text/css" />
   <link href="../../../themes/context_menu/google.css" rel="stylesheet" type="text/css" />
-  <link href="../../../themes/context_menu/desktop.css" rel="stylesheet" type="text/css" />
-  <link href="../../../themes/context_menu/aqua.css" rel="stylesheet" type="text/css" />
-  <link href="../../../themes/context_menu/osx.css" rel="stylesheet" type="text/css" />
-  
-  <link href="../../../themes/shadow/leopard.css" rel="stylesheet" type="text/css" /> 
-  <link href="../../../themes/shadow/mac_shadow.css" rel="stylesheet" type="text/css" />
+  <link href="../../../themes/shadow/leopard.css" rel="stylesheet" type="text/css" />
 
   <style type='text/css'>
   body { 
     background: url('../assets/body_bg.png') repeat; 
   }
-  #contextArea {
-    background: #eef;
-    height: 100px;
-    margin: 5px;
-    padding: 20px;
-    color: #888;
-    font-size: 48px;
-  }
-  #contextAreaMacOsX {
+  .contextArea {
     background: #eef;
     height: 100px;
     margin: 5px;
@@ -50,18 +38,13 @@
     width: 6em;
     text-align: right;
   }
-  .menu.desktop a.add {
-    background: #f9f8f7 url(../../../themes/contextmenu/images/page_add.png) 2px 50% no-repeat;
-  }
-  .menu.desktop a.edit {
-    background: #f9f8f7 url(../../../themes/contextmenu/images/page_edit.png) 2px 50% no-repeat;
-  }
   </style>
   
 </head>
 <body>  
-  <div id="contextArea">Desktop Theme</div>
-  <div id="contextAreaMacOsX">Aqua Theme</div>
+  <div class="contextArea" id="contextAreaLeopoard">Leopard Theme</div>
+  <div class="contextArea" id="contextAreaGoogle">Google Theme</div>
+  <div class="contextArea"id="contextAreaFirefox">Firefox Theme</div>
   <ul id="options">
     <li>
       <label for="showEffect">showEffect</label>
@@ -80,42 +63,57 @@
   <script type="text/javascript">
     function runTest() {   
       var myMenuItems = [
-      	{
-      		name: 'Add', 
-      		className: 'add', 
-      		callback: function(e){
-      			alert('you clicked "add" option on <' + e.element().tagName.toLowerCase() + '> element');
-      		}
-      	},{
-      		name: 'Edit',
-      		className: 'edit', 
-      		callback: function(){
-      			alert('Forward function called')
-      		}
-      	},{
-      		separator: true
-      	},{
-      		name: 'Reload', 
-      		callback: function(){
-      			alert('Reload function called')
-      		}
-      	},{
-      		name: 'Disabled option', 
-      		disabled: true
-      	}
+        {
+          name: 'Add', 
+          className: 'add', 
+          callback: function(e) {
+            e.stop();
+            alert('you clicked "add" option on <' + e.element().tagName.toLowerCase() + '> element');
+          }
+        },{
+          name: 'Edit',
+          className: 'edit', 
+          callback: function(e) { e.stop(); alert('Forward function called'); }
+        },{
+          separator: true
+        },{
+          name: 'Save as...', 
+          submenu: [{
+            name: '.doc',
+            callback: function(e) { e.stop(); alert('saving as .doc'); }
+          }, {
+            name: '.xsl',
+            callback: function(e) { e.stop(); alert('saving as .xsl'); }
+          }, {
+            name: '.pdf',
+            callback: function(e) { e.stop(); alert('saving as .pdf'); }
+          }]
+        },{
+          name: 'Disabled option',
+          disabled: true
+        }
       ]
       
       new UI.ContextMenu({
-        selector: '#contextArea',
-        theme: 'desktop',
+        selector: '#contextAreaLeopoard',
+        theme: 'osx',    
+        shadow:    'leopard',
         menuItems: myMenuItems
-      });
+      })
       
       new UI.ContextMenu({
-        selector: '#contextAreaMacOsX',
-        theme: 'aqua',
+        selector: '#contextAreaGoogle',
+        theme: 'google',
+        shadow: false,
         menuItems: myMenuItems
-      });
+      })
+      
+      new UI.ContextMenu({
+        selector: '#contextAreaFirefox',
+        theme: 'firefox',
+        shadow: false,    
+        menuItems: myMenuItems
+      })
     }  
     document.whenReady(runTest);
   </script>
