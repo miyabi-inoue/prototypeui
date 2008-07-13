@@ -7,6 +7,8 @@
 .osx_ui_menu ul {
 	padding: 2px 0;
 }                 
+.osx_ui_menu a:link,
+.osx_ui_menu a:visited,
 .osx_ui_menu a {
 	color: #333;
 	padding: 0px 15px;

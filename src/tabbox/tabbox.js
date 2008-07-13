@@ -152,6 +152,9 @@ UI.Tabbox = Class.create(UI.Options, {
     
     this.selectedTab=this.tabs.get(tabName);
     
+    this.selectedTab.head.addClassName('selected');
+    this.selectedTab.element.show();
+ 
     if(this.selectedTab.ajaxContent)
     {
       tab=this.tabs.get(tabName);
@@ -159,6 +162,7 @@ UI.Tabbox = Class.create(UI.Options, {
         this.fire('selected', {
           tab: tab
         });
+        this.fire('selected:'+tabName);
         if(tab.ajaxLoadOnce) {
           tab.ajaxContent=false;
         }
@@ -168,11 +172,8 @@ UI.Tabbox = Class.create(UI.Options, {
       this.fire('selected', {
         tab: tabName
       });
-    }
-    
-    this.selectedTab.head.addClassName('selected');
-    this.selectedTab.element.show();
-      
+      this.fire('selected:'+tabName);
+    }      
     
     return this;
   }
