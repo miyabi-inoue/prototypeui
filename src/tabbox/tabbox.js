@@ -135,6 +135,8 @@ UI.Tabbox = Class.create(UI.Options, {
         }
       }
       tab.element.addClassName('tabbox_body');
+      if(tab.id)
+        tab.element.id=tab.id;
       tab.element.writeAttribute('pui-tabbox:object',this);
           
       this.tabs.set(tab.name,tab);    
@@ -158,7 +160,19 @@ UI.Tabbox = Class.create(UI.Options, {
     if(this.selectedTab.ajaxContent)
     {
       tab=this.tabs.get(tabName);
-      options={onComplete:function(){
+      
+      var url, options;
+      
+      if(typeof this.selectedTab.ajaxContent == 'object')
+      {
+        url = this.selectedTab.ajaxContent.url;
+        options = this.selectedTab.ajaxContent.options;
+      } else {
+        url = this.selectedTab.ajaxContent;
+        options = {};
+      }
+      
+      options.onComplete=function(){
         this.fire('selected', {
           tab: tab
         });
@@ -166,8 +180,8 @@ UI.Tabbox = Class.create(UI.Options, {
         if(tab.ajaxLoadOnce) {
           tab.ajaxContent=false;
         }
-      }.bind(this).bind(tab)};
-      new Ajax.Updater(this.selectedTab.element, this.selectedTab.ajaxContent, options);
+      }.bind(this).bind(tab);
+      new Ajax.Updater(this.selectedTab.element, url, options);
     } else {
       this.fire('selected', {
         tab: tabName
