@@ -31,7 +31,10 @@ UI.Tabbox = Class.create(UI.Options, {
     this.head=new Element('div',{className:'tabbox_head'});
     
     tabs.each(function(tab) {
-      this.add(tab);
+      if(tab == 'separator')
+        this.addSeparator(new Hash);    
+      else
+        this.add(tab);
     }.bind(this));
     
     this.element.insert({
@@ -140,6 +143,16 @@ UI.Tabbox = Class.create(UI.Options, {
       tab.element.writeAttribute('pui-tabbox:object',this);
           
       this.tabs.set(tab.name,tab);    
+  },
+  
+  addSeparator: function(tab) {
+    head=new Element('span', {className: 'separator'});
+    
+    if(tab.after && this.tabs.get(tab.after)) {
+      this.tabs.get(tab.after).head.insert({after:head});
+    } else {
+      this.head.insert(head);
+    }
   },
 
   select: function(tabName) {
