@@ -22,7 +22,7 @@ UI.AutoComplete = Class.create(UI.Options, {
     delay: 0.2,                            // Delay before running ajax request
     shadow: false,                         // Shadow theme name (false = no shadow)
     highlight: false,                      // Highlight search string in list
-    tokens: false,                         // Tokens used to automatically adds a new entry (ex tokens:[',', ' '] for comma and spaces)
+    tokens: false,                         // Tokens used to automatically adds a new entry (ex tokens:[KEY_SPACE, KEY_COMMA] for comma and spaces)
     returnType: 'text',                    // Return following type in input:
                                            // 'text'  : return text of selected items
                                            // 'value' : return value of selected items - not possible if token is active
@@ -537,7 +537,7 @@ UI.AutoComplete = Class.create(UI.Options, {
   },
   
   updateHiddenField: function() {
-    var separator = this.options.separator ? this.options.separator : " ";
+    var separator = this.getSeparatorChar();
     
     if (this.options.returnType == 'value' && this.options.tokens == false) {
       content=this.selectedValues();
@@ -554,7 +554,7 @@ UI.AutoComplete = Class.create(UI.Options, {
   
   getSeparatorChar: function() {
     var separator = this.options.tokens ? this.options.tokens.first() : " ";
-    if (separator == Event.KEY_COMA)
+    if (separator == Event.KEY_COMMA)
       separator = ',';
     if (separator == Event.KEY_SPACE)
       separator = ' ';
