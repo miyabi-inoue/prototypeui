@@ -76,7 +76,7 @@ var CSS = (function() {
         bgImg.match(/^url[("']+(.*)[)"']+$/i);
         var src = RegExp.$1;
         // Relative path
-        if (!(src[0] == '/' || src.match(/^file:/) || src.match(/^https?:/)))
+        if (!(src.substr(0, 1) == '/' || src.match(/^file:/) || src.match(/^https?:/)))
           src = docPath + "/" + src; 
         preloadedImages.set(bgImg, true);
         var image = new Image();
