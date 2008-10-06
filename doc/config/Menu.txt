@@ -69,19 +69,12 @@ Group: Window  {
    File: Dialog  (window/dialog.js)
    }  # Group: Window
 
+File: auto_complete/auto_complete.js  (auto_complete/auto_complete.js)
 File: Calendar  (calendar/calendar.js)
 File: ContextMenu  (context_menu/context_menu.js)
 File: Dock  (dock/dock.js)
 File: Shadow  (shadow/shadow.js)
 File: tabbox/tabbox.js  (tabbox/tabbox.js)
-
-Group: Auto_complete  {
-
-   File: auto_complete.js  (auto_complete/auto_complete.js)
-   File: auto_complete.js.BASE.64058.js  (auto_complete/auto_complete.js.BASE.64058.js)
-   File: auto_complete.js.LOCAL.64058.js  (auto_complete/auto_complete.js.LOCAL.64058.js)
-   File: auto_complete.js.REMOTE.64058.js  (auto_complete/auto_complete.js.REMOTE.64058.js)
-   }  # Group: Auto_complete
 
 Group: Index  {
 
