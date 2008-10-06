@@ -530,7 +530,7 @@ UI.AutoComplete = Class.create(UI.Options, {
   updateSelectedText: function() {
     var selected = this.container.select("li." + this.getClassName("box"));
     var content = selected.collect(function(element) {return element.down("span").firstChild.textContent});
-    var separator = this.options.separator ? this.options.separator : " ";
+    var separator = this.getSeparatorChar();
     this.selectedText = content.empty() ? false : content.join(separator); 
  
     return this;
@@ -549,7 +549,16 @@ UI.AutoComplete = Class.create(UI.Options, {
   
   selectedValues: function() {
     var selected = this.container.select("li." + this.getClassName("box"));
-    return selected.collect(function(element) {return element.readAttribute("pui-autocomplete:value")});
+    return  selected.collect(function(element) {return element.readAttribute("pui-autocomplete:value")});
+  },
+  
+  getSeparatorChar: function() {
+    var separator = this.options.tokens ? this.options.tokens.first() : " ";
+    if (separator == Event.KEY_COMA)
+      separator = ',';
+    if (separator == Event.KEY_SPACE)
+      separator = ' ';
+    return separator;
   }
 });
 
