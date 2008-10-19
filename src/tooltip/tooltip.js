@@ -18,37 +18,28 @@ UI.Tooltip = Class.create(UI.Options, {
       className: (this.options.theme?this.options.theme+'_ui_pulldown ':'') + this.options.className,
       shadow: this.options.shadow,
       position: 'over',
+      beforeShow: this.options.beforeShow,
+      afterShow: this.options.afterShow,
+      beforeHide: this.options.beforeHide,
+      afterHide: this.options.afterHide,
       cloneWidth: false
     });
 
     this.anchor.observe('mouseover', this.show.bindAsEventListener(this));   
     this.pulldown.element.addClassName('ui_tooltip');
     this.pulldown.element.observe('mouseout', this.hide.bindAsEventListener(this));
-
-
   },
   setContent: function(content) {
     this.pulldown.element.innerHTML= content;
     return this;
   },
   show: function() {
-    console.log('view tooltip: ' + this.content);
-
-    Event.stopObserving(this.anchor,'mouseout', this.hide);    
-        
-    if (this.options.beforeShow) 
-        this.options.beforeShow(this);
-        
     this.pulldown.place();
     this.pulldown.show();
-        
-    if (this.options.afterShow) 
-      this.options.afterShow(this);
       
     return this;
   },
   hide: function() {
-    console.log('hide tooltip');
     this.pulldown.hide();
     return this;
   }
