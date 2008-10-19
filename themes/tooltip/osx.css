@@ -1,0 +1,8 @@
+.ui_tooltip_anchor {
+  text-decoration: underline;
+}
+
+.ui_tooltip {
+  padding: 5px 10px;
+  background: #fff;
+}

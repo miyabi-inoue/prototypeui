@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	  <title>Prototype UI : functional test : Tabbox</title>
+    
+    <script src="../../../lib/prototype.js" type="text/javascript"></script>
+    <script src="../../../lib/effects.js" type="text/javascript"></script>
+    <script src="../../../src/core/base.js" type="text/javascript"></script>  
+    <script src="../../../src/core/dom.js" type="text/javascript"></script>  
+    <script src="../../../src/core/options.js" type="text/javascript"></script>  
+    <script src="../../../src/util/css.js" type="text/javascript"></script>    
+    <script src="../../../src/util/iframe_shim.js" type="text/javascript"></script>    
+    <script src="../../../src/shadow/shadow.js" type="text/javascript"></script>
+    <script src="../../../src/util/pull_down.js" type="text/javascript"></script>
+    <script src="../../../src/tooltip/tooltip.js" type="text/javascript"></script>
+    <link href="../../../themes/shadow/pulldown.css" rel="stylesheet" type="text/css"/>
+    <link href="../../../themes/tooltip/osx.css" rel="stylesheet" type="text/css" />
+  </head>
+  
+  <body id="test">    
+    <h1>Prototype UI tooltip Demo</h1>
+
+    <p>This is a test of the <span class="has_tooltip" title="Test Tooltip">Tooltip</span> feature of <span class="has_tooltip" title="PrototypeUI is great">PrototypeUI</span>.</p>
+    <script  type="text/javascript">     
+      function runTest() {
+        $$('.has_tooltip').each(function(anchor) {
+          t = new UI.Tooltip(anchor,{shadow:'pulldown'}).setContent(anchor.title);  
+          anchor.title='';
+        });
+       }  
+       
+      document.whenReady(runTest);
+    </script>
+  </body>  
+</html>

@@ -17,6 +17,7 @@ PUI_DEPENDENCIES = {
   :calendar      => :"util/date.js",
   :widget        => [ :shadow, :"util/iframe_shim.js"],
   :tabbox        => nil,
+  :tooltip       => :util,
   :data_grid     => :util
 }
 
