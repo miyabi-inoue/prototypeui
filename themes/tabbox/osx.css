@@ -12,18 +12,19 @@
   height:auto;
 }
 
-.null_focused .tabdialog .tabs_head {
+.null_focused .osx_ui_tabbox div.tabbox_head {
   background: #e8e8e8;
 }
 
 .osx_ui_tabbox .tabbox_head span {
   display: block;
   float:none;
-  background: #D3D9E2;
   text-align: left;
   padding: 0 5px;
   margin: 0;
   height:auto;
+  white-space:nowrap;
+  overflow:hidden;
 }
 
 .osx_ui_tabbox .tabbox_head span.separator {
@@ -65,10 +66,22 @@
 }
 
 .osx_ui_tabbox .tabbox_head span span.tab_w,
-.osx_ui_tabbox .tabbox_head span span.tab_e,
-.osx_ui_tabbox .tabbox_head span.selected span.tab_w,
-.osx_ui_tabbox .tabbox_head span.selected span.tab_e {
+.osx_ui_tabbox .tabbox_head span span.tab_e {
   display:none;
+}
+
+.osx_ui_tabbox div.tabbox_head_with_buttons {
+  bottom:29px;
+  border-bottom:1px solid #A5A5A5;
+}
+
+.osx_ui_tabbox div.tabbox_buttons {
+  position:absolute;
+  height:29px;
+  bottom:0;
+  width:160px;
+  border-right:1px solid #A5A5A5;
+  background: transparent url(osx/toolbar_background.png) repeat-x scroll center top;
 }
 
 .osx_ui_tabbox div.tabbox_body {
@@ -82,3 +95,4 @@
   padding: 0 5px;
   text-align: left;
 }
+

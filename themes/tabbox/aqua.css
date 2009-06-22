@@ -2,13 +2,20 @@
   height: 18px;
   margin: 0px;
   padding:0;
+  border:none;
+  width:auto;
   border: none;
+  position:static;
+  overflow:visible;
+  background:transparent;
 }
 
 .aqua_ui_tabbox .tabbox_head span {
   display: block;
   float: left;
   text-align:justify;
+  padding:0;
+  margin:0;
 }
 
 .aqua_ui_tabbox .tabbox_head span span {
@@ -17,8 +24,10 @@
   height: 18px;
   margin: 0px;
   background: url(aqua/default.gif) repeat-x;
-  line-height: 18px;
-  font-size: 12px;
+  line-height: 16px;
+  font-family: "Lucida Grande", Arial, Helvetica, sans-serif;
+  font-size: 13px;
+
 }
 
 .aqua_ui_tabbox .tabbox_head span span.tab_w {
@@ -35,6 +44,10 @@
   background: url(aqua/default_e.gif);
 }
 
+.aqua_ui_tabbox .tabbox_head span.selected {
+  background:transparent;
+}
+
 .aqua_ui_tabbox .tabbox_head span.selected span {
   background: url(aqua/default_selected.gif) repeat-x;
 }
@@ -49,6 +62,8 @@
 
 .aqua_ui_tabbox div.tabbox_body {
   margin: 0px;
-  border: 1px solid #999;
+  padding: 10px;
+  border: 1px solid #ccc;
   clear:left;
+  position:static;
 }

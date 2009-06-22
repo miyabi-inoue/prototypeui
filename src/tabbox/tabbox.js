@@ -1,7 +1,8 @@
 UI.Tabbox = Class.create(UI.Options, {
   // Group: Options
   options: {
-    theme: ''
+    theme: '',
+    buttons: null
   },
  
   // Group: Contructor
@@ -28,7 +29,16 @@ UI.Tabbox = Class.create(UI.Options, {
     this.element.childElements().invoke('hide');
     this.element.addClassName('ui_tabbox'+(this.options.theme?' '+this.options.theme+'_ui_tabbox':''));
     
-    this.head=new Element('div',{className:'tabbox_head'});
+    if(this.options.buttons) {
+      this.buttons=new Element('div',{className:'tabbox_buttons'}).insert(this.options.buttons);    
+      this.buttons.tabbox=this;
+      this.element.insert({
+          top: this.buttons
+        });
+    }
+    
+    
+    this.head=new Element('div',{className:'tabbox_head'+(this.options.buttons?' tabbox_head_with_buttons':'')});
     
     tabs.each(function(tab) {
       if(tab == 'separator')
@@ -40,7 +50,7 @@ UI.Tabbox = Class.create(UI.Options, {
     this.element.insert({
         top: this.head
       });
-      
+           
     return this;
     //this.change(this.openTab);
   },
@@ -155,7 +165,7 @@ UI.Tabbox = Class.create(UI.Options, {
     }
   },
 
-  select: function(tabName) {
+  select: function(tabName, select_options) {
     if (this.selectedTab && this.selectedTab.name == tabName) {
       return this;
     }
@@ -166,42 +176,50 @@ UI.Tabbox = Class.create(UI.Options, {
     }
     
     this.selectedTab=this.tabs.get(tabName);
-    
-    this.selectedTab.head.addClassName('selected');
-    this.selectedTab.element.show();
- 
-    if(this.selectedTab.ajaxContent)
-    {
-      tab=this.tabs.get(tabName);
+    if (this.selectedTab) {
+      this.selectedTab.head.addClassName('selected');
+      this.selectedTab.element.show();
       
-      var url, options;
-      
-      if(typeof this.selectedTab.ajaxContent == 'object')
-      {
-        url = this.selectedTab.ajaxContent.url;
-        options = this.selectedTab.ajaxContent.options;
-      } else {
-        url = this.selectedTab.ajaxContent;
-        options = {};
-      }
-      
-      options.onComplete=function(){
-        this.fire('selected', {
-          tab: tab
-        });
-        this.fire('selected:'+tabName);
-        if(tab.ajaxLoadOnce) {
-          tab.ajaxContent=false;
+      if (this.selectedTab.ajaxContent) {
+        tab = this.tabs.get(tabName);
+        
+        var url, options;
+        
+        if (typeof this.selectedTab.ajaxContent == 'object') {
+          url = this.selectedTab.ajaxContent.url;
+          options = this.selectedTab.ajaxContent.options;
         }
-      }.bind(this).bind(tab);
-      new Ajax.Updater(this.selectedTab.element, url, options);
-    } else {
-      this.fire('selected', {
-        tab: tabName
-      });
-      this.fire('selected:'+tabName);
-    }      
-    
+        else {
+          url = this.selectedTab.ajaxContent;
+          options = {};
+        }
+        
+        if(select_options && select_options['parameters']) {
+          if (options.parameters) {
+            options.parameters = Object.extend(options.parameters, select_options.parameters);
+          } else {
+            options.parameters = select_options.parameters;
+          }
+        }
+        
+        options.onComplete = function(){
+          this.fire('selected', {
+            tab: tab
+          });
+          this.fire('selected:' + tabName);
+          if (tab.ajaxLoadOnce) {
+            tab.ajaxContent = false;
+          }
+        }.bind(this).bind(tab);
+        new Ajax.Updater(this.selectedTab.element, url, options);
+      }
+      else {
+        this.fire('selected', {
+          tab: tabName
+        });
+        this.fire('selected:' + tabName);
+      }
+    }
     return this;
   }
 });

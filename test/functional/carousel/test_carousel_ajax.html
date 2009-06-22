@@ -46,14 +46,23 @@
       padding-top: 80px;
       opacity: 0;
     }
+    
+
+    .horizontal_carousel .test_container {
+      float: left;
+      width: 500px;
+      height: 240px;
+      position: relative;    
+      overflow: hidden;
+    }
     </style>
   </head>
   <body>
 	<h1>Prototype UI : functional test : Carousel : Ajax test</h1>
     <h2>Liquid Layout</h2>    
-    <div id="horizontal_carousel">
+    <div id="hcarousel" class="horizontal_carousel">
       <div class="previous_button"></div>  
-      <div class="container">
+      <div class="test_container">
         <ul>
         </ul>
         <div id="spinner" style="display: none;">Loading ...<br /></div>
@@ -62,7 +71,7 @@
     </div>
     
     <h2>Fixed Layout</h2>    
-    <div id="vertical_carousel">
+    <div id="vertical_carousel" class="vertical_carousel">
       <div class="previous_button"></div>  
       <div class="container">
         <ul>
@@ -99,7 +108,7 @@
       var carousel = null;
       function runTest() {
         updateCarouselSize();
-        carousel = new UI.Ajax.Carousel("horizontal_carousel", {url: "../../fixtures/ajax_carousel_content.html", elementSize: 250})
+        carousel = new UI.Ajax.Carousel("hcarousel", {url: "../../fixtures/ajax_carousel_content.html", elementSize: 250, container:'.test_container'})
           .observe("request:started", function() {
 	            $('spinner').show().morph("opacity:0.8", {duration:0.5});
             })
@@ -128,8 +137,8 @@
       function updateCarouselSize() {
 		    var dim = document.viewport.getDimensions(); 
 		    dim.width -= 20;                             
-        $("horizontal_carousel").style.width = dim.width + "px";
-        $$("#horizontal_carousel .container").first().style.width =  (dim.width - 100) + "px";
+        $("hcarousel").style.width = dim.width + "px";
+        $$("#hcarousel .test_container").first().style.width =  (dim.width - 100) + "px";
       }
 
       document.whenReady(runTest);
