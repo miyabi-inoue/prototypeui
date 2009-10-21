@@ -154,7 +154,8 @@ UI.Carousel = Class.create(UI.Options, {
   */
   initialize: function(element, options) {   
     this.setOptions(options);
-    this.element = $(element);
+    if (!(this.element = $(element)))
+      return;
     this.id = this.element.id;                                                    
     this.container   = this.element.down(this.options.container).firstDescendant();
     this.elements    = this.container.childElements();
