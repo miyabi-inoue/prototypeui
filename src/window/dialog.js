@@ -1,23 +1,23 @@
 /*
 Class: UI.Dialog
   Main class to handle dialog. Dialog are Windows with buttons like Ok/Cancel for having nicer alert/confirm javascript dialog.
-  
+
   Buttons are fully configurable and designed by CSS
-  
+
   Alert and confirm are already designed
 
   To open a alert dialog just do:
-  > new UI.Dialog({buttons: UI.Dialog.okButton}).center().setHeader("Open a new sesssion").setContent("your content").show(true);         
-  >         
-  
+  > new UI.Dialog({buttons: UI.Dialog.okButton}).center().setHeader("Open a new sesssion").setContent("your content").show(true);
+  >
+
   To open a cofirm dialog just do:
-  > new UI.Dialog({buttons: UI.Dialog.okCancelButton}).center().setHeader("Open a new sesssion").setContent("your content").show(true);         
+  > new UI.Dialog({buttons: UI.Dialog.okCancelButton}).center().setHeader("Open a new sesssion").setContent("your content").show(true);
   >
   > // Or without options as it's by default
-  > new UI.Dialog().center().setHeader("Open a new sesssion").setContent("your content").show(true);         
-  
+  > new UI.Dialog().center().setHeader("Open a new sesssion").setContent("your content").show(true);
+
 */
-                               
+
 UI.Dialog = Class.create(UI.Window, {
   options: {
     buttons:       null, // default = ok/cancel button
@@ -35,7 +35,7 @@ UI.Dialog = Class.create(UI.Window, {
       - title
       - className
       - callback (optional) called when a user click on a button (not disabled)
-      
+
       Example for alert Dialog
       > [{title: 'Ok',     className: 'ok',     callback: function(win) { win.destroy(); }}]
       >
@@ -47,7 +47,7 @@ UI.Dialog = Class.create(UI.Window, {
 
 
   // Group: Instance Methods
-  
+
   /*
     Method: disableButton
       Disables a button (add disabled css class name)
@@ -61,11 +61,11 @@ UI.Dialog = Class.create(UI.Window, {
   */
   disableDialogButton: function(index) {
     var button = this.getDialogButton(index);
-    if (button) 
-      button.addClassName("disabled"); 
+    if (button)
+      button.addClassName("disabled");
     return this;
   },
-  
+
   /*
     Method: enableButton
       Enables a button (remove disabled css class name)
@@ -79,13 +79,47 @@ UI.Dialog = Class.create(UI.Window, {
   */
   enableDialogButton: function(index) {
     var button = this.getDialogButton(index);
-    if (button) 
+    if (button)
       button.removeClassName("disabled");
     return this;
   },
 
   /*
-    Method: getButton                                  
+    Method: disableAllDialogButtons
+      Disables all the dialog buttons (remove disabled css class name)
+      All the buttons are now not clickable
+
+    Returns:
+      this
+  */
+	disableAllDialogButtons: function() {
+		var self = this;
+    var buttons = this.buttonContainer.childElements();
+		(buttons.size()).times(function(index) {
+		  self.disableDialogButton(index);
+		});
+		return self;
+	},
+
+  /*
+    Method: enableAllDialogButtons
+      Enables all the dialog buttons (remove disabled css class name)
+      All the buttons are now clickable
+
+    Returns:
+      this
+  */
+	enableAllDialogButtons: function() {
+		var self = this;
+    var buttons = this.buttonContainer.childElements();
+		(buttons.size()).times(function(index) {
+		  self.enableDialogButton(index);
+		});
+		return self;
+	},
+
+  /*
+    Method: getButton
       Gets button element
 
     Parameters:
@@ -94,82 +128,82 @@ UI.Dialog = Class.create(UI.Window, {
     Returns:
       button element or null if bad index
   */
-  getDialogButton: function(index) {                                    
-    var buttons = this.buttonContainer.childElements(); 
+  getDialogButton: function(index) {
+    var buttons = this.buttonContainer.childElements();
     if (index >= 0 && index < buttons.length)
       return buttons[index];
     else
       return null;
-  },   
+  },
 
   // Override create to add dialog buttons
   create: function($super) {
-    $super();    
-    
+    $super();
+
     // Create buttons
-    this.buttonContainer = this.createButtons();   
+    this.buttonContainer = this.createButtons();
     // Add a new content for dialog content
     this.dialogContent   = new Element('div', {className:'ui-dialog-content'});
-    
-    this.content.update(this.dialogContent);  
-    this.content.insert(this.buttonContainer); 
+
+    this.content.update(this.dialogContent);
+    this.content.insert(this.buttonContainer);
   },
 
   addElements: function($super) {
     $super();
-    // Pre compute buttons height 
-    this.buttonsHeight = this.buttonContainer.getHeight() || this.buttonsHeight; 
+    // Pre compute buttons height
+    this.buttonsHeight = this.buttonContainer.getHeight() || this.buttonsHeight;
     this.setDialogSize();
   },
-  
-  setContent: function(content, withoutButton) { 
-    this.dialogContent.update(content);                  
-    
+
+  setContent: function(content, withoutButton) {
+    this.dialogContent.update(content);
+
     // Remove button if need be
     if (withoutButton && this.buttonContainer.parentNode)
       this.buttonContainer.remove();
-    else 
+    else
       this.content.insert(this.buttonContainer);
-    
+
     // Update dialog size
-    this.setDialogSize();      
+    this.setDialogSize();
     return this;
   },
 
-  onSelect: function(e) { 
-    var element = e.element();       
+  onSelect: function(e) {
+    var element = e.element();
     if (element.callback && !element.hasClassName('disabled')) {
       if (this.options.beforeSelect(element))
         element.callback(this);
     }
   },
-  
-  createButtons: function(dialogButtons) {          
+
+  createButtons: function(dialogButtons) {
     var buttonContainer = new Element('div', { className: 'ui-dialog-buttons'});
-    (this.options.buttons || UI.Dialog.okCancelButtons).each(function(item){    
+    (this.options.buttons || UI.Dialog.okCancelButtons).each(function(item){
       var button;
       if (item.separator)
         button = new Element('span', {className: 'separator'});
-      else 
+      else
         button = new Element('button', {title: item.title,
                                         className: (item.className || '') + (item.disabled ? ' disabled' : '')})
                    .observe('click', this.onSelect.bind(this))
                    .update(item.title);
 
        buttonContainer.insert(button);
-       button.callback = item.callback; 
-    }.bind(this));        
+       button.callback = item.callback;
+    }.bind(this));
     return buttonContainer;
   },
-  
-  setDialogSize: function () {  
-    // Do not compute dialog size if window is not completly ready                                    
+
+  setDialogSize: function () {
+    // Do not compute dialog size if window is not completly ready
     if (!this.borderSize)
       return;
-      
+
     this.buttonsHeight = this.buttonContainer.getHeight() || this.buttonsHeight;
-    var style = this.dialogContent.style, size  = this.getSize(true);    
-    style.width = size.width + "px", style.height = size.height - this.buttonsHeight + "px";  
+    var style = this.dialogContent.style, size  = this.getSize(true);
+    style.width = size.width + "px", style.height = size.height - this.buttonsHeight + "px";
   },
 
   setSize: function($super, width, height, innerSize) {
@@ -177,7 +211,7 @@ UI.Dialog = Class.create(UI.Window, {
     this.setDialogSize();
     return this;
   }
-}); 
+});
 
 
 UI.Dialog =  Object.extend(UI.Dialog, {
@@ -185,5 +219,4 @@ UI.Dialog =  Object.extend(UI.Dialog, {
   okCancelButtons : [{title: 'Ok',     className: 'ok',     callback: function(win) { win.destroy(); }},
                      {title: 'Cancel', className: 'cancel', callback: function(win) { win.destroy(); }}]
 });
-
 
