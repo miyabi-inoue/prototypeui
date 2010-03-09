@@ -25,6 +25,13 @@ UI.URLWindow = Class.create(UI.Window, {
     this.contentframe.src = url;
     return this;
   },
+
+  adapt: function() {
+    var dimensions = Element.getScrollDimensions(this.contentframe.contentDocument.body);
+      this.setSize(dimensions.width+1, dimensions.height, true);
+      this.morph(dimensions, true);
+    return this;
+  },
   
   createIFrame: function($super) {
     this.contentframe = new Element('iframe', {
