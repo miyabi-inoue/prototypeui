@@ -189,7 +189,7 @@ UI.WindowManager = Class.create(UI.Options, {
       var win = this.getWindow(event.findElement('.ui-window'));
       
       // render drag overlay
-      this.container.insert(this.dragOverlay.setStyle({ zIndex: this.getLastZIndex() }));
+      this.container.insert(this.dragOverlay.setStyle({ zIndex: this.getLastZIndex(), display: "block" }));
       
       win.startDrag(handle);
       this.draggedWindow = win;
