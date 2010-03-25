@@ -156,6 +156,11 @@ UI.Window.addMethods({
   },
   
   computePosition: function(top, left) { 
+   if(top < this.windowManager.options.menuMargin)
+        top = this.windowManager.options.menuMargin;
+    if(left < 0)
+        left = 0;
+
     if (this.centerOptions && this.centerOptions.auto)
       return this.computeRecenter(this.getSize());                                                                                                            ;
     

@@ -18,6 +18,7 @@ UI.WindowManager = Class.create(UI.Options, {
     shadowTheme: "mac_shadow",
     showOverlay: Element.show,
     hideOverlay: Element.hide,
+    menuMargin:  0,
     positionningStrategy: function(win, area) {
       UI.WindowManager.DumbPositionningStrategy(win, area);
     }

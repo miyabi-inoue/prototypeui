@@ -53,13 +53,7 @@ UI.Window.addMethods({
   },
 
   moveDrag: function(dx, dy) {
-    var newTop = this.initBounds.top + dy;
-    if(newTop < 0)
-        newTop = 0;
-    var newLeft = this.initBounds.left + dx;
-    if(newLeft < 0)
-        newLeft = 0;
-    this.setPosition(newTop, newLeft);
+    this.setPosition(this.initBounds.top + dy, this.initBounds.left + dx);
   },
 
   swDrag: function(dx, dy) {
