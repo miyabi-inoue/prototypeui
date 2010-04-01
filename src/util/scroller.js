@@ -11,7 +11,7 @@ UI.Scroller = Class.create(UI.Options, {
   
   /*
     Method: initialize
-      Constructor, should not be called directly, it's called by new operator (new Tabbox())
+      Constructor, should not be called directly, it's called by new operator (new Scroller())
       The tabbox is not open and nothing has been added to the DOM yet
       
     Parameters:                                                                            
@@ -62,7 +62,7 @@ UI.Scroller = Class.create(UI.Options, {
       The memo object contains a "tabbox" property referring to the tabbox.
 
     Example:
-      > UI.Tabbox.addMethods({
+      > UI.Scroller.addMethods({
       >   iconify: function() {
       >     // ... your iconifying code here ...
       >     this.fire('iconified');
@@ -72,7 +72,7 @@ UI.Scroller = Class.create(UI.Options, {
       > });
       > 
       > document.observe('tabbox:iconified', function(event) {
-      >   alert("Tabbox with id " + event.memo.tabbox.id + " has just been iconified");
+      >   alert("Scroller with id " + event.memo.tabbox.id + " has just been iconified");
       > });
 
     Parameters:
