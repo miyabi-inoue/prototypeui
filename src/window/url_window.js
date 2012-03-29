@@ -13,7 +13,8 @@ UI.URLWindow = Class.create(UI.Window, {
   },
   
   destroy: function($super){
-    this.contentframe.src = null;
+    Event.stopObserving(this.contentframe, "load", this.onLoad);
+    this.contentframe.src = "about:blank";
     $super();
   },
   
@@ -41,8 +42,18 @@ UI.URLWindow = Class.create(UI.Window, {
       name: this.element.id + "_frame",
       id:  this.element.id + "_frame" 
     });
-    
+
+    Event.observe(this.contentframe, "load", this.onLoad);
+
     this.content.insert(this.contentframe);
+  },
+
+  onLoad: function(event) {
+    var element = Event.element(event);
+    var document = element.contentDocument || element.contentWindow.document;
+    element.contentWindow.focus();
+    if (typeof element.contentWindow.Prototype != "undefined" && typeof document.forms != "undefined" && document.forms.length > 0)
+      document.forms[0].findFirstElement().focus();
   }
 });
 
